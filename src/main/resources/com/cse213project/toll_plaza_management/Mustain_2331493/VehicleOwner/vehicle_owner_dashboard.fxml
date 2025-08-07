@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cse213project.toll_plaza_management.Mustain_2331493.VehicleOwner.VehicleOwnerDashboardController">
+   <left>
+      <VBox prefHeight="449.0" prefWidth="130.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btnRegisterVehicleScreen" mnemonicParsing="false" onAction="#openRegisterVehicleScreen" prefHeight="30.0" prefWidth="131.0" text="Register Vehicle" />
+            <Button fx:id="btnViewTripHistoryScreen" mnemonicParsing="false" prefHeight="30.0" prefWidth="130.0" text="View Trip History" />
+            <Button fx:id="btnPayTollOnlineScreen" mnemonicParsing="false" prefHeight="30.0" prefWidth="131.0" text="Pay Toll Online" />
+            <Button fx:id="btnViewTollRatesScreen" mnemonicParsing="false" prefHeight="30.0" prefWidth="131.0" text="View Toll Rates" />
+            <Button fx:id="btnRechargeTagScreen" mnemonicParsing="false" prefHeight="30.0" prefWidth="130.0" text="Recharge Tag" />
+            <Button fx:id="btnReportTagIssueScreen" mnemonicParsing="false" prefHeight="30.0" prefWidth="131.0" text="Report Tag Issue" />
+            <Button fx:id="btnViewInvoiceHistoryScreen" mnemonicParsing="false" prefHeight="30.0" prefWidth="130.0" text="View Invoice History" />
+            <Button fx:id="btnLogout" mnemonicParsing="false" prefHeight="30.0" prefWidth="130.0" text="Logout" />
+         </children>
+      </VBox>
+   </left>
+   <top>
+      <Label alignment="CENTER" prefHeight="68.0" prefWidth="700.0" style="-fx-background-color: a8a8a6;" text="Vehicle Owner Dashboard" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+      </Label>
+   </top>
+   <center>
+      <Label alignment="TOP_CENTER" prefHeight="239.0" prefWidth="462.0" text="Welcome, [Owner Name]!" BorderPane.alignment="TOP_LEFT">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </center>
+</BorderPane>

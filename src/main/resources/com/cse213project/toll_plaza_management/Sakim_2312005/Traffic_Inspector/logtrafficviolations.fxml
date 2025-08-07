@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cse213_ms3_group43_2312005_2320524_tollplazamanagement.LogtrafficviolationsController">
+   <children>
+      <TextField fx:id="vehicleidTf" layoutX="99.0" layoutY="59.0" promptText="Vehicle Id" />
+      <ComboBox fx:id="violationtypeCb" layoutX="99.0" layoutY="106.0" prefWidth="150.0" promptText="Violation Type" />
+      <Button layoutX="350.0" layoutY="100.0" mnemonicParsing="false" onAction="#attachevidenceOnaction" text="Attach Evidence">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Button>
+      <Button layoutX="353.0" layoutY="250.0" mnemonicParsing="false" onAction="#submitviolationOnaction" text="Submit Violation">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <TextArea fx:id="notesTa" layoutX="99.0" layoutY="168.0" prefHeight="200.0" prefWidth="200.0" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cse213project.toll_plaza_management.Mustain_2331493.VehicleOwner.VehicleRegisterController">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutY="-3.0" prefHeight="63.0" prefWidth="700.0" style="-fx-background-color: a8a8a6;" text="Vehicle Registration">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="35.0" layoutY="137.0" text="Vehicle Number">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtOwnerName" layoutX="144.0" layoutY="90.0" />
+      <ComboBox fx:id="comboVehicleType" layoutX="436.0" layoutY="88.0" prefWidth="150.0" />
+      <Label layoutX="354.0" layoutY="92.0" text="Vehicle Type">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="34.0" layoutY="92.0" text="Owner Name">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="36.0" layoutY="179.0" text="Mobile Number">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="385.0" layoutY="179.0" text="Email">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtVehicleNumber" layoutX="144.0" layoutY="135.0" />
+      <TextField fx:id="txtMobileNumber" layoutX="144.0" layoutY="175.0" />
+      <TextField fx:id="txtEmail" layoutX="436.0" layoutY="175.0" />
+      <Button fx:id="btnRegisterVehicle" layoutX="135.0" layoutY="226.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="92.0" text="Register" />
+      <Button fx:id="btnClearForm" layoutX="287.0" layoutY="227.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="92.0" text="Clear" />
+      <Button fx:id="btnBack" layoutX="445.0" layoutY="226.0" mnemonicParsing="false" onAction="#goBackToDashboard" prefHeight="46.0" prefWidth="92.0" text="Back" />
+      <TableView fx:id="tableRegisteredVehicles" layoutY="286.0" prefHeight="214.0" prefWidth="700.0">
+        <columns>
+            <TableColumn fx:id="colOwnerName" prefWidth="138.0" text="Owner Name" />
+          <TableColumn fx:id="colVehicleNumber" prefWidth="138.0" text="Vehicle Number " />
+          <TableColumn fx:id="colVehicleType" prefWidth="138.0" text="Vehicle Type" />
+            <TableColumn fx:id="colMobileNumber" prefWidth="138.0" text="Mobile Number" />
+            <TableColumn fx:id="colEmail" prefWidth="147.0" text="Email" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

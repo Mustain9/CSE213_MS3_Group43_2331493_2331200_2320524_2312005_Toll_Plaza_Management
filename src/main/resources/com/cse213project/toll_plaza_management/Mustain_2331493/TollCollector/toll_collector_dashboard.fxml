@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="436.0" prefWidth="631.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cse213project.toll_plaza_management.Mustain_2331493.TollCollector.TollCollectorDashboardController">
+   <children>
+      <BorderPane prefHeight="500.0" prefWidth="700.0">
+         <top>
+            <Label alignment="CENTER" prefHeight="62.0" prefWidth="702.0" style="-fx-background-color: a8a8a6;" text="Toll Collector Dashboard" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Label>
+         </top>
+         <left>
+            <VBox prefHeight="438.0" prefWidth="135.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="btnCollectCashScreen" mnemonicParsing="false" onAction="#openCollectCashScreen" prefHeight="35.0" prefWidth="135.0" text="Collect Cash Toll" />
+                  <Button fx:id="btnScanTagScreen" mnemonicParsing="false" prefHeight="35.0" prefWidth="135.0" text="Scan Tag for Payment" />
+                  <Button fx:id="btnViewTollRatesScreen" mnemonicParsing="false" prefHeight="35.0" prefWidth="135.0" text="View Toll Rate Chart" />
+                  <Button fx:id="btnFlagVehicleScreen" mnemonicParsing="false" prefHeight="35.0" prefWidth="135.0" text="Flag Vehicle" />
+                  <Button fx:id="btnIssueTemporaryTagScreen" mnemonicParsing="false" prefHeight="35.0" prefWidth="135.0" text="Issue Temporary Tag" />
+                  <Button fx:id="btnReportIssueScreen" mnemonicParsing="false" prefWidth="135.0" text="Report Issue" />
+                  <Button fx:id="btnViewShiftSummaryScreen" mnemonicParsing="false" prefHeight="35.0" prefWidth="135.0" text="View Shift Summary" />
+                  <Button fx:id="btnLogout" mnemonicParsing="false" prefHeight="35.0" prefWidth="135.0" text="Logout" />
+               </children>
+            </VBox>
+         </left>
+         <center>
+            <Label alignment="TOP_CENTER" prefHeight="268.0" prefWidth="427.0" text="Welcome, Toll Collector!" BorderPane.alignment="TOP_LEFT">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

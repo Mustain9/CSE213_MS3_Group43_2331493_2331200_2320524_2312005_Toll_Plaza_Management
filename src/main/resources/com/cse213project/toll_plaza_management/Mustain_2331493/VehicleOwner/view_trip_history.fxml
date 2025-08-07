@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cse213project.toll_plaza_management.Mustain_2331493.VehicleOwner.ViewTripHistoryController">
+   <children>
+      <Label alignment="CENTER" layoutY="-1.0" prefHeight="59.0" prefWidth="700.0" style="-fx-background-color: a8a8a6;" text="Trip History">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="dateFrom" layoutX="132.0" layoutY="90.0" />
+      <DatePicker fx:id="dateTo" layoutX="132.0" layoutY="143.0" />
+      <Label layoutX="45.0" layoutY="92.0" text="Date From">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="45.0" layoutY="146.0" text="Date To">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="comboVehicleFilter" layoutX="481.0" layoutY="90.0" prefWidth="150.0" />
+      <Label layoutX="415.0" layoutY="93.0" text="Vehicle">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tableTripHistory" layoutY="296.0" prefHeight="214.0" prefWidth="700.0">
+         <columns>
+            <TableColumn fx:id="colTripID" prefWidth="138.0" text="Trip ID " />
+            <TableColumn fx:id="colDate" prefWidth="138.0" text="Date" />
+            <TableColumn fx:id="colVehicleNo" prefWidth="138.0" text="Vehicle No" />
+            <TableColumn fx:id="colTollAmount" prefWidth="138.0" text="Toll Amount" />
+            <TableColumn fx:id="colPaymentMethod" prefWidth="147.0" text="Payment Method" />
+         </columns>
+      </TableView>
+      <Button fx:id="btnSearchTrips" layoutX="132.0" layoutY="217.0" mnemonicParsing="false" text="Search " />
+      <Button fx:id="btnDownloadTripPDF" layoutX="303.0" layoutY="217.0" mnemonicParsing="false" text="Download PDF" />
+      <Button fx:id="btnBack" layoutX="504.0" layoutY="217.0" mnemonicParsing="false" text="Back" />
+   </children>
+</AnchorPane>

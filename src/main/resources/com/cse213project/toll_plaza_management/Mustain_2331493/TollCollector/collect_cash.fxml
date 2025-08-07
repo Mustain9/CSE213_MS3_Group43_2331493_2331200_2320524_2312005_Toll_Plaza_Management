@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cse213project.toll_plaza_management.Mustain_2331493.TollCollector.CollectCashController">
+   <children>
+      <Label alignment="CENTER" layoutX="-4.0" prefHeight="62.0" prefWidth="707.0" style="-fx-background-color: a8a8a6;" text="Collect Cash Toll">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="101.0" layoutY="113.0" text="Vehicle Number">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="101.0" layoutY="196.0" text="Toll Amount">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="101.0" layoutY="157.0" text="Vehicle Type">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtVehicleNumber" layoutX="262.0" layoutY="111.0" />
+      <TextField fx:id="lblTollAmount" layoutX="263.0" layoutY="193.0" />
+      <ComboBox fx:id="comboVehicleType" layoutX="262.0" layoutY="154.0" prefWidth="150.0" />
+      <Button fx:id="btnConfirmCashPayment" layoutX="101.0" layoutY="267.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="117.0" text="Confirm Payment" />
+      <Button fx:id="btnBack" layoutX="489.0" layoutY="267.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="117.0" text="Back" />
+      <Button fx:id="btnCancel" layoutX="295.0" layoutY="267.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="117.0" text="Cancel" />
+   </children>
+</AnchorPane>

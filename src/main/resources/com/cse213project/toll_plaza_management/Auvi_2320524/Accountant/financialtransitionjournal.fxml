@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.auvi2320524.FinancialTransitionJournalController">
+   <children>
+      <Label layoutX="82.0" layoutY="39.0" text="Financial Transition Journal">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
+      <TableView fx:id="FinancialTransitionJournaltableview" layoutX="88.0" layoutY="100.0" prefHeight="200.0" prefWidth="402.0">
+        <columns>
+          <TableColumn fx:id="DatePeriodtablecolumn" prefWidth="108.0" text="Date / Period" />
+          <TableColumn fx:id="ActivityTransitiontablecolumn" prefWidth="293.60003662109375" text="Description of Financial Activity / Transition" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
