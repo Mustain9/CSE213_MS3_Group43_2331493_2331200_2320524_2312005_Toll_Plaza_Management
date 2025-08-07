@@ -47,8 +47,8 @@
       <TextField fx:id="txtMobileNumber" layoutX="144.0" layoutY="175.0" />
       <TextField fx:id="txtEmail" layoutX="436.0" layoutY="175.0" />
       <Button fx:id="btnRegisterVehicle" layoutX="135.0" layoutY="226.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="92.0" text="Register" />
-      <Button fx:id="btnClearForm" layoutX="287.0" layoutY="227.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="92.0" text="Clear" />
-      <Button fx:id="btnBack" layoutX="445.0" layoutY="226.0" mnemonicParsing="false" onAction="#goBackToDashboard" prefHeight="46.0" prefWidth="92.0" text="Back" />
+      <Button fx:id="btnClearForm" layoutX="286.0" layoutY="226.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="92.0" text="Clear" />
+      <Button fx:id="btnBack" layoutX="443.0" layoutY="226.0" mnemonicParsing="false" onAction="#goBackToDashboard" prefHeight="46.0" prefWidth="92.0" text="Back" />
       <TableView fx:id="tableRegisteredVehicles" layoutY="286.0" prefHeight="214.0" prefWidth="700.0">
         <columns>
             <TableColumn fx:id="colOwnerName" prefWidth="138.0" text="Owner Name" />

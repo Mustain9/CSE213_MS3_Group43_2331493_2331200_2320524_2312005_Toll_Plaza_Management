@@ -1,24 +1,53 @@
 package com.cse213project.toll_plaza_management.Mustain_2331493.VehicleOwner;
 
-public class ViewInvoiceHistoryController
-{
-    @javafx.fxml.FXML
-    private TableColumn colTotalAmount;
-    @javafx.fxml.FXML
-    private Button btnViewInvoiceDetails;
-    @javafx.fxml.FXML
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.stage.Stage;
+
+import java.io.IOException;
+
+public class ViewInvoiceHistoryController {
+
+    @FXML
     private Button btnBack;
-    @javafx.fxml.FXML
-    private TableColumn colNoOfTrips;
-    @javafx.fxml.FXML
-    private TableColumn colInvoiceID;
-    @javafx.fxml.FXML
-    private TableView tableInvoices;
-    @javafx.fxml.FXML
+
+    @FXML
     private Button btnDownloadInvoicePDF;
-    @javafx.fxml.FXML
-    private TableColumn colInvoiceDate;
+
+    @FXML
+    private Button btnViewInvoiceDetails;
+
+    @FXML
+    private TableColumn<?, ?> colInvoiceDate;
+
+    @FXML
+    private TableColumn<?, ?> colInvoiceID;
+
+    @FXML
+    private TableColumn<?, ?> colNoOfTrips;
+
+    @FXML
+    private TableColumn<?, ?> colTotalAmount;
+
+    @FXML
+    private TableView<?> tableInvoices;
 
     @javafx.fxml.FXML
     public void initialize() {
-    }}
+    }
+    @FXML
+    public void goBackToDashboard(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/com/cse213project/toll_plaza_management/Mustain_2331493/VehicleOwner/vehicle_owner_dashboard.fxml"));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.show();
+    }
+
+}

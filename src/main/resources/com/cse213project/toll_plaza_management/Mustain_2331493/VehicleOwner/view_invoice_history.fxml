@@ -7,7 +7,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cse213project.toll_plaza_management.Mustain_2331493.VehicleOwner.ViewInvoiceHistoryController">
    <children>
       <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="63.0" prefWidth="700.0" style="-fx-background-color: a8a8a6;" text="Invoice History">
@@ -25,6 +24,6 @@
       </TableView>
       <Button fx:id="btnViewInvoiceDetails" layoutX="90.0" layoutY="421.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="88.0" text="View Details" />
       <Button fx:id="btnDownloadInvoicePDF" layoutX="303.0" layoutY="421.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="101.0" text="Download PDF" />
-      <Button fx:id="btnBack" layoutX="519.0" layoutY="421.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="49.0" text="Back" />
+      <Button fx:id="btnBack" layoutX="519.0" layoutY="421.0" mnemonicParsing="false" onAction="#goBackToDashboard" prefHeight="33.0" prefWidth="49.0" text="Back" />
    </children>
 </AnchorPane>

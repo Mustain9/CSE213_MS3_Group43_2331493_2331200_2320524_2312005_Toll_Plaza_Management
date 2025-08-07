@@ -6,7 +6,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cse213project.toll_plaza_management.Mustain_2331493.VehicleOwner.RechargeTagController">
    <children>
       <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="63.0" prefWidth="700.0" style="-fx-background-color: a8a8a6;" text="Recharge Tag">
@@ -27,7 +26,7 @@
       <TextField fx:id="txtTagID" layoutX="226.0" layoutY="110.0" />
       <TextField fx:id="txtRechargeAmount" layoutX="226.0" layoutY="157.0" />
       <Button fx:id="btnRecharge" layoutX="101.0" layoutY="267.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="69.0" text="Recharge" />
-      <Button fx:id="btnBack" layoutX="489.0" layoutY="267.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="69.0" text="Back" />
+      <Button fx:id="btnBack" layoutX="489.0" layoutY="267.0" mnemonicParsing="false" onAction="#goBackToDashboard" prefHeight="37.0" prefWidth="69.0" text="Back" />
       <Button fx:id="btnCancel" layoutX="293.0" layoutY="267.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="69.0" text="Cancel" />
    </children>
 </AnchorPane>

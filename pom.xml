@@ -61,7 +61,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                com.cse213project.cse213_ms3_group43_2331493_2331200_2320524_2312005_toll_plaza_management/com.cse213project.toll_plaza_management.HelloApplication
+                                com.cse213project.cse213_ms3_group43_2331493_2331200_2320524_2312005_toll_plaza_management/com.cse213project.toll_plaza_management.MainController
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>

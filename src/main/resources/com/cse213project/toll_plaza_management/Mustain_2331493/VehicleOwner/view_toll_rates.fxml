@@ -7,7 +7,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cse213project.toll_plaza_management.Mustain_2331493.VehicleOwner.ViewTollRatesController">
    <children>
       <Label alignment="CENTER" prefHeight="68.0" prefWidth="700.0" style="-fx-background-color: a8a8a6;" text="Toll Rate Chart">
@@ -23,6 +22,6 @@
             <TableColumn fx:id="colMonthlyRate" minWidth="0.0" prefWidth="175.0" text="Monthly Rate" />
         </columns>
       </TableView>
-      <Button fx:id="btnBack" layoutX="309.0" layoutY="428.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="83.0" text="Back" />
+      <Button fx:id="btnBack" layoutX="309.0" layoutY="428.0" mnemonicParsing="false" onAction="#goBackToDashboard" prefHeight="46.0" prefWidth="83.0" text="Back" />
    </children>
 </AnchorPane>

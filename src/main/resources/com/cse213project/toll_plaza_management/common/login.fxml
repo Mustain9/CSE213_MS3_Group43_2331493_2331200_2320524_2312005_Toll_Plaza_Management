@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cse213project.toll_plaza_management.common.loginController">
+   <Label alignment="CENTER" contentDisplay="TOP" prefHeight="62.0" prefWidth="710.0" style="-fx-background-color: a8a8a6;" text="Toll Plaza Login">
+      <font>
+         <Font name="System Bold" size="36.0" />
+      </font>
+   </Label>
+     <TextField fx:id="usernameField" layoutX="168.0" layoutY="144.0" prefHeight="38.0" prefWidth="321.0" promptText="Username" />
+     <PasswordField fx:id="passwordField" layoutX="168.0" layoutY="194.0" prefHeight="38.0" prefWidth="321.0" promptText="Password" />
+     <Button layoutX="292.0" layoutY="323.0" onAction="#HandleLogin" prefHeight="38.0" prefWidth="74.0" text="Login" />
+   <ChoiceBox fx:id="roleChoiceBox" layoutX="254.0" layoutY="262.0" prefWidth="150.0" />
+   <Label fx:id="errorLabel" layoutX="236.0" layoutY="388.0" prefHeight="62.0" prefWidth="187.0" />
+</AnchorPane>

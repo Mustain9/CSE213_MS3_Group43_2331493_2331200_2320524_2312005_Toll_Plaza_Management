@@ -1,41 +1,74 @@
 package com.cse213project.toll_plaza_management.Mustain_2331493.VehicleOwner;
 
-public class VehicleRegisterController
-{
-    @javafx.fxml.FXML
-    private TextField txtMobileNumber;
-    @javafx.fxml.FXML
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+
+import java.io.IOException;
+
+public class VehicleRegisterController {
+
+    @FXML
     private Button btnBack;
-    @javafx.fxml.FXML
-    private TextField txtEmail;
-    @javafx.fxml.FXML
+
+    @FXML
     private Button btnClearForm;
-    @javafx.fxml.FXML
-    private TableColumn colOwnerName;
-    @javafx.fxml.FXML
+
+    @FXML
     private Button btnRegisterVehicle;
-    @javafx.fxml.FXML
-    private TableColumn colVehicleType;
-    @javafx.fxml.FXML
-    private TableColumn colEmail;
-    @javafx.fxml.FXML
-    private TableColumn colMobileNumber;
-    @javafx.fxml.FXML
-    private ComboBox comboVehicleType;
-    @javafx.fxml.FXML
+
+    @FXML
+    private TableColumn<?, ?> colEmail;
+
+    @FXML
+    private TableColumn<?, ?> colMobileNumber;
+
+    @FXML
+    private TableColumn<?, ?> colOwnerName;
+
+    @FXML
+    private TableColumn<?, ?> colVehicleNumber;
+
+    @FXML
+    private TableColumn<?, ?> colVehicleType;
+
+    @FXML
+    private ComboBox<?> comboVehicleType;
+
+    @FXML
+    private TableView<?> tableRegisteredVehicles;
+
+    @FXML
+    private TextField txtEmail;
+
+    @FXML
+    private TextField txtMobileNumber;
+
+    @FXML
     private TextField txtOwnerName;
-    @javafx.fxml.FXML
+
+    @FXML
     private TextField txtVehicleNumber;
-    @javafx.fxml.FXML
-    private TableView tableRegisteredVehicles;
-    @javafx.fxml.FXML
-    private TableColumn colVehicleNumber;
 
     @javafx.fxml.FXML
     public void initialize() {
     }
 
-    @javafx.fxml.FXML
-    public void goBackToDashboard(ActionEvent actionEvent) {
+    @FXML
+    public void goBackToDashboard(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/com/cse213project/toll_plaza_management/Mustain_2331493/VehicleOwner/vehicle_owner_dashboard.fxml"));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.show();
     }
+
 }
