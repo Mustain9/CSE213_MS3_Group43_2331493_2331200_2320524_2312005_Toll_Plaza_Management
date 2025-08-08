@@ -25,7 +25,7 @@ public class PayTollOnlineController {
     private Button btnPayToll;
 
     @FXML
-    private ComboBox<?> comboPaymentMethod;
+    private ComboBox<String> comboPaymentMethod;
 
     @FXML
     private TextField txtTollAmount;
@@ -35,6 +35,7 @@ public class PayTollOnlineController {
 
     @javafx.fxml.FXML
     public void initialize() {
+        comboPaymentMethod.getItems().addAll("Bkash", "PayPal","Upay","Nogod");
     }
 
     @FXML
@@ -45,4 +46,13 @@ public class PayTollOnlineController {
         stage.show();
     }
 
+    @FXML
+    public void btnCancel(ActionEvent actionEvent) {
+    }
+
+    @FXML
+    public void btnPayToll(ActionEvent actionEvent) {
+
+
+    }
 }

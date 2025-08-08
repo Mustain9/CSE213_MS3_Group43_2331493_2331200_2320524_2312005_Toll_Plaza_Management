@@ -44,7 +44,7 @@ public class TollCollectorDashboardController {
 
     @FXML
     public void openCollectCashScreen(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("collect_cash_toll.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("collect_cash.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
         stage.setTitle("Collect Cash Toll");
@@ -53,7 +53,7 @@ public class TollCollectorDashboardController {
 
     @FXML
     public void openScanTagForPayment(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("scan_tag_for_payment.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("scan_tag.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
         stage.setTitle("Scan Tag for Payment");
@@ -62,7 +62,7 @@ public class TollCollectorDashboardController {
 
     @FXML
     public void openViewTollRate(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("view_toll_rate.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("view_toll_rate_chart.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
         stage.setTitle("View Toll Rate");
@@ -98,7 +98,7 @@ public class TollCollectorDashboardController {
 
     @FXML
     public void openViewShiftSummary(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("view_shift_summary.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("shift_summary.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
         stage.setTitle("View Shift Summary");

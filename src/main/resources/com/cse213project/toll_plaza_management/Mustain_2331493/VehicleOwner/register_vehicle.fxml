@@ -33,7 +33,7 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="36.0" layoutY="179.0" text="Mobile Number">
+      <Label layoutX="36.0" layoutY="179.0" text="Phone Number">
          <font>
             <Font size="14.0" />
          </font>
@@ -44,9 +44,9 @@
          </font>
       </Label>
       <TextField fx:id="txtVehicleNumber" layoutX="144.0" layoutY="135.0" />
-      <TextField fx:id="txtMobileNumber" layoutX="144.0" layoutY="175.0" />
+      <TextField fx:id="txtphoneNumber" layoutX="144.0" layoutY="175.0" />
       <TextField fx:id="txtEmail" layoutX="436.0" layoutY="175.0" />
-      <Button fx:id="btnRegisterVehicle" layoutX="135.0" layoutY="226.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="92.0" text="Register" />
+      <Button fx:id="btnRegisterVehicle" layoutX="135.0" layoutY="226.0" mnemonicParsing="false" onAction="#btnRegisterVehicle" prefHeight="46.0" prefWidth="92.0" text="Register" />
       <Button fx:id="btnClearForm" layoutX="286.0" layoutY="226.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="92.0" text="Clear" />
       <Button fx:id="btnBack" layoutX="443.0" layoutY="226.0" mnemonicParsing="false" onAction="#goBackToDashboard" prefHeight="46.0" prefWidth="92.0" text="Back" />
       <TableView fx:id="tableRegisteredVehicles" layoutY="286.0" prefHeight="214.0" prefWidth="700.0">
@@ -54,7 +54,7 @@
             <TableColumn fx:id="colOwnerName" prefWidth="138.0" text="Owner Name" />
           <TableColumn fx:id="colVehicleNumber" prefWidth="138.0" text="Vehicle Number " />
           <TableColumn fx:id="colVehicleType" prefWidth="138.0" text="Vehicle Type" />
-            <TableColumn fx:id="colMobileNumber" prefWidth="138.0" text="Mobile Number" />
+            <TableColumn fx:id="colPhoneNumber" prefWidth="138.0" text="Phone Number" />
             <TableColumn fx:id="colEmail" prefWidth="147.0" text="Email" />
         </columns>
       </TableView>

@@ -19,20 +19,20 @@ public class loginController {
     @FXML
     private TextField usernameField;
     @FXML
-    private ChoiceBox<String> roleChoiceBox;
-    @FXML
     private Label errorLabel;
+    @FXML
+    private ComboBox<String> roleCombobox;
 
     @FXML
     public void initialize() {
-        roleChoiceBox.getItems().addAll("Vehicle Owner", "Toll Collector");
+        roleCombobox.getItems().addAll("Vehicle Owner", "Toll Collector");
     }
 
     @FXML
     public void HandleLogin(ActionEvent event) throws IOException {
         String username = usernameField.getText();
         String password = passwordField.getText();
-        String role = roleChoiceBox.getValue();
+        String role = roleCombobox.getValue();
 
         // 🔹 Simple check (replace with database check later)
         if (username.isEmpty() || password.isEmpty() || role == null) {

@@ -11,9 +11,11 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class VehicleRegisterController {
 
@@ -27,31 +29,25 @@ public class VehicleRegisterController {
     private Button btnRegisterVehicle;
 
     @FXML
-    private TableColumn<?, ?> colEmail;
+    private TableColumn<Vehicle, String> colEmail;
 
     @FXML
-    private TableColumn<?, ?> colMobileNumber;
+    private TableColumn<Vehicle, String> colOwnerName;
 
     @FXML
-    private TableColumn<?, ?> colOwnerName;
+    private TableColumn<Vehicle, String> colVehicleNumber;
 
     @FXML
-    private TableColumn<?, ?> colVehicleNumber;
+    private TableColumn<Vehicle, String> colVehicleType;
 
     @FXML
-    private TableColumn<?, ?> colVehicleType;
+    private ComboBox<String> comboVehicleType;
 
     @FXML
-    private ComboBox<?> comboVehicleType;
-
-    @FXML
-    private TableView<?> tableRegisteredVehicles;
+    private TableView<Vehicle> tableRegisteredVehicles;
 
     @FXML
     private TextField txtEmail;
-
-    @FXML
-    private TextField txtMobileNumber;
 
     @FXML
     private TextField txtOwnerName;
@@ -59,8 +55,25 @@ public class VehicleRegisterController {
     @FXML
     private TextField txtVehicleNumber;
 
+    private ArrayList<Vehicle> VehicleList;
+    @FXML
+    private TextField txtphoneNumber;
+    @FXML
+    private TableColumn colPhoneNumber;
+
     @javafx.fxml.FXML
     public void initialize() {
+
+        VehicleList = new ArrayList<>();
+        comboVehicleType.getItems().addAll("Bike", "Car", "Truck", "Bus");
+
+        colOwnerName.setCellValueFactory(new PropertyValueFactory<>("Name"));
+        colEmail.setCellValueFactory(new PropertyValueFactory<>("Email"));
+        colVehicleNumber.setCellValueFactory(new PropertyValueFactory<>("VehicleNumber"));
+        colVehicleType.setCellValueFactory(new PropertyValueFactory<>("VehicleType"));
+        colPhoneNumber.setCellValueFactory(new PropertyValueFactory<>("PhoneNumber"));
+
+
     }
 
     @FXML
@@ -71,4 +84,17 @@ public class VehicleRegisterController {
         stage.show();
     }
 
+    @FXML
+    public void btnRegisterVehicle(ActionEvent actionEvent) {
+        Vehicle vehicleToBeAdded =  new Vehicle(
+                txtOwnerName.getText(),
+                txtEmail.getText(),
+                txtVehicleNumber.getText(),
+                comboVehicleType.getValue(),
+                Integer.parseInt(txtphoneNumber.getText()));
+
+        VehicleList.add(vehicleToBeAdded);
+        tableRegisteredVehicles.getItems().add(vehicleToBeAdded);
+
+    }
 }

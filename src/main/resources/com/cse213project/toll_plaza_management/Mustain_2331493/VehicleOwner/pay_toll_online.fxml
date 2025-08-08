@@ -32,8 +32,8 @@
       <TextField fx:id="txtVehicleNumber" layoutX="252.0" layoutY="101.0" />
       <TextField fx:id="txtTollAmount" layoutX="252.0" layoutY="143.0" />
       <ComboBox fx:id="comboPaymentMethod" layoutX="252.0" layoutY="182.0" prefWidth="150.0" />
-      <Button fx:id="btnPayToll" layoutX="91.0" layoutY="257.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="69.0" text="Pay" />
+      <Button fx:id="btnPayToll" layoutX="91.0" layoutY="257.0" mnemonicParsing="false" onAction="#btnPayToll" prefHeight="37.0" prefWidth="69.0" text="Pay" />
       <Button fx:id="btnBack" layoutX="479.0" layoutY="257.0" mnemonicParsing="false" onAction="#goBackToDashboard" prefHeight="37.0" prefWidth="69.0" text="Back" />
-      <Button fx:id="btnCancel" layoutX="276.0" layoutY="257.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="69.0" text="Cancel" />
+      <Button fx:id="btnCancel" layoutX="276.0" layoutY="257.0" mnemonicParsing="false" onAction="#btnCancel" prefHeight="37.0" prefWidth="69.0" text="Cancel" />
    </children>
 </AnchorPane>
