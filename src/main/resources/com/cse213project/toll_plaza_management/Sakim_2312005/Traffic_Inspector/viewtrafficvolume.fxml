@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cse213_ms3_group43_2312005_2320524_tollplazamanagement.ViewtrafficvolumeController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cse213project.toll_plaza_management.Sakim_2312005.Traffic_Inspector.ViewtrafficvolumeController">
    <children>
       <ComboBox fx:id="selectlaneboothCb" layoutX="111.0" layoutY="71.0" prefHeight="39.0" prefWidth="150.0" promptText="Select Lane/ Booth" />
       <Button layoutX="109.0" layoutY="122.0" mnemonicParsing="false" onAction="#viewcountOnaction" prefHeight="39.0" prefWidth="77.0" text="View Count" />

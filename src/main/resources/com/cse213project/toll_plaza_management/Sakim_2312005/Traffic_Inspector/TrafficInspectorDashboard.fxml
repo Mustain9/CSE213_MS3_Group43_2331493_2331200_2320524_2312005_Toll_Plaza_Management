@@ -6,7 +6,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cse213_ms3_group43_2312005_2320524_tollplazamanagement.TrafficInspectorDashboardController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cse213project.toll_plaza_management.Sakim_2312005.Traffic_Inspector.TrafficInspectorDashboardController">
    <children>
       <Button layoutX="68.0" layoutY="82.0" mnemonicParsing="false" onAction="#viewTrafficVolumeAcrossTollLanesOnaction" text="View traffic volume across toll lanes" />
       <Button layoutX="68.0" layoutY="120.0" mnemonicParsing="false" onAction="#detectandflagcongestionOnaction" text="Detect and flag congestion" />

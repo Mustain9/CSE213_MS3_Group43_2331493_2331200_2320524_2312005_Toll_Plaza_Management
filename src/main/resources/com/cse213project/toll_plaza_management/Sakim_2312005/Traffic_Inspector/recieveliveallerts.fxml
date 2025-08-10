@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane prefHeight="498.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cse213_ms3_group43_2312005_2320524_tollplazamanagement.RecieveliveallertsController">
+<AnchorPane prefHeight="498.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cse213project.toll_plaza_management.Sakim_2312005.Traffic_Inspector.RecieveliveallertsController">
    <children>
       <TableView fx:id="alertTv" layoutX="40.0" layoutY="64.0" prefHeight="200.0" prefWidth="520.0">
         <columns>
