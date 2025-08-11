@@ -22,8 +22,7 @@
             <TableColumn fx:id="colNoOfTrips" minWidth="0.0" prefWidth="175.0" text="No. of Trips" />
          </columns>
       </TableView>
-      <Button fx:id="btnViewInvoiceDetails" layoutX="90.0" layoutY="421.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="88.0" text="View Details" />
-      <Button fx:id="btnDownloadInvoicePDF" layoutX="303.0" layoutY="421.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="101.0" text="Download PDF" />
+      <Button fx:id="btnViewInvoiceDetails" layoutX="90.0" layoutY="421.0" mnemonicParsing="false" onAction="#handleViewInvoiceDetails" prefHeight="33.0" prefWidth="88.0" text="View Details" />
       <Button fx:id="btnBack" layoutX="519.0" layoutY="421.0" mnemonicParsing="false" onAction="#goBackToDashboard" prefHeight="33.0" prefWidth="49.0" text="Back" />
    </children>
 </AnchorPane>

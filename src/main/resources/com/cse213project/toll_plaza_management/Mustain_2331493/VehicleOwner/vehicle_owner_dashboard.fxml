@@ -11,12 +11,12 @@
       <VBox prefHeight="449.0" prefWidth="130.0" BorderPane.alignment="CENTER">
          <children>
             <Button fx:id="btnRegisterVehicleScreen" mnemonicParsing="false" onAction="#openRegisterVehicleScreen" prefHeight="30.0" prefWidth="131.0" text="Register Vehicle" />
-            <Button fx:id="btnViewTripHistoryScreen" mnemonicParsing="false" onAction="#ViewTripHistoryScreen" prefHeight="30.0" prefWidth="130.0" text="View Trip History" />
             <Button fx:id="btnPayTollOnlineScreen" mnemonicParsing="false" onAction="#PayTollOnlineScreen" prefHeight="30.0" prefWidth="131.0" text="Pay Toll Online" />
-            <Button fx:id="btnViewTollRatesScreen" mnemonicParsing="false" onAction="#ViewTollRatesScreen" prefHeight="30.0" prefWidth="131.0" text="View Toll Rates" />
             <Button fx:id="btnRechargeTagScreen" mnemonicParsing="false" onAction="#RechargeTagScreen" prefHeight="30.0" prefWidth="130.0" text="Recharge Tag" />
-            <Button fx:id="btnReportTagIssueScreen" mnemonicParsing="false" onAction="#ReportTagIssueScreen" prefHeight="30.0" prefWidth="131.0" text="Report Tag Issue" />
             <Button fx:id="btnViewInvoiceHistoryScreen" mnemonicParsing="false" onAction="#ViewInvoiceHistoryScreen" prefHeight="30.0" prefWidth="130.0" text="View Invoice History" />
+            <Button fx:id="btnViewTollRatesScreen" mnemonicParsing="false" onAction="#ViewTollRatesScreen" prefHeight="30.0" prefWidth="131.0" text="View Toll Rates" />
+            <Button fx:id="btnViewTripHistoryScreen" mnemonicParsing="false" onAction="#ViewTripHistoryScreen" prefHeight="30.0" prefWidth="130.0" text="View Trip History" />
+            <Button fx:id="btnReportTagIssueScreen" mnemonicParsing="false" onAction="#ReportTagIssueScreen" prefHeight="30.0" prefWidth="131.0" text="Report Tag Issue" />
             <Button fx:id="btnLogout" mnemonicParsing="false" onAction="#logout" prefHeight="30.0" prefWidth="130.0" text="Logout" />
          </children>
       </VBox>

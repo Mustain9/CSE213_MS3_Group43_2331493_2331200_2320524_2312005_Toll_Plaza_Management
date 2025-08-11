@@ -93,7 +93,7 @@ public class VehicleRegisterController {
 
         if (vehicleNumber.isEmpty() || vehicleType == null || phoneNumberText.isEmpty() ||
                 ownerName.isEmpty() || email.isEmpty()) {
-            showAlert("Input Error", "All fields are required.");
+            showAlert(Alert.AlertType.ERROR,"Input Error", "All fields are required.");
             return;
         }
 
@@ -102,7 +102,7 @@ public class VehicleRegisterController {
         try {
             phoneNumber = Integer.parseInt(phoneNumberText);
         } catch (NumberFormatException e) {
-            showAlert("Invalid Input", "Phone Number must be a number.");
+            showAlert(Alert.AlertType.ERROR,"Invalid Input", "Phone Number must be a number.");
             return;
         }
 
@@ -110,13 +110,15 @@ public class VehicleRegisterController {
 
         VehicleList.add(vehicleToBeAdded);
         tableRegisteredVehicles.getItems().add(vehicleToBeAdded);
+        showAlert(Alert.AlertType.INFORMATION, "Success", "Vehicle Registered Successfully!");
         clearFields();
     }
 
-    private void showAlert(String title, String content) {
-        Alert alert = new Alert(Alert.AlertType.ERROR);
+    private void showAlert(Alert.AlertType type, String title, String message) {
+        Alert alert = new Alert(type);
         alert.setTitle(title);
-        alert.setContentText(content);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
         alert.showAndWait();
     }
 
@@ -132,6 +134,6 @@ public class VehicleRegisterController {
 
     @FXML
     public void ClearField(ActionEvent actionEvent) {
-
+        clearFields();
     }
 }

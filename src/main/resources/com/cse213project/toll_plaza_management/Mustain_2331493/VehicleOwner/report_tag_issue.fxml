@@ -33,8 +33,8 @@
       <TextArea fx:id="txtIssueDescription" layoutX="135.0" layoutY="176.0" prefHeight="200.0" prefWidth="504.0" />
       <ComboBox fx:id="comboIssueType" layoutX="135.0" layoutY="134.0" prefWidth="150.0" />
       <TextField fx:id="txtTagID" layoutX="136.0" layoutY="94.0" />
-      <Button fx:id="btnSubmitIssue" layoutX="135.0" layoutY="405.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="69.0" text="Submit" />
+      <Button fx:id="btnSubmitIssue" layoutX="135.0" layoutY="405.0" mnemonicParsing="false" onAction="#btnSubmitAction" prefHeight="37.0" prefWidth="69.0" text="Submit" />
       <Button fx:id="btnBack" layoutX="523.0" layoutY="405.0" mnemonicParsing="false" onAction="#goBackToDashboard" prefHeight="37.0" prefWidth="69.0" text="Back" />
-      <Button fx:id="btnCancel" layoutX="320.0" layoutY="405.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="69.0" text="Cancel" />
+      <Button fx:id="btnCancel" layoutX="320.0" layoutY="405.0" mnemonicParsing="false" onAction="#btnCancelAction" prefHeight="37.0" prefWidth="69.0" text="Cancel" />
    </children>
 </AnchorPane>

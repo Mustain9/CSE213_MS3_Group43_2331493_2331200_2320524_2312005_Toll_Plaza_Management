@@ -1,5 +1,7 @@
 package com.cse213project.toll_plaza_management.Sakim_2312005.Traffic_Inspector;
 
+import javafx.event.ActionEvent;
+
 public class TrafficInspectorDashboardController
 {
     @javafx.fxml.FXML

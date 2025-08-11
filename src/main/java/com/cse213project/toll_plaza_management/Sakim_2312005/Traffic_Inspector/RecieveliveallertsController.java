@@ -1,5 +1,10 @@
 package com.cse213project.toll_plaza_management.Sakim_2312005.Traffic_Inspector;
 
+import javafx.event.ActionEvent;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextArea;
+
 public class RecieveliveallertsController
 {
     @javafx.fxml.FXML
