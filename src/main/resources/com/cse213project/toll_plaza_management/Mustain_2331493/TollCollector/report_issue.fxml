@@ -26,8 +26,8 @@
       </Label>
       <TextArea fx:id="txtDescription" layoutX="136.0" layoutY="138.0" prefHeight="200.0" prefWidth="504.0" />
       <ComboBox fx:id="comboIssueType" layoutX="136.0" layoutY="96.0" prefWidth="150.0" />
-      <Button fx:id="btnSubmitIssue" layoutX="136.0" layoutY="367.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="69.0" text="Submit" />
+      <Button fx:id="btnSubmitIssue" layoutX="136.0" layoutY="367.0" mnemonicParsing="false" onAction="#OnSubmit" prefHeight="37.0" prefWidth="69.0" text="Submit" />
       <Button fx:id="btnBack" layoutX="524.0" layoutY="367.0" mnemonicParsing="false" onAction="#goBackToDashboard" prefHeight="37.0" prefWidth="69.0" text="Back" />
-      <Button fx:id="btnCancel" layoutX="321.0" layoutY="367.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="69.0" text="Cancel" />
+      <Button fx:id="btnCancel" layoutX="321.0" layoutY="367.0" mnemonicParsing="false" onAction="#OnCancel" prefHeight="37.0" prefWidth="69.0" text="Cancel" />
    </children>
 </AnchorPane>

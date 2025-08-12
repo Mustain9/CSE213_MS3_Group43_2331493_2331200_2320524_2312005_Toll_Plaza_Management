@@ -22,11 +22,11 @@
                <children>
                   <Button fx:id="btnCollectCashScreen" mnemonicParsing="false" onAction="#openCollectCashScreen" prefHeight="35.0" prefWidth="135.0" text="Collect Cash Toll" />
                   <Button fx:id="btnScanTagScreen" mnemonicParsing="false" onAction="#openScanTagForPayment" prefHeight="35.0" prefWidth="135.0" text="Scan Tag for Payment" />
-                  <Button fx:id="btnViewTollRatesScreen" mnemonicParsing="false" onAction="#openViewTollRate" prefHeight="35.0" prefWidth="135.0" text="View Toll Rate Chart" />
-                  <Button fx:id="btnFlagVehicleScreen" mnemonicParsing="false" onAction="#openFlagVehicle" prefHeight="35.0" prefWidth="135.0" text="Flag Vehicle" />
                   <Button fx:id="btnIssueTemporaryTagScreen" mnemonicParsing="false" onAction="#openIssueTemporaryTag" prefHeight="35.0" prefWidth="135.0" text="Issue Temporary Tag" />
-                  <Button fx:id="btnReportIssueScreen" mnemonicParsing="false" onAction="#openReportIssue" prefWidth="135.0" text="Report Issue" />
+                  <Button fx:id="btnViewTollRatesScreen" mnemonicParsing="false" onAction="#openViewTollRate" prefHeight="35.0" prefWidth="135.0" text="View Toll Rate Chart" />
                   <Button fx:id="btnViewShiftSummaryScreen" mnemonicParsing="false" onAction="#openViewShiftSummary" prefHeight="35.0" prefWidth="135.0" text="View Shift Summary" />
+                  <Button fx:id="btnFlagVehicleScreen" mnemonicParsing="false" onAction="#openFlagVehicle" prefHeight="35.0" prefWidth="135.0" text="Flag Vehicle" />
+                  <Button fx:id="btnReportIssueScreen" mnemonicParsing="false" onAction="#openReportIssue" prefWidth="135.0" text="Report Issue" />
                   <Button fx:id="btnLogout" mnemonicParsing="false" onAction="#logout" prefHeight="35.0" prefWidth="135.0" text="Logout" />
                </children>
             </VBox>

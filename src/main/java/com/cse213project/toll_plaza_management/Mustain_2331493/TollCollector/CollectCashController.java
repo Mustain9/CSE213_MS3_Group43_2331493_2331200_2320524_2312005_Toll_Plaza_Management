@@ -56,7 +56,6 @@ public class CollectCashController {
         clearFields();
     }
 
-
     private void clearFields() {
         txtVehicleNumber.clear();
         comboVehicleType.setValue(null);
@@ -70,7 +69,6 @@ public class CollectCashController {
         alert.setContentText(message);
         alert.showAndWait();
     }
-
 
     @FXML
     public void goBackToDashboard(ActionEvent event) throws IOException {

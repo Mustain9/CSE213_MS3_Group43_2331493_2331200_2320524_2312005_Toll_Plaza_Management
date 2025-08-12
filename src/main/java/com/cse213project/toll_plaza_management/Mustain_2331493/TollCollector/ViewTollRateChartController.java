@@ -1,5 +1,8 @@
 package com.cse213project.toll_plaza_management.Mustain_2331493.TollCollector;
 
+import com.cse213project.toll_plaza_management.Mustain_2331493.VehicleOwner.TollRate;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,6 +12,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -19,22 +23,34 @@ public class ViewTollRateChartController {
     private Button btnBack;
 
     @FXML
-    private TableColumn<?, ?> colMonthlyRate;
+    private TableColumn<TollRate, Double> colMonthlyRate;
 
     @FXML
-    private TableColumn<?, ?> colOneWayRate;
+    private TableColumn<TollRate, Double> colOneWayRate;
 
     @FXML
-    private TableColumn<?, ?> colRoundTripRate;
+    private TableColumn<TollRate, Double> colRoundTripRate;
 
     @FXML
-    private TableColumn<?, ?> colVehicleType;
+    private TableColumn<TollRate, String> colVehicleType;
 
     @FXML
-    private TableView<?> tableTollRates;
+    private TableView<TollRate> tableTollRates;
+
+    private ObservableList<TollRate> tollRatesList = FXCollections.observableArrayList();
 
     @javafx.fxml.FXML
     public void initialize() {
+        colVehicleType.setCellValueFactory(new PropertyValueFactory<>("vehicleType"));
+        colOneWayRate.setCellValueFactory(new PropertyValueFactory<>("oneWayRate"));
+        colRoundTripRate.setCellValueFactory(new PropertyValueFactory<>("roundTripRate"));
+        colMonthlyRate.setCellValueFactory(new PropertyValueFactory<>("monthlyRate"));
+
+        tollRatesList.add(new TollRate("Car", 50.0, 90.0, 1500.0));
+        tollRatesList.add(new TollRate("Truck", 100.0, 180.0, 3500.0));
+        tollRatesList.add(new TollRate("Bus", 80.0, 150.0, 3000.0));
+
+        tableTollRates.setItems(tollRatesList);
     }
 
     @FXML

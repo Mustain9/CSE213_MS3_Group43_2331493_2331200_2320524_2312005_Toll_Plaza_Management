@@ -57,7 +57,6 @@
             </Label>
          </children>
       </HBox>
-      <Button fx:id="btnExportPDF" layoutX="93.0" layoutY="409.0" mnemonicParsing="false" text="Export as PDF" />
-      <Button fx:id="btnBack" layoutX="441.0" layoutY="409.0" mnemonicParsing="false" onAction="#goBackToDashboard" text="Back to Dashboard" />
+      <Button fx:id="btnBack" layoutX="267.0" layoutY="423.0" mnemonicParsing="false" onAction="#goBackToDashboard" text="Back to Dashboard" />
    </children>
 </AnchorPane>

@@ -1,7 +1,6 @@
 package com.cse213project.toll_plaza_management.Mustain_2331493.VehicleOwner;
 
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableArray;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

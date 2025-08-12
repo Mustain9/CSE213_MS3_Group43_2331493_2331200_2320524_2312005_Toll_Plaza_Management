@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -32,6 +33,39 @@ public class FlagVehicleController {
 
     @javafx.fxml.FXML
     public void initialize() {
+    }
+
+    @FXML
+    private void onSubmitFlag() {
+        String vehicleNumber = txtVehicleNumber.getText();
+        String reason = txtReason.getText();
+
+        if (vehicleNumber.isEmpty() || reason.isEmpty()) {
+            showAlert("Input Error", "Please fill in both Vehicle Number and Reason.");
+            return;
+        }
+
+        showAlert("Success", "Vehicle " + vehicleNumber + " has been flagged for: " + reason);
+
+        clearFields();
+    }
+
+    @FXML
+    private void onCancel() {
+        clearFields();
+    }
+
+    private void clearFields() {
+        txtVehicleNumber.clear();
+        txtReason.clear();
+    }
+
+    private void showAlert(String title, String message) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 
     @FXML
