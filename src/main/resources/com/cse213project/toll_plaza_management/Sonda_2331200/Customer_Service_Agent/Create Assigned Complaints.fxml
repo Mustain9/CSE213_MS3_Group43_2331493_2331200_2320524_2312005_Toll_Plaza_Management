@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cse213project.toll_plaza_management.Sonda_2331200.Customer_Service_Agent.CreateAssignedComplaintsController">
+   <children>
+      <TableView fx:id="assignedComplaintsTable" layoutY="13.0" prefHeight="201.0" prefWidth="701.0">
+        <columns>
+          <TableColumn prefWidth="156.00002539157867" text="Complaint ID" />
+          <TableColumn prefWidth="95.33328247070312" text="Date" />
+            <TableColumn prefWidth="145.33338928222656" text="Customer Name" />
+            <TableColumn prefWidth="117.33328247070312" text="Problem" />
+            <TableColumn prefWidth="184.0" text="Status" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

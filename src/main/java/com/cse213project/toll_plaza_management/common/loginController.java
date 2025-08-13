@@ -25,7 +25,7 @@ public class loginController {
 
     @FXML
     public void initialize() {
-        roleCombobox.getItems().addAll("Vehicle Owner", "Toll Collector");
+        roleCombobox.getItems().addAll("Vehicle Owner", "Toll Collector", "Supervisor", "Customer_Service_Agent");
     }
 
     @FXML
@@ -46,6 +46,10 @@ public class loginController {
         else if (role.equals("Toll Collector") && username.equals("collector") && password.equals("1234")) {
             loadDashboard(event, "/com/cse213project/toll_plaza_management/Mustain_2331493/TollCollector/toll_collector_dashboard.fxml", "Toll Collector Dashboard");
         }
+        else if (role.equals("Supervisor") && username.equals("supervisor") && password.equals("1234")) {
+            loadDashboard(event, "/com/cse213project/toll_plaza_management/Sonda_2331200/Supervisor/SupervisorDashboard.fxml", "Supervisor Dashboard");
+        }
+
         else {
             errorLabel.setText("Invalid credentials.");
         }
