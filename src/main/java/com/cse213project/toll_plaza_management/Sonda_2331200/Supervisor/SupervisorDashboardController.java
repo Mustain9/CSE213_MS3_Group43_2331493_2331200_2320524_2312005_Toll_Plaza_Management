@@ -31,7 +31,7 @@ public class SupervisorDashboardController
     }
 
     @javafx.fxml.FXML
-    public void deleteComplaintBtn(ActionEvent event) {
+    public void deleteComplaintBtn(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/cse213project/toll_plaza_management/common/login.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
@@ -40,7 +40,7 @@ public class SupervisorDashboardController
     }
 
     @javafx.fxml.FXML
-    public void AssignComplainBtn(ActionEvent event) {
+    public void AssignComplainBtn(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("com/cse213project/toll_plaza_management/Sonda_2331200/Supervisor/AssignComplaintController.java"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
