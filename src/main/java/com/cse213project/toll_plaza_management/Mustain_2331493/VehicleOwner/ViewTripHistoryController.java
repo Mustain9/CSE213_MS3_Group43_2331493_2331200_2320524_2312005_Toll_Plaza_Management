@@ -21,9 +21,6 @@ public class ViewTripHistoryController {
     private Button btnBack;
 
     @FXML
-    private Button btnDownloadTripPDF;
-
-    @FXML
     private Button btnSearchTrips;
 
     @FXML

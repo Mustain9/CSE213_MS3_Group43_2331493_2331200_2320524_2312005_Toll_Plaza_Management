@@ -43,8 +43,7 @@
             <TableColumn fx:id="colPaymentMethod" prefWidth="147.0" text="Payment Method" />
          </columns>
       </TableView>
-      <Button fx:id="btnSearchTrips" layoutX="132.0" layoutY="217.0" mnemonicParsing="false" text="Search " />
-      <Button fx:id="btnDownloadTripPDF" layoutX="303.0" layoutY="217.0" mnemonicParsing="false" text="Download PDF" />
-      <Button fx:id="btnBack" layoutX="504.0" layoutY="217.0" mnemonicParsing="false" onAction="#goBackToDashboard" text="Back" />
+      <Button fx:id="btnSearchTrips" layoutX="132.0" layoutY="217.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="94.0" text="Search " />
+      <Button fx:id="btnBack" layoutX="440.0" layoutY="221.0" mnemonicParsing="false" onAction="#goBackToDashboard" prefHeight="33.0" prefWidth="94.0" text="Back" />
    </children>
 </AnchorPane>
