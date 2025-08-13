@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cse213project.toll_plaza_management.Sakim_2312005.Traffic_Inspector.ViewentryandexitController">
    <children>
       <TextField fx:id="vehicleidTf" layoutX="123.0" layoutY="76.0" />
@@ -25,7 +24,12 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <Button layoutX="430.0" layoutY="264.0" mnemonicParsing="false" onAction="#pdfOnaction" prefHeight="44.0" prefWidth="80.0" text="PDF" />
-      <Button layoutX="430.0" layoutY="327.0" mnemonicParsing="false" onAction="#csvOnaction" prefHeight="44.0" prefWidth="80.0" text="CSV" />
+      <Button layoutX="403.0" layoutY="263.0" mnemonicParsing="false" onAction="#pdfOnaction" prefHeight="44.0" prefWidth="80.0" text="PDF" />
+      <Button layoutX="403.0" layoutY="327.0" mnemonicParsing="false" onAction="#csvOnaction" prefHeight="44.0" prefWidth="80.0" text="CSV" />
+      <Button layoutX="524.0" layoutY="329.0" mnemonicParsing="false" onAction="#backOnaction" text="Back">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

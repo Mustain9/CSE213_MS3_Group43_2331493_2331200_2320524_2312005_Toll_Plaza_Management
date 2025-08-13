@@ -10,7 +10,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="446.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cse213project.toll_plaza_management.Sakim_2312005.Maintenance_Staff.ViewactivemaintenceController">
    <children>
       <Label layoutX="178.0" layoutY="21.0" text="View Active Maintenacne">
@@ -31,5 +30,10 @@
         </columns>
       </TableView>
       <Button layoutX="474.0" layoutY="310.0" mnemonicParsing="false" onAction="#viewMaintenanceOnaction" prefHeight="51.0" prefWidth="113.0" text="View Maintenance" />
+      <Button layoutX="474.0" layoutY="385.0" mnemonicParsing="false" onAction="#backOnaction" text="Back">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

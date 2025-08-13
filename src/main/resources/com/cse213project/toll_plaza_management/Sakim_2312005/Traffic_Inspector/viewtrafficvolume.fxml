@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cse213project.toll_plaza_management.Sakim_2312005.Traffic_Inspector.ViewtrafficvolumeController">
    <children>
       <ComboBox fx:id="selectlaneboothCb" layoutX="111.0" layoutY="71.0" prefHeight="39.0" prefWidth="150.0" promptText="Select Lane/ Booth" />
@@ -20,11 +19,16 @@
             <TableColumn fx:id="directionTc" prefWidth="116.0" text="Direction" />
         </columns>
       </TableView>
-      <Button layoutX="459.0" layoutY="308.0" mnemonicParsing="false" onAction="#downloadOnaction" prefHeight="39.0" prefWidth="71.0" text="Download" />
+      <Button layoutX="459.0" layoutY="252.0" mnemonicParsing="false" onAction="#downloadOnaction" prefHeight="39.0" prefWidth="71.0" text="Download" />
       <Label layoutX="209.0" layoutY="24.0" text="View traffic volume">
          <font>
             <Font size="23.0" />
          </font>
       </Label>
+      <Button layoutX="459.0" layoutY="332.0" mnemonicParsing="false" onAction="#backOnaction" prefHeight="39.0" prefWidth="71.0" text="Back">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

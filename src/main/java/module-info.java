@@ -6,6 +6,9 @@ module com.cse213project.cse213_ms3_group43_2331493_2331200_2320524_2312005_toll
     opens com.cse213project.toll_plaza_management.common to javafx.fxml;
     opens com.cse213project.toll_plaza_management.Mustain_2331493.VehicleOwner to javafx.fxml;
     opens com.cse213project.toll_plaza_management.Mustain_2331493.TollCollector to javafx.fxml;
+    opens com.cse213project.toll_plaza_management.Sakim_2312005.Traffic_Inspector to javafx.fxml;
+    opens com.cse213project.toll_plaza_management.Sakim_2312005.Maintenance_Staff to javafx.fxml;
+
 
     exports com.cse213project.toll_plaza_management;
     exports com.cse213project.toll_plaza_management.common;

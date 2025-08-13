@@ -7,7 +7,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cse213project.toll_plaza_management.Sakim_2312005.Maintenance_Staff.MarkaboothController">
    <children>
       <Button layoutX="363.0" layoutY="214.0" mnemonicParsing="false" onAction="#markOperationalOnaction" text="Mark Operational">
@@ -24,5 +23,10 @@
       <CheckBox fx:id="boothCb" layoutX="106.0" layoutY="225.0" mnemonicParsing="false" text="Booth" />
       <Label layoutX="43.0" layoutY="225.0" text="Category:" />
       <CheckBox fx:id="statusCb" layoutX="168.0" layoutY="225.0" mnemonicParsing="false" text="Status" />
+      <Button layoutX="458.0" layoutY="325.0" mnemonicParsing="false" onAction="#backOnaction" text="Back">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
