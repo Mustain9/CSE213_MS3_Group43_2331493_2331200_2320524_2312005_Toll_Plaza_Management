@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="458.0" prefWidth="636.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cse213project.toll_plaza_management.Sakim_2312005.Maintenance_Staff.AcknowledgenewissueController">
+   <children>
+      <TextField fx:id="notificationIdTf" layoutX="34.0" layoutY="77.0" promptText="Notification Id" />
+      <TextArea fx:id="issueSummaryTa" layoutX="204.0" layoutY="77.0" prefHeight="154.0" prefWidth="200.0" promptText="Issue Summary" />
+      <TextArea fx:id="reportWriteTa" layoutX="422.0" layoutY="77.0" prefHeight="154.0" prefWidth="200.0" promptText="Report Write" />
+      <TableView fx:id="notificationTv" layoutX="34.0" layoutY="244.0" prefHeight="200.0" prefWidth="447.0">
+        <columns>
+          <TableColumn fx:id="notificationIdTc" minWidth="0.0" prefWidth="132.0" text="Notification Id" />
+          <TableColumn fx:id="issueSummaryTc" minWidth="0.0" prefWidth="152.66665649414062" text="Issue Summary" />
+            <TableColumn fx:id="reportTc" prefWidth="162.0" text="Report" />
+        </columns>
+      </TableView>
+      <Label layoutX="200.0" layoutY="14.0" text="Acknowledge New Issue">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Button layoutX="530.0" layoutY="306.0" mnemonicParsing="false" onAction="#issueButtonOnaction" prefHeight="57.0" prefWidth="82.0" text="Issue Button" />
+   </children>
+</AnchorPane>
