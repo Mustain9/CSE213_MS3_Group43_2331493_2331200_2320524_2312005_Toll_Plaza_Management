@@ -43,7 +43,7 @@ public class SupervisorDashboardController
     }
 
     @javafx.fxml.FXML
-    public void remainderBtn(ActionEvent event) {
+    public void remainderBtn(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/cse213project/toll_plaza_management/Sonda_2331200/Supervisor/UpdateComplaintStatus.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));

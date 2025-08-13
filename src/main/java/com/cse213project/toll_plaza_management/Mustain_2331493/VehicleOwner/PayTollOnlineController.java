@@ -17,6 +17,8 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 
 public class PayTollOnlineController {
 
@@ -39,6 +41,7 @@ public class PayTollOnlineController {
     private TextField txtVehicleNumber;
 
     public static ObservableList<Invoice> invoiceList = FXCollections.observableArrayList();
+    public static List<Trip> tripList = new ArrayList<>();
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -75,8 +78,13 @@ public class PayTollOnlineController {
         String invoiceID = "INV" + (invoiceList.size() + 1);
         String date = LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
 
+        int noOfTrips = 1;
+        invoiceList.add(new Invoice(invoiceID, date,  tollAmount , noOfTrips,vehicleNumber, paymentMethod ));
 
-        invoiceList.add(new Invoice(invoiceID, date, vehicleNumber, tollAmount, paymentMethod));
+
+        String tripID = "TRIP" + (tripList.size() + 1);
+        Trip newTrip = new Trip(tripID, vehicleNumber, paymentMethod, tollAmount, LocalDate.now());
+        tripList.add(newTrip);
 
         Alert success = new Alert(Alert.AlertType.INFORMATION);
         success.setTitle("Payment Successful");

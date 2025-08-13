@@ -41,16 +41,10 @@ public class ViewInvoiceHistoryController {
     @javafx.fxml.FXML
     public void initialize() {
 
-        colInvoiceID.setCellValueFactory(new PropertyValueFactory<>("InvoiceID"));
-        colInvoiceDate.setCellValueFactory(new PropertyValueFactory<>("InvoiceDate"));
-        colTotalAmount.setCellValueFactory(new PropertyValueFactory<>("TotalAmount"));
-        colNoOfTrips.setCellValueFactory(new PropertyValueFactory<>("NoOfTrip"));
-
-//        colInvoiceID.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getInvoiceID()));
-//        colInvoiceDate.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getDate()));
-//        colTotalAmount.setCellValueFactory(data -> new SimpleStringProperty(new DecimalFormat("#.00").format(data.getValue().gettollAmountt())));
-//        colNoOfTrips.setCellValueFactory(data -> new SimpleStringProperty("1"));
-
+        colInvoiceID.setCellValueFactory(new PropertyValueFactory<>("invoiceID"));
+        colInvoiceDate.setCellValueFactory(new PropertyValueFactory<>("date"));
+        colTotalAmount.setCellValueFactory(new PropertyValueFactory<>("tollAmount"));
+        colNoOfTrips.setCellValueFactory(new PropertyValueFactory<>("noOfTrips"));
 
         tableInvoices.setItems(PayTollOnlineController.invoiceList);
     }
@@ -77,7 +71,7 @@ public class ViewInvoiceHistoryController {
         alert.setContentText(
                 "Date: " + selected.getDate() +
                         "\nVehicle: " + selected.getVehicleNumber() +
-                        "\nAmount: " + selected.gettollAmountt() +
+                        "\nAmount: " + selected.getTollAmount() +
                         "\nPayment Method: " + selected.getPaymentMethod()
         );
         alert.showAndWait();

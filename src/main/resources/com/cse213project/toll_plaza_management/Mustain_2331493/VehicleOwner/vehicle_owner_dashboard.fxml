@@ -29,7 +29,7 @@
       </Label>
    </top>
    <center>
-      <Label alignment="TOP_CENTER" prefHeight="239.0" prefWidth="462.0" text="Welcome, [Owner Name]!" BorderPane.alignment="TOP_LEFT">
+      <Label alignment="TOP_CENTER" prefHeight="239.0" prefWidth="462.0" text="Welcome!" BorderPane.alignment="TOP_LEFT">
          <font>
             <Font size="18.0" />
          </font>

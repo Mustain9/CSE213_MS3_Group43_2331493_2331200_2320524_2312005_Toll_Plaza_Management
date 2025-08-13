@@ -36,7 +36,6 @@ public class ScanTagController {
     @FXML
     private TextField txtTagID;
 
-    private double tollAmount = 50.0;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -65,8 +64,10 @@ public class ScanTagController {
 
     @FXML
     private void onDeductToll() {
+        double tollAmount = 50.0;
 
             double Balance = Double.parseDouble(lblBalance.getText());
+
             if (Balance >= tollAmount) {
                 double newBalance = Balance - tollAmount;
                 lblBalance.setText(String.format("%.2f", newBalance));

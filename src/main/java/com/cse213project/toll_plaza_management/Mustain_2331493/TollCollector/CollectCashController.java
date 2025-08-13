@@ -42,13 +42,16 @@ public class CollectCashController {
         String vehicleNumber = txtVehicleNumber.getText();
         String tollAmount = lblTollAmount.getText();
 
+
         if (vehicleNumber.isEmpty() || comboVehicleType.getValue() == null || tollAmount.isEmpty()) {
             showAlert("Input Error", "Please fill all required fields.");
             return;
         }
 
+
         showAlert("Success", "Cash payment recorded for vehicle: " + vehicleNumber);
         clearFields();
+
     }
 
     @FXML

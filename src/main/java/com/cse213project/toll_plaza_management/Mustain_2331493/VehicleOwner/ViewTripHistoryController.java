@@ -1,5 +1,6 @@
 package com.cse213project.toll_plaza_management.Mustain_2331493.VehicleOwner;
 
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -7,13 +8,14 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+
+import static com.cse213project.toll_plaza_management.Mustain_2331493.VehicleOwner.PayTollOnlineController.tripList;
 
 public class ViewTripHistoryController {
 
@@ -21,37 +23,32 @@ public class ViewTripHistoryController {
     private Button btnBack;
 
     @FXML
-    private Button btnSearchTrips;
+    private TableColumn<Trip, String> colDate;
 
     @FXML
-    private TableColumn<?, ?> colDate;
+    private TableColumn<Trip, String> colPaymentMethod;
 
     @FXML
-    private TableColumn<?, ?> colPaymentMethod;
+    private TableColumn<Trip, Double> colTollAmount;
 
     @FXML
-    private TableColumn<?, ?> colTollAmount;
+    private TableColumn<Trip, String> colTripID;
 
     @FXML
-    private TableColumn<?, ?> colTripID;
+    private TableColumn<Trip, String> colVehicleNo;
 
     @FXML
-    private TableColumn<?, ?> colVehicleNo;
-
-    @FXML
-    private ComboBox<?> comboVehicleFilter;
-
-    @FXML
-    private DatePicker dateFrom;
-
-    @FXML
-    private DatePicker dateTo;
-
-    @FXML
-    private TableView<?> tableTripHistory;
+    private TableView<Trip> tableTripHistory;
 
     @javafx.fxml.FXML
     public void initialize() {
+        colTripID.setCellValueFactory(new PropertyValueFactory<>("tripID"));
+        colDate.setCellValueFactory(new PropertyValueFactory<>("date"));
+        colVehicleNo.setCellValueFactory(new PropertyValueFactory<>("vehicleNumber"));
+        colPaymentMethod.setCellValueFactory(new PropertyValueFactory<>("paymentMethod"));
+        colTollAmount.setCellValueFactory(new PropertyValueFactory<>("tollAmount"));
+
+        tableTripHistory.setItems(FXCollections.observableArrayList(tripList));
     }
 
     @FXML

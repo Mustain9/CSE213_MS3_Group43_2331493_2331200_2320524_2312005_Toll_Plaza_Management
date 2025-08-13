@@ -3,15 +3,17 @@ package com.cse213project.toll_plaza_management.Mustain_2331493.VehicleOwner;
 public class Invoice {
     private String invoiceID;
     private String date;
-    private String vehicleNumber;
     private double tollAmount;
+    private int noOfTrips;
+    private String vehicleNumber;
     private String paymentMethod;
 
-    public Invoice(String invoiceID, String date, String vehicleNumber, double tollAmount, String paymentMethod) {
+    public Invoice(String invoiceID, String date, double tollAmount, int noOfTrips, String vehicleNumber, String paymentMethod) {
         this.invoiceID = invoiceID;
         this.date = date;
-        this.vehicleNumber = vehicleNumber;
         this.tollAmount = tollAmount;
+        this.noOfTrips = noOfTrips;
+        this.vehicleNumber = vehicleNumber;
         this.paymentMethod = paymentMethod;
     }
 
@@ -31,20 +33,28 @@ public class Invoice {
         this.date = date;
     }
 
+    public double getTollAmount() {
+        return tollAmount;
+    }
+
+    public void setTollAmount(double tollAmount) {
+        this.tollAmount = tollAmount;
+    }
+
+    public int getNoOfTrips() {
+        return noOfTrips;
+    }
+
+    public void setNoOfTrips(int noOfTrips) {
+        this.noOfTrips = noOfTrips;
+    }
+
     public String getVehicleNumber() {
         return vehicleNumber;
     }
 
     public void setVehicleNumber(String vehicleNumber) {
         this.vehicleNumber = vehicleNumber;
-    }
-
-    public double gettollAmountt() {
-        return tollAmount;
-    }
-
-    public void settollAmount(double tollAmount) {
-        this.tollAmount = tollAmount;
     }
 
     public String getPaymentMethod() {
@@ -54,5 +64,4 @@ public class Invoice {
     public void setPaymentMethod(String paymentMethod) {
         this.paymentMethod = paymentMethod;
     }
-
 }
