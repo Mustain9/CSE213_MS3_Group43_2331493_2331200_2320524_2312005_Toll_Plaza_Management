@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cse213project.toll_plaza_management.Sakim_2312005.Maintenance_Staff.ScheduleequipmentrepairsController">
+   <children>
+      <ComboBox fx:id="timeSlotCb" layoutX="76.0" layoutY="85.0" prefWidth="150.0" promptText="Time Slot" />
+      <ComboBox fx:id="assignTeamCb" layoutX="76.0" layoutY="200.0" prefWidth="150.0" promptText="Assign Team" />
+      <DatePicker fx:id="repairDateDp" layoutX="76.0" layoutY="144.0" promptText="Repair Date" />
+      <Button layoutX="427.0" layoutY="85.0" mnemonicParsing="false" onAction="#scheduleRepairOnaction" text="Schedule Repair">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="427.0" layoutY="200.0" mnemonicParsing="false" onAction="#confirmRepairOnaction" text="Confirm Repair">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Label layoutX="161.0" layoutY="14.0" text="Schedule equipment Repairs">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

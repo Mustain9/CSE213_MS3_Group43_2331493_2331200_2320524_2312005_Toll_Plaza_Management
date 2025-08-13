@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cse213project.toll_plaza_management.Sakim_2312005.Maintenance_Staff.MarkaboothController">
+   <children>
+      <Button layoutX="363.0" layoutY="214.0" mnemonicParsing="false" onAction="#markOperationalOnaction" text="Mark Operational">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Label layoutX="168.0" layoutY="14.0" text="Mark A Booth As operation">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="operationReportTa" layoutX="43.0" layoutY="60.0" prefHeight="123.0" prefWidth="200.0" promptText="Operation Report" />
+      <CheckBox fx:id="boothCb" layoutX="106.0" layoutY="225.0" mnemonicParsing="false" text="Booth" />
+      <Label layoutX="43.0" layoutY="225.0" text="Category:" />
+      <CheckBox fx:id="statusCb" layoutX="168.0" layoutY="225.0" mnemonicParsing="false" text="Status" />
+   </children>
+</AnchorPane>
