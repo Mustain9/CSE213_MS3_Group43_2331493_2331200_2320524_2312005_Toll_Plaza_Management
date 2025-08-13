@@ -35,7 +35,7 @@ public class SupervisorDashboardController
         Parent root = FXMLLoader.load(getClass().getResource("/com/cse213project/toll_plaza_management/common/login.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
-        stage.setTitle("Login");
+        stage.setTitle("delete complain ");
         stage.show();
     }
 
@@ -44,7 +44,7 @@ public class SupervisorDashboardController
         Parent root = FXMLLoader.load(getClass().getResource("/com/cse213project/toll_plaza_management/Sonda_2331200/Supervisor/AssignComplaintController.java"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
-        stage.setTitle("Login");
+        stage.setTitle("assign Complain");
         stage.show();
     }
 
@@ -53,7 +53,7 @@ public class SupervisorDashboardController
         Parent root = FXMLLoader.load(getClass().getResource("/com/cse213project/toll_plaza_management/Sonda_2331200/Supervisor/UpdateComplaintStatus.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
-        stage.setTitle("Login");
+        stage.setTitle("remainder");
         stage.show();
     }
 
@@ -62,7 +62,7 @@ public class SupervisorDashboardController
         Parent root = FXMLLoader.load(getClass().getResource("/com/cse213project/toll_plaza_management/Sonda_2331200/Supervisor/UpdateComplaintStatus.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
-        stage.setTitle("Login");
+        stage.setTitle("update complaint");
         stage.show();
     }
 
