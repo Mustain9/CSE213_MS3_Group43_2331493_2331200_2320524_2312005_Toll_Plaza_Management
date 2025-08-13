@@ -2,11 +2,8 @@ package com.cse213project.toll_plaza_management;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
-import java.io.IOException;
 
 public class MainController extends Application {
     @Override
