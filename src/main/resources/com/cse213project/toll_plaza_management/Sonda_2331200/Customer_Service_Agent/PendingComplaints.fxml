@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cse213project.toll_plaza_management.Sonda_2331200.Customer_Service_Agent.PendingComplaintsController">
+   <children>
+      <TableView fx:id="pendingComplaintsTable" layoutY="-1.0" prefHeight="500.0" prefWidth="713.0">
+        <columns>
+          <TableColumn fx:id="pendingComplaintsTable" prefWidth="696.6666361093521" text="Pending Complaints" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
