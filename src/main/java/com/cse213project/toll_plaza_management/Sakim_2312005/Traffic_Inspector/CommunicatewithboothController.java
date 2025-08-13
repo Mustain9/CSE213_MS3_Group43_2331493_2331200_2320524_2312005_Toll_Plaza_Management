@@ -14,11 +14,11 @@ import java.io.IOException;
 public class CommunicatewithboothController
 {
     @javafx.fxml.FXML
-    private TextArea messageinputtTa;
-    @javafx.fxml.FXML
     private ComboBox selectrecipientCb;
     @javafx.fxml.FXML
     private TextArea messagehistoryTa;
+    @javafx.fxml.FXML
+    private TextArea messageinputTa;
 
     @javafx.fxml.FXML
     public void initialize() {
