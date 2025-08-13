@@ -9,7 +9,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cse213project.toll_plaza_management.Sakim_2312005.Maintenance_Staff.UpdaterepairstatusController">
    <children>
       <TextField fx:id="issueIdTf" layoutX="72.0" layoutY="75.0" promptText="Issue Id" />
@@ -28,6 +27,11 @@
       <Button layoutX="418.0" layoutY="235.0" mnemonicParsing="false" onAction="#repairUpdateOnaction" text="Repair Update">
          <font>
             <Font size="17.0" />
+         </font>
+      </Button>
+      <Button layoutX="483.0" layoutY="342.0" mnemonicParsing="false" onAction="#backOnaction" text="Back">
+         <font>
+            <Font size="20.0" />
          </font>
       </Button>
    </children>

@@ -9,7 +9,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="458.0" prefWidth="636.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cse213project.toll_plaza_management.Sakim_2312005.Maintenance_Staff.AcknowledgenewissueController">
    <children>
       <TextField fx:id="notificationIdTf" layoutX="34.0" layoutY="77.0" promptText="Notification Id" />
@@ -28,5 +27,10 @@
          </font>
       </Label>
       <Button layoutX="530.0" layoutY="306.0" mnemonicParsing="false" onAction="#issueButtonOnaction" prefHeight="57.0" prefWidth="82.0" text="Issue Button" />
+      <Button layoutX="550.0" layoutY="394.0" mnemonicParsing="false" onAction="#backOnation" text="Back">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

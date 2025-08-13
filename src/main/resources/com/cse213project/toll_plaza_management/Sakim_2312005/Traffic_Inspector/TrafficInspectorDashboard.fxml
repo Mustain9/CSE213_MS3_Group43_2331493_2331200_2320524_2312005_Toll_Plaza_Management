@@ -5,7 +5,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cse213project.toll_plaza_management.Sakim_2312005.Traffic_Inspector.TrafficInspectorDashboardController">
    <children>
       <Button layoutX="68.0" layoutY="82.0" mnemonicParsing="false" onAction="#viewTrafficVolumeAcrossTollLanesOnaction" text="View traffic volume across toll lanes" />
@@ -21,5 +20,6 @@
          </font>
       </Label>
       <Button layoutX="68.0" layoutY="346.0" mnemonicParsing="false" onAction="#communicatewithboothoperatorsorsupervisorsOnaction" text="Communicate with booth operators or supervisors" />
+      <Button layoutX="492.0" layoutY="346.0" mnemonicParsing="false" onAction="#signOutOnaction" text="Sign Out" />
    </children>
 </AnchorPane>

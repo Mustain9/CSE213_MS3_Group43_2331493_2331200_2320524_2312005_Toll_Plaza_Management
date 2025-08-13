@@ -9,7 +9,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cse213project.toll_plaza_management.Sakim_2312005.Maintenance_Staff.UploadmaintenancereportsController">
    <children>
       <Label layoutX="177.0" layoutY="14.0" text="Upload Maintenace Reports">
@@ -19,12 +18,12 @@
       </Label>
       <TextField fx:id="reportFilePathTf" layoutX="37.0" layoutY="85.0" promptText="Report File Path" />
       <TextArea fx:id="reportDescriptionTa" layoutX="360.0" layoutY="85.0" prefHeight="131.0" prefWidth="200.0" promptText="Report Description" />
-      <Button layoutX="416.0" layoutY="254.0" mnemonicParsing="false" onAction="#saveReportOnaction" text="Save Report">
+      <Button layoutX="394.0" layoutY="242.0" mnemonicParsing="false" onAction="#saveReportOnaction" text="Save Report">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button layoutX="416.0" layoutY="316.0" mnemonicParsing="false" onAction="#submitReportOnaction" prefHeight="43.0" prefWidth="158.0" text="Submit Report">
+      <Button layoutX="394.0" layoutY="303.0" mnemonicParsing="false" onAction="#submitReportOnaction" prefHeight="43.0" prefWidth="158.0" text="Submit Report">
          <font>
             <Font size="20.0" />
          </font>
@@ -35,5 +34,6 @@
           <TableColumn fx:id="descriptionTc" prefWidth="148.66665649414062" text="Description" />
         </columns>
       </TableView>
+      <Button layoutX="394.0" layoutY="362.0" mnemonicParsing="false" onAction="#backOnaction" prefHeight="30.0" prefWidth="85.0" text="Back" />
    </children>
 </AnchorPane>

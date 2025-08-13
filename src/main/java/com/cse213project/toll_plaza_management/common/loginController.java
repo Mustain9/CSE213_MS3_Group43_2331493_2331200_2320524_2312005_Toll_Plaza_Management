@@ -25,6 +25,7 @@ public class loginController {
     @FXML
     public void initialize() {
         roleCombobox.getItems().addAll("Vehicle Owner", "Toll Collector", "Supervisor", "Customer_Service_Agent", "Accountant", "Managing Director");
+        roleCombobox.getItems().addAll("Vehicle Owner", "Toll Collector", "Maintenance Stuff", "Traffic Inspector");
     }
 
     @FXML
@@ -55,6 +56,12 @@ public class loginController {
             loadDashboard(event, "/com/cse213project/toll_plaza_management/Auvi_2320524/ManagingDirector/MenuManagingDirector.fxml", "Managing Director Menu");
         }
 
+        else if (role.equals("Maintenance Stuff") && username.equals("Maintenance Stuff") && password.equals("1234")) {
+            loadDashboard(event, "/com/cse213project/toll_plaza_management/Sakim_2312005/Maintenance_Staff/MaintenanceStuffDashboard.fxml", "Maintenance Stuff Dashboard");
+        }
+        else if (role.equals("Traffic Inspector") && username.equals("Traffic Inspector") && password.equals("1234")) {
+            loadDashboard(event, "/com/cse213project/toll_plaza_management/Sakim_2312005/Traffic_Inspector/TrafficInspectorDashboard.fxml", "Traffic Inspector Dashboard");
+        }
         else {
             errorLabel.setText("Invalid credentials.");
         }
