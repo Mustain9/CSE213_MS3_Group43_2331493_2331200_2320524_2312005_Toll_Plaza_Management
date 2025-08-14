@@ -81,15 +81,32 @@ public class ViewComplaintsController {
         String selectedStatus = filterStatus.getValue();
         LocalDate selectedDate = filterDate.getValue();
 
-        if (selectedAgent != null && !selectedAgent.equals("All Agents")) {
-            filteredList.removeIf(c -> !c.getAgent().equals(selectedAgent));
+        for (Complaint c : allComplaints) {
+            boolean match = true;
+
+            if (selectedAgent != null && !selectedAgent.equals("All Agents")) {
+                if (!c.getAgent().equals(selectedAgent)) {
+                    match = false;
+                }
+            }
+
+            if (selectedStatus != null && !selectedStatus.equals("All Status")) {
+                if (!c.getStatus().equals(selectedStatus)) {
+                    match = false;
+                }
+            }
+
+            if (selectedDate != null) {
+                if (!c.getDate().equals(selectedDate.toString())) {
+                    match = false;
+                }
+            }
+
+            if (match) {
+                filteredList.add(c);
+            }
         }
-        if (selectedStatus != null && !selectedStatus.equals("All Status")) {
-            filteredList.removeIf(c -> !c.getStatus().equals(selectedStatus));
-        }
-        if (selectedDate != null) {
-            filteredList.removeIf(c -> !c.getDate().equals(selectedDate.toString()));
-        }
+
 
         complaintTable.setItems(filteredList);
     }
