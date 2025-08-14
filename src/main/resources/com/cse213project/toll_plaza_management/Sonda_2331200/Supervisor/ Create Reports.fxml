@@ -6,8 +6,7 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane fx:id="reportType" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cse213project.toll_plaza_management.Sonda_2331200.Supervisor.CreateReportsController">
+<AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cse213project.toll_plaza_management.Sonda_2331200.Supervisor.CreateReportsController">
    <children>
       <ComboBox fx:id="reportType" layoutX="25.0" layoutY="23.0" prefWidth="150.0" />
       <Button layoutX="294.0" layoutY="23.0" mnemonicParsing="false" onAction="#handleGenerateReport" text="GenerateReport" />
@@ -16,5 +15,6 @@
           <TableColumn prefWidth="672.0000102519989" text="reportChart" />
         </columns>
       </TableView>
+      <Button layoutX="298.0" layoutY="316.0" mnemonicParsing="false" onAction="#backOnDashboard" prefHeight="25.0" prefWidth="93.0" text="Back" />
    </children>
 </AnchorPane>

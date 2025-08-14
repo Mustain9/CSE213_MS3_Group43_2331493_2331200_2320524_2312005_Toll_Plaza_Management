@@ -6,8 +6,7 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cse213project.toll_plaza_management.Sonda_2331200.Supervisor.AssignComplaintController">
+<AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cse213project.toll_plaza_management.Sonda_2331200.Supervisor.AssignComplaintController">
    <children>
       <TableView fx:id="unassignedComplaintsTable" layoutY="14.0" prefHeight="251.0" prefWidth="709.0">
         <columns>
@@ -17,6 +16,7 @@
         </columns>
       </TableView>
       <ComboBox fx:id="agentList" layoutX="280.0" layoutY="300.0" prefWidth="150.0" />
-      <Button layoutX="304.0" layoutY="345.0" mnemonicParsing="false" onAction="#OnAssignAgent" text="Assign to Agent" />
+      <Button layoutX="200.0" layoutY="356.0" mnemonicParsing="false" onAction="#OnAssignAgent" text="Assign to Agent" />
+      <Button layoutX="452.0" layoutY="356.0" mnemonicParsing="false" onAction="#backOnDashboard" prefHeight="25.0" prefWidth="101.0" text="Back" />
    </children>
 </AnchorPane>

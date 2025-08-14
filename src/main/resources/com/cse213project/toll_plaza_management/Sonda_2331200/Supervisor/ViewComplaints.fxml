@@ -12,7 +12,7 @@
       <DatePicker fx:id="filterDate" layoutX="36.0" layoutY="64.0" />
       <ComboBox fx:id="filterAgent" layoutX="487.0" layoutY="64.0" prefWidth="150.0" />
       <ComboBox fx:id="filterStatus" layoutX="271.0" layoutY="64.0" prefHeight="25.0" prefWidth="157.0" />
-      <Button layoutX="312.0" layoutY="99.0" mnemonicParsing="false" onAction="#OnFilterBtn" text="Apply Filter" />
+      <Button layoutX="233.0" layoutY="99.0" mnemonicParsing="false" onAction="#OnFilterBtn" text="Apply Filter" />
       <TableView fx:id="complaintTable" layoutY="134.0" prefHeight="365.0" prefWidth="700.0">
          <columns>
             <TableColumn fx:id="colComplaintID" prefWidth="90.00000250339508" text="Complaint ID" />
@@ -23,5 +23,6 @@
             <TableColumn fx:id="colStatus" prefWidth="100.66668701171875" text="Status" />
          </columns>
       </TableView>
+      <Button layoutX="428.0" layoutY="99.0" mnemonicParsing="false" onAction="#backOnDashboard" prefHeight="25.0" prefWidth="77.0" text="Back" />
    </children>
 </AnchorPane>

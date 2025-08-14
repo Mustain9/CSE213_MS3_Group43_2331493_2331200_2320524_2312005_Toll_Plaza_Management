@@ -27,6 +27,11 @@ public class SupervisorDashboardController
 
     @javafx.fxml.FXML
     public void ViewComplaintBtn(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/com/cse213project/toll_plaza_management/Sonda_2331200/Supervisor/ViewComplaints.fxml"));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.setTitle("delete complain ");
+        stage.show();
        
     }
 
