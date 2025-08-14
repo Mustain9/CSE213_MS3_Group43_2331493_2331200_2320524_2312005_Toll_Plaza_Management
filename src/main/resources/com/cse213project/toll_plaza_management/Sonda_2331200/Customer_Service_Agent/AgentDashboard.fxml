@@ -7,21 +7,19 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cse213project.toll_plaza_management.Sonda_2331200.Customer_Service_Agent.AgentDashboardController">
+<AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cse213project.toll_plaza_management.Sonda_2331200.Customer_Service_Agent.AgentDashboardController">
    <children>
       <BorderPane layoutX="-13.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="510.0" prefWidth="723.0">
          <left>
             <VBox prefHeight="432.0" prefWidth="170.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="agentdashboardbtn" mnemonicParsing="false" onAction="#ViewComplaintBtn" prefHeight="50.0" prefWidth="170.0" text="AgentDashboard" />
-                  <Button fx:id="assignedcomplaintsbtn" mnemonicParsing="false" onAction="#AssignComplainBtn" prefHeight="50.0" prefWidth="170.0" text="AssignedComplaints" />
-                  <Button fx:id="agentupdatestatusbtn" mnemonicParsing="false" onAction="#updateComplaintBtn" prefHeight="50.0" prefWidth="170.0" text="AgentUpdateStatus" />
-                  <Button fx:id="addnotebtn" mnemonicParsing="false" onAction="#viewReportBtn" prefHeight="50.0" prefWidth="170.0" text="AddNote" />
-                  <Button fx:id="closecomplaintbtn" mnemonicParsing="false" onAction="#remainderBtn" prefHeight="50.0" prefWidth="170.0" text="CloseComplaint" />
-                  <Button fx:id="searchComplainthistorybtn" mnemonicParsing="false" onAction="#PerfomanceBtn" prefHeight="50.0" prefWidth="170.0" text="SearchComplaintHistory" />
-                  <Button fx:id="contactcustomerbtn" mnemonicParsing="false" onAction="#deleteComplaintBtn" prefHeight="50.0" prefWidth="170.0" text="ContactCustomer" />
-                  <Button fx:id="logoutbtn" mnemonicParsing="false" onAction="#logout" prefHeight="62.0" prefWidth="170.0" text="Logout" />
+                  <Button mnemonicParsing="false" onAction="#assignedcomplaintsbtn" prefHeight="50.0" prefWidth="170.0" text="AssignedComplaints" />
+                  <Button mnemonicParsing="false" onAction="#agentupdatestatusbtn" prefHeight="50.0" prefWidth="170.0" text="AgentUpdateStatus" />
+                  <Button mnemonicParsing="false" onAction="#addnotebtn" prefHeight="50.0" prefWidth="170.0" text="AddNote" />
+                  <Button mnemonicParsing="false" onAction="#closecomplaintbtn" prefHeight="50.0" prefWidth="170.0" text="CloseComplaint" />
+                  <Button mnemonicParsing="false" onAction="#searchComplainthistorybtn" prefHeight="50.0" prefWidth="170.0" text="SearchComplaintHistory" />
+                  <Button mnemonicParsing="false" onAction="#contactcustomerbtn" prefHeight="50.0" prefWidth="170.0" text="ContactCustomer" />
+                  <Button mnemonicParsing="false" onAction="#logout" prefHeight="62.0" prefWidth="170.0" text="Logout" />
                </children>
             </VBox>
          </left>

@@ -14,69 +14,6 @@ import java.io.IOException;
 public class AgentDashboardController {
 
     @FXML
-    private Button addnotebtn;
-
-
-    @FXML
-    private Button agentdashboardbtn;
-
-    @FXML
-    private Button agentupdatestatusbtn;
-
-    @FXML
-    private Button assignedcomplaintsbtn;
-
-    @FXML
-    private Button closecomplaintbtn;
-
-    @FXML
-    private Button contactcustomerbtn;
-
-    @FXML
-    private Button logoutbtn;
-
-
-
-    @FXML
-    private Button searchComplainthistorybtn;
-
-    @FXML
-    void AssignComplainBtn(ActionEvent event) {
-
-    }
-
-    @FXML
-    public void PerfomanceBtn(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/cse213project/toll_plaza_management/common/login.fxml"));
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(root));
-        stage.setTitle("perfomance");
-        stage.show();
-
-    }
-
-    @FXML
-    public void ViewComplaintBtn(ActionEvent event)  throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/cse213project/toll_plaza_management/common/login.fxml"));
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(root));
-        stage.setTitle("ViewComplaint");
-        stage.show();
-
-
-    }
-
-    @FXML
-    public void deleteComplaintBtn(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/cse213project/toll_plaza_management/common/login.fxml"));
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(root));
-        stage.setTitle("delete complaint");
-        stage.show();
-
-    }
-
-    @FXML
     public void logout(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/cse213project/toll_plaza_management/common/login.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -85,25 +22,32 @@ public class AgentDashboardController {
         stage.show();
     }
 
-    @FXML
-    void remainderBtn(ActionEvent event) {
-
-    }
 
     @FXML
-    public void updateComplaintBtn(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/cse213project/toll_plaza_management/common/login.fxml"));
+    public void contactcustomerbtn(ActionEvent event)  throws IOException{
+        Parent root = FXMLLoader.load(getClass().getResource("/com/cse213project/toll_plaza_management/Sonda_2331200/Customer_Service_Agent/ContactCustomer.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
-        stage.setTitle("ViewComplaint");
+        stage.setTitle("View report");
         stage.show();
-
-
     }
 
     @FXML
-    public void viewReportBtn(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/cse213project/toll_plaza_management/common/login.fxml"));
+    public void closecomplaintbtn(ActionEvent actionEvent) {
+    }
+
+    @FXML
+    public void addnotebtn(ActionEvent event)  throws IOException{
+        Parent root = FXMLLoader.load(getClass().getResource("/com/cse213project/toll_plaza_management/Sonda_2331200/Customer_Service_Agent/AddNote.fxml"));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.setTitle("View report");
+        stage.show();
+    }
+
+    @FXML
+    public void assignedcomplaintsbtn(ActionEvent event)  throws IOException{
+        Parent root = FXMLLoader.load(getClass().getResource("/com/cse213project/toll_plaza_management/Sonda_2331200/Customer_Service_Agent/AssignedComplaints.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
         stage.setTitle("View report");
@@ -111,4 +55,20 @@ public class AgentDashboardController {
 
     }
 
+    @FXML
+    public void searchComplainthistorybtn(ActionEvent event)  throws IOException{
+        Parent root = FXMLLoader.load(getClass().getResource("/com/cse213project/toll_plaza_management/Sonda_2331200/Customer_Service_Agent/SearchComplaintHistory.fxml"));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.setTitle("View report");
+        stage.show();}
+
+    @FXML
+    public void agentupdatestatusbtn(ActionEvent event)  throws IOException{
+        Parent root = FXMLLoader.load(getClass().getResource("/com/cse213project/toll_plaza_management/Sonda_2331200/Customer_Service_Agent/AgentUpdateStatus.fxml"));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.setTitle("View report");
+        stage.show();
+    }
 }

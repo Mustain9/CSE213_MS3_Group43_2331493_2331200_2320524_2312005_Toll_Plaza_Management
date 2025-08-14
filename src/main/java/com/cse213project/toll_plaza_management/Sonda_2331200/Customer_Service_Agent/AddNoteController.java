@@ -4,4 +4,6 @@ public class AddNoteController
 {
     @javafx.fxml.FXML
     public void initialize() {
-    }}
+    }
+
+}
