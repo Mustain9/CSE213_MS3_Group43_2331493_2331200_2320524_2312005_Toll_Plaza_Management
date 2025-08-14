@@ -1,24 +1,24 @@
 package com.cse213project.toll_plaza_management.Sakim_2312005.Traffic_Inspector;
 
 public class TrafficViolation {
-    private String vehicleId;
+    private int vehicleId;
     private String violationType;
     private String notes;
 
     public TrafficViolation() {
     }
 
-    public TrafficViolation(String vehicleId, String violationType, String notes) {
+    public TrafficViolation(int vehicleId, String violationType, String notes) {
         this.vehicleId = vehicleId;
         this.violationType = violationType;
         this.notes = notes;
     }
 
-    public String getVehicleId() {
+    public int getVehicleId() {
         return vehicleId;
     }
 
-    public void setVehicleId(String vehicleId) {
+    public void setVehicleId(int vehicleId) {
         this.vehicleId = vehicleId;
     }
 
@@ -41,7 +41,7 @@ public class TrafficViolation {
     @Override
     public String toString() {
         return "TrafficViolation{" +
-                "vehicleId='" + vehicleId + '\'' +
+                "vehicleId=" + vehicleId +
                 ", violationType='" + violationType + '\'' +
                 ", notes='" + notes + '\'' +
                 '}';

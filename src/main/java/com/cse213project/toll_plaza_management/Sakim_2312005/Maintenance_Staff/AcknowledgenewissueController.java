@@ -9,34 +9,50 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class AcknowledgenewissueController
 {
     @javafx.fxml.FXML
     private TextField notificationIdTf;
     @javafx.fxml.FXML
-    private TableColumn<String, String> issueSummaryTc;
+    private TableColumn<Notification, String> issueSummaryTc;
     @javafx.fxml.FXML
     private TextArea reportWriteTa;
     @javafx.fxml.FXML
     private TextArea issueSummaryTa;
     @javafx.fxml.FXML
-    private TableColumn<String, String> reportTc;
+    private TableColumn<Notification, String> reportTc;
     @javafx.fxml.FXML
-    private TableColumn<String, String> notificationIdTc;
+    private TableColumn<Notification, String> notificationIdTc;
     @javafx.fxml.FXML
-    private TableView<String> notificationTv;
+    private TableView<Notification> notificationTv;
+
+    ArrayList<Notification> NotificationList;
 
     @javafx.fxml.FXML
     public void initialize() {
+        NotificationList = new ArrayList<>();
+        notificationIdTc.setCellValueFactory(new PropertyValueFactory<Notification, String>("notificationId"));
+        issueSummaryTc.setCellValueFactory(new PropertyValueFactory<Notification, String>("issueSummary"));
+        reportTc.setCellValueFactory(new PropertyValueFactory<Notification,String>("report"));
     }
 
 
     @javafx.fxml.FXML
     public void issueButtonOnaction(ActionEvent actionEvent) {
+
+        Notification NotificationToBeAdded = new Notification (
+                Integer.parseInt(notificationIdTf.getText()),
+                issueSummaryTa.getText(),
+                reportWriteTa.getText()
+        );
+        notificationTv.getItems().add(NotificationToBeAdded);
+        NotificationList.add(NotificationToBeAdded);
     }
 
     @javafx.fxml.FXML

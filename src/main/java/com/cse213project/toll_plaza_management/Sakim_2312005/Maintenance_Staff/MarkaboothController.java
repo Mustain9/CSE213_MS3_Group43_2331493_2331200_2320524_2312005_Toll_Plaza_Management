@@ -10,6 +10,9 @@ import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class MarkaboothController
 {
@@ -20,12 +23,36 @@ public class MarkaboothController
     @javafx.fxml.FXML
     private TextArea operationReportTa;
 
+    ArrayList<Booth> BoothList;
+
+
     @javafx.fxml.FXML
     public void initialize() {
+        BoothList = new ArrayList<>();
     }
 
     @javafx.fxml.FXML
     public void markOperationalOnaction(ActionEvent actionEvent) {
+
+        ArrayList<String> category = new ArrayList<String>();
+        if (boothCb.isSelected() && statusCb.isSelected()) {
+            category.add("Booth");
+            category.add("Status");
+        }
+        if (boothCb.isSelected())
+            category.add("Booth");
+        if (statusCb.isSelected())
+            category.add("Status");
+
+        Booth BoothToBeAdded = new Booth (
+                operationReportTa.getText(),
+                Arrays.toString(category.toArray())
+
+
+        );
+
+
+
     }
 
     @javafx.fxml.FXML

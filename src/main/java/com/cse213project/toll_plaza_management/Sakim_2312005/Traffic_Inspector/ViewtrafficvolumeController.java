@@ -8,22 +8,31 @@ import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class ViewtrafficvolumeController
 {
     @javafx.fxml.FXML
-    private TableColumn directionTc;
+    private TableColumn<TrafficVolume,String> directionTc;
     @javafx.fxml.FXML
-    private TableColumn countTc;
+    private TableColumn<TrafficVolume,String> countTc;
     @javafx.fxml.FXML
-    private TableColumn vehicletypeTc;
+    private TableColumn<TrafficVolume,String> vehicletypeTc;
     @javafx.fxml.FXML
-    private TableView vehiclecountTv;
+    private TableView<TrafficVolume> vehiclecountTv;
     @javafx.fxml.FXML
-    private ComboBox selectlaneboothCb;
+    private ComboBox<String> selectlaneboothCb;
+    @javafx.fxml.FXML
+    private TextField countNumberTf;
+    @javafx.fxml.FXML
+    private TextField vehicleTypeTf;
+
+    ArrayList<TrafficVolume> TrafficVolumeList;
+
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -31,6 +40,14 @@ public class ViewtrafficvolumeController
 
     @javafx.fxml.FXML
     public void viewcountOnaction(ActionEvent actionEvent) {
+        TrafficVolume TrafficVolumeToBeAdded = new TrafficVolume (
+                selectlaneboothCb.getValue(),
+                vehicleTypeTf.getText(),
+                Integer.parseInt(countNumberTf.getText())
+
+        );
+        vehiclecountTv.getItems().add(TrafficVolumeToBeAdded);
+        TrafficVolumeList.add(TrafficVolumeToBeAdded);
     }
 
     @javafx.fxml.FXML

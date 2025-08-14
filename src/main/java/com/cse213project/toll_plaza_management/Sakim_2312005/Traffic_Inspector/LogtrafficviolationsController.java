@@ -11,15 +11,19 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class LogtrafficviolationsController
 {
     @javafx.fxml.FXML
-    private ComboBox violationtypeCb;
+    private ComboBox<String> violationtypeCb;
     @javafx.fxml.FXML
     private TextArea notesTa;
     @javafx.fxml.FXML
     private TextField vehicleidTf;
+
+    ArrayList<TrafficViolation> TrafficViolationList;
+
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -31,6 +35,11 @@ public class LogtrafficviolationsController
 
     @javafx.fxml.FXML
     public void attachevidenceOnaction(ActionEvent actionEvent) {
+        TrafficViolation TrafficViolationToBeAdded = new TrafficViolation (
+                Integer.parseInt(vehicleidTf.getText()),
+                violationtypeCb.getValue(),
+                notesTa.getText()
+        );
     }
 
     @javafx.fxml.FXML
