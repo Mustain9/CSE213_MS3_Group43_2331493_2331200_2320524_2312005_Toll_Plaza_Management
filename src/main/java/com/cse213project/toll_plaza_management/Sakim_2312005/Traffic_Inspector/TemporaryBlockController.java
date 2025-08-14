@@ -10,13 +10,19 @@ import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class TemporaryBlockController
 {
     @javafx.fxml.FXML
     private TextArea reasonforblockTa;
     @javafx.fxml.FXML
-    private ComboBox selectlaneCb;
+    private ComboBox<String> selectlaneCb;
+
+    ArrayList<Block> BlockList;
+
+
+
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -24,11 +30,12 @@ public class TemporaryBlockController
 
     @javafx.fxml.FXML
     public void blocklaneOnaction(ActionEvent actionEvent) {
+        Block BlockToBeAdded = new Block (
+                selectlaneCb.getValue(),
+                reasonforblockTa.getText()
+        );
     }
 
-    @javafx.fxml.FXML
-    public void confirmactionOnaction(ActionEvent actionEvent) {
-    }
 
     @javafx.fxml.FXML
     public void backOnaction(ActionEvent actionEvent) throws IOException {

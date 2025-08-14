@@ -9,9 +9,11 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class UploadmaintenancereportsController
 {
@@ -20,18 +22,29 @@ public class UploadmaintenancereportsController
     @javafx.fxml.FXML
     private TextArea reportDescriptionTa;
     @javafx.fxml.FXML
-    private TableColumn filePathTc;
+    private TableColumn<MaintenanceReport, String> filePathTc;
     @javafx.fxml.FXML
-    private TableView maintenanceReportTv;
+    private TableView<MaintenanceReport> maintenanceReportTv;
     @javafx.fxml.FXML
-    private TableColumn descriptionTc;
+    private TableColumn<MaintenanceReport, String> descriptionTc;
+
+    ArrayList<MaintenanceReport> MaintenanceReportList;
+
 
     @javafx.fxml.FXML
     public void initialize() {
+        filePathTc.setCellValueFactory(new PropertyValueFactory<MaintenanceReport, String>("filePath"));
+        descriptionTc.setCellValueFactory(new PropertyValueFactory<MaintenanceReport, String>("description"));
     }
 
     @javafx.fxml.FXML
     public void saveReportOnaction(ActionEvent actionEvent) {
+        MaintenanceReport MaintenanceReportToBeAdded = new MaintenanceReport (
+                reportFilePathTf.getText(),
+                reportDescriptionTa.getText()
+        );
+        maintenanceReportTv.getItems().add(MaintenanceReportToBeAdded);
+        MaintenanceReportList.add(MaintenanceReportToBeAdded);
     }
 
     @javafx.fxml.FXML

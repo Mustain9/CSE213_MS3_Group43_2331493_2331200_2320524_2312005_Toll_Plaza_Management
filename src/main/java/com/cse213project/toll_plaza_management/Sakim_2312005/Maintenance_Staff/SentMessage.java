@@ -3,24 +3,24 @@ package com.cse213project.toll_plaza_management.Sakim_2312005.Maintenance_Staff;
 import java.time.LocalDate;
 
 public class SentMessage {
-    private String messageId;
+    private int messageId;
     private String status;
     private LocalDate date;
 
     public SentMessage() {
     }
 
-    public SentMessage(String messageId, String status, LocalDate date) {
+    public SentMessage(int messageId, String status, LocalDate date) {
         this.messageId = messageId;
         this.status = status;
         this.date = date;
     }
 
-    public String getMessageId() {
+    public int getMessageId() {
         return messageId;
     }
 
-    public void setMessageId(String messageId) {
+    public void setMessageId(int messageId) {
         this.messageId = messageId;
     }
 
@@ -43,7 +43,7 @@ public class SentMessage {
     @Override
     public String toString() {
         return "SentMessage{" +
-                "messageId='" + messageId + '\'' +
+                "messageId=" + messageId +
                 ", status='" + status + '\'' +
                 ", date=" + date +
                 '}';

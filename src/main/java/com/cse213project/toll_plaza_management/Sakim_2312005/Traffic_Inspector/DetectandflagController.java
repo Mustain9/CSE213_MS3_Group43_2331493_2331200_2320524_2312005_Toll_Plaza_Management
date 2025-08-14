@@ -10,13 +10,17 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class DetectandflagController
 {
     @javafx.fxml.FXML
-    private ComboBox selectboothCb;
+    private ComboBox<String> selectboothCb;
     @javafx.fxml.FXML
     private TextField congestionresultTf;
+
+    ArrayList<DetectFlag> DetectFlagList;
+
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -28,6 +32,10 @@ public class DetectandflagController
 
     @javafx.fxml.FXML
     public void checkcongestionOnaction(ActionEvent actionEvent) {
+        DetectFlag DetectFlagToBeAdded = new DetectFlag (
+                selectboothCb.getValue(),
+                congestionresultTf.getText()
+        );
     }
 
     @javafx.fxml.FXML

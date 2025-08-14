@@ -10,15 +10,19 @@ import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class ExportDailyTrafficController
 {
     @javafx.fxml.FXML
-    private ComboBox selectrangeCb;
+    private ComboBox<String> selectrangeCb;
     @javafx.fxml.FXML
-    private ComboBox selectboothCb;
+    private ComboBox<String> selectboothCb;
     @javafx.fxml.FXML
     private TextArea reportTf;
+
+    ArrayList<ExportDaily> ExportDailyList;
+
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -30,6 +34,12 @@ public class ExportDailyTrafficController
 
     @javafx.fxml.FXML
     public void clickgeneratereportOnaction(ActionEvent actionEvent) {
+        ExportDaily ExportDailyToBeAdded = new ExportDaily (
+                selectrangeCb.getValue(),
+                selectboothCb.getValue(),
+                reportTf.getText()
+
+        );
     }
 
     @javafx.fxml.FXML

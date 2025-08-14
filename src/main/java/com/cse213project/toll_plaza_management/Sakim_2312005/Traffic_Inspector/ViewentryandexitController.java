@@ -5,23 +5,34 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class ViewentryandexitController
 {
     @javafx.fxml.FXML
-    private TableView logstableTv;
+    private TableView<EntryExitLog> logstableTv;
     @javafx.fxml.FXML
-    private TableColumn lanesTc;
+    private TableColumn<EntryExitLog, String> lanesTc;
     @javafx.fxml.FXML
     private TextField vehicleidTf;
     @javafx.fxml.FXML
-    private TableColumn timestampsTc;
+    private TableColumn<EntryExitLog, String> timestampsTc;
+    @javafx.fxml.FXML
+    private TableColumn<EntryExitLog, String> idTc;
+    @javafx.fxml.FXML
+    private TextField laneTf;
+    @javafx.fxml.FXML
+    private DatePicker timeStampsDp;
+
+    ArrayList<EntryExitLog> EntryExitLogList;
+
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -33,6 +44,13 @@ public class ViewentryandexitController
 
     @javafx.fxml.FXML
     public void searchlogsOnaction(ActionEvent actionEvent) {
+        EntryExitLog EntryExitLogToBeAdded = new EntryExitLog (
+                Integer.parseInt(vehicleidTf.getText()),
+                laneTf.getText(),
+                timeStampsDp.getValue()
+        );
+        logstableTv.getItems().add(EntryExitLogToBeAdded);
+        EntryExitLogList.add(EntryExitLogToBeAdded);
     }
 
     @javafx.fxml.FXML

@@ -9,29 +9,43 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class UpdaterepairstatusController
 {
     @javafx.fxml.FXML
-    private ComboBox currentStatusCb;
+    private ComboBox<String> currentStatusCb;
     @javafx.fxml.FXML
-    private TableColumn currentStatusTc;
+    private TableColumn<RepairStatus, String> currentStatusTc;
     @javafx.fxml.FXML
-    private TableView showIssueTv;
+    private TableView<RepairStatus> showIssueTv;
     @javafx.fxml.FXML
     private TextField issueIdTf;
     @javafx.fxml.FXML
-    private TableColumn issueIdTc;
+    private TableColumn<RepairStatus, String> issueIdTc;
+
+    ArrayList<RepairStatus> RepairStatusList;
+
+
 
     @javafx.fxml.FXML
     public void initialize() {
+        issueIdTc.setCellValueFactory(new PropertyValueFactory<RepairStatus, String>("issueId"));
+        currentStatusTc.setCellValueFactory(new PropertyValueFactory<RepairStatus, String>("currentStatus"));
     }
 
     @javafx.fxml.FXML
     public void repairUpdateOnaction(ActionEvent actionEvent) {
+        RepairStatus RepairStatusToBeAdded = new RepairStatus (
+                Integer.parseInt(issueIdTf.getText()),
+                currentStatusCb.getValue()
+        );
+        showIssueTv.getItems().add(RepairStatusToBeAdded);
+        RepairStatusList.add(RepairStatusToBeAdded);
     }
 
     @javafx.fxml.FXML

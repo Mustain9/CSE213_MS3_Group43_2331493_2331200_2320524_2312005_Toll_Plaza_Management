@@ -10,20 +10,33 @@ import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class RundiagnosticsController
 {
     @javafx.fxml.FXML
-    private ComboBox hardwareSelectCb;
+    private ComboBox<String> hardwareSelectCb;
     @javafx.fxml.FXML
     private TextArea diagnosticsReportTa;
 
+    ArrayList<Diagnostics> DiagnosticsList;
+
+
     @javafx.fxml.FXML
     public void initialize() {
+        DiagnosticsList = new ArrayList<>();
+        hardwareSelectCb.getItems().addAll(" Barrier Gate", "Camera", "Sensor", "Payment Terminal");
+
+
     }
 
     @javafx.fxml.FXML
     public void runDiagnosticsOnaction(ActionEvent actionEvent) throws IOException {
+        Diagnostics DiagnosticsToBeAdded = new Diagnostics (
+                diagnosticsReportTa.getText(),
+                hardwareSelectCb.getValue()
+        );
+
 
     }
 

@@ -8,24 +8,37 @@ import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class RecieveliveallertsController
 {
     @javafx.fxml.FXML
-    private TableView alertTv;
+    private TableView<LiveAlert> alertTv;
     @javafx.fxml.FXML
     private TextArea alertTf;
     @javafx.fxml.FXML
-    private TableColumn carTc;
+    private TableColumn<LiveAlert, String> carTc;
     @javafx.fxml.FXML
-    private TableColumn busTc;
+    private TableColumn<LiveAlert, String> busTc;
     @javafx.fxml.FXML
-    private TableColumn truckTc;
+    private TableColumn<LiveAlert, String> truckTc;
     @javafx.fxml.FXML
-    private TableColumn minibusTc;
+    private TableColumn<LiveAlert, String> minibusTc;
+    @javafx.fxml.FXML
+    private TextField miniBusCountTf;
+    @javafx.fxml.FXML
+    private TextField carCountTf;
+    @javafx.fxml.FXML
+    private TextField truckCountTf;
+    @javafx.fxml.FXML
+    private TextField busCountTf;
+
+    ArrayList<LiveAlert> LiveAlertList;
+
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -33,6 +46,17 @@ public class RecieveliveallertsController
 
     @javafx.fxml.FXML
     public void acknowledgeOnaction(ActionEvent actionEvent) {
+        LiveAlert LiveAlertToBeAdded = new LiveAlert (
+                carCountTf.getText(),
+                busCountTf.getText(),
+                truckCountTf.getText(),
+                miniBusCountTf.getText(),
+                alertTf.getText()
+
+
+        );
+        alertTv.getItems().add(LiveAlertToBeAdded);
+        LiveAlertList.add(LiveAlertToBeAdded);
     }
 
     @javafx.fxml.FXML

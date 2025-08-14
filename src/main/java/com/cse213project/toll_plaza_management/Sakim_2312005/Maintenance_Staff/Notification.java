@@ -1,24 +1,24 @@
 package com.cse213project.toll_plaza_management.Sakim_2312005.Maintenance_Staff;
 
 public class Notification {
-    private String notificationId;
+    private int notificationId;
     private String issueSummary;
     private String report;
 
     public Notification() {
     }
 
-    public Notification(String notificationId, String issueSummary, String report) {
+    public Notification(int notificationId, String issueSummary, String report) {
         this.notificationId = notificationId;
         this.issueSummary = issueSummary;
         this.report = report;
     }
 
-    public String getNotificationId() {
+    public int getNotificationId() {
         return notificationId;
     }
 
-    public void setNotificationId(String notificationId) {
+    public void setNotificationId(int notificationId) {
         this.notificationId = notificationId;
     }
 
@@ -41,7 +41,7 @@ public class Notification {
     @Override
     public String toString() {
         return "Notification{" +
-                "notificationId='" + notificationId + '\'' +
+                "notificationId=" + notificationId +
                 ", issueSummary='" + issueSummary + '\'' +
                 ", report='" + report + '\'' +
                 '}';
