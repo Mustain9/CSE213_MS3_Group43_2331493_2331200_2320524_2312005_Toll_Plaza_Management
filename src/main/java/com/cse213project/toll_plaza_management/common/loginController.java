@@ -15,7 +15,6 @@ public class loginController {
 
     @FXML
     private PasswordField passwordField;
-
     @FXML
     private TextField usernameField;
     @FXML
@@ -34,7 +33,6 @@ public class loginController {
         String password = passwordField.getText();
         String role = roleCombobox.getValue();
 
-        // 🔹 Simple check (replace with database check later)
         if (username.isEmpty() || password.isEmpty() || role == null) {
             errorLabel.setText("Please fill in all fields.");
             return;
@@ -48,6 +46,9 @@ public class loginController {
         }
         else if (role.equals("Supervisor") && username.equals("supervisor") && password.equals("1234")) {
             loadDashboard(event, "/com/cse213project/toll_plaza_management/Sonda_2331200/Supervisor/SupervisorDashboard.fxml", "Supervisor Dashboard");
+        }
+        else if (role.equals("Agent") && username.equals("agent") && password.equals("1234")) {
+            loadDashboard(event, "/com/cse213project/toll_plaza_management/Sonda_2331200/Customer_Service_Agent/AgentDashboard.fxml", "Agent Dashboard");
         }
 
         else {

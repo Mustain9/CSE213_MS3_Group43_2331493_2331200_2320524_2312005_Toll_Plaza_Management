@@ -46,7 +46,7 @@ public class AgentDashboardController {
     }
 
     @FXML
-    public void PerfomanceBtn(ActionEvent event) {
+    public void PerfomanceBtn(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/cse213project/toll_plaza_management/common/login.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
@@ -56,7 +56,7 @@ public class AgentDashboardController {
     }
 
     @FXML
-    public void ViewComplaintBtn(ActionEvent event) {
+    public void ViewComplaintBtn(ActionEvent event)  throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/cse213project/toll_plaza_management/common/login.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
@@ -67,7 +67,7 @@ public class AgentDashboardController {
     }
 
     @FXML
-    public void deleteComplaintBtn(ActionEvent event) {
+    public void deleteComplaintBtn(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/cse213project/toll_plaza_management/common/login.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
@@ -91,7 +91,7 @@ public class AgentDashboardController {
     }
 
     @FXML
-    public void updateComplaintBtn(ActionEvent event) {
+    public void updateComplaintBtn(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/cse213project/toll_plaza_management/common/login.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
@@ -102,7 +102,7 @@ public class AgentDashboardController {
     }
 
     @FXML
-    public void viewReportBtn(ActionEvent event) {
+    public void viewReportBtn(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/cse213project/toll_plaza_management/common/login.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));

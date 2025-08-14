@@ -7,21 +7,20 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cse213project.toll_plaza_management.Sonda_2331200.Supervisor.ViewComplaintsController">
+<AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cse213project.toll_plaza_management.Sonda_2331200.Supervisor.ViewComplaintsController">
    <children>
       <DatePicker fx:id="filterDate" layoutX="36.0" layoutY="64.0" />
       <ComboBox fx:id="filterAgent" layoutX="487.0" layoutY="64.0" prefWidth="150.0" />
       <ComboBox fx:id="filterStatus" layoutX="271.0" layoutY="64.0" prefHeight="25.0" prefWidth="157.0" />
       <Button layoutX="312.0" layoutY="99.0" mnemonicParsing="false" onAction="#OnFilterBtn" text="Apply Filter" />
-      <TableView layoutY="134.0" prefHeight="365.0" prefWidth="700.0">
+      <TableView fx:id="complaintTable" layoutY="134.0" prefHeight="365.0" prefWidth="700.0">
          <columns>
-            <TableColumn prefWidth="90.00000250339508" text="Complaint ID" />
-            <TableColumn prefWidth="97.33330535888672" text="Date" />
-            <TableColumn prefWidth="140.00001525878906" text="Customer Name" />
-            <TableColumn prefWidth="144.6666259765625" text="Problem" />
-            <TableColumn prefWidth="124.66665649414062" text="Assigned Agent" />
-            <TableColumn prefWidth="100.66668701171875" text="Status" />
+            <TableColumn fx:id="colComplaintID" prefWidth="90.00000250339508" text="Complaint ID" />
+            <TableColumn fx:id="colDate" prefWidth="97.33330535888672" text="Date" />
+            <TableColumn fx:id="colName" prefWidth="140.00001525878906" text="Customer Name" />
+            <TableColumn fx:id="colProblem" prefWidth="144.6666259765625" text="Problem" />
+            <TableColumn fx:id="colAgent" prefWidth="124.66665649414062" text="Assigned Agent" />
+            <TableColumn fx:id="colStatus" prefWidth="100.66668701171875" text="Status" />
          </columns>
       </TableView>
    </children>
