@@ -77,12 +77,5 @@ public class RecieveliveallertsController
         stage.show();
     }
 
-    @javafx.fxml.FXML
-    public void backOnaction(ActionEvent actionEvent) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/cse213project/toll_plaza_management/Sakim_2312005/Traffic_Inspector/TrafficInspectorDashboard.fxml"));
-        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(root));
-        stage.setTitle("Traffic Inspector Dashboard");
-        stage.show();
-    }
+
 }

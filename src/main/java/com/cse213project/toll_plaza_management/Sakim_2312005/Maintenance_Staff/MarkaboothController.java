@@ -67,12 +67,5 @@ public class MarkaboothController
         stage.show();
     }
 
-    @javafx.fxml.FXML
-    public void backOnaction(ActionEvent actionEvent) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/cse213project/toll_plaza_management/Sakim_2312005/Maintenance_Staff/MaintenanceStuffDashboard.fxml"));
-        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(root));
-        stage.setTitle("Maintenance Stuff Dashboard");
-        stage.show();
-    }
+
 }

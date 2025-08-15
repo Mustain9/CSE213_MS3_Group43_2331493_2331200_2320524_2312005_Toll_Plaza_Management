@@ -11,20 +11,13 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import javafx.stage.Stage;
-
-import java.io.IOException;
 
 public class CommunicatewithboothController
 {
     @javafx.fxml.FXML
-    private ComboBox selectrecipientCb;
-    @javafx.fxml.FXML
     private ComboBox<String> selectrecipientCb;
     @javafx.fxml.FXML
     private TextArea messagehistoryTa;
-    @javafx.fxml.FXML
-    private TextArea messageinputTa;
     @javafx.fxml.FXML
     private TextArea messageinputTa;
 
@@ -44,15 +37,6 @@ public class CommunicatewithboothController
                 messageinputTa.getText(),
                 messagehistoryTa.getText()
         );
-    }
-
-    @javafx.fxml.FXML
-    public void backOnaction(ActionEvent actionEvent) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/cse213project/toll_plaza_management/Sakim_2312005/Traffic_Inspector/TrafficInspectorDashboard.fxml"));
-        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(root));
-        stage.setTitle("Traffic Inspector Dashboard");
-        stage.show();
     }
 
     @javafx.fxml.FXML
