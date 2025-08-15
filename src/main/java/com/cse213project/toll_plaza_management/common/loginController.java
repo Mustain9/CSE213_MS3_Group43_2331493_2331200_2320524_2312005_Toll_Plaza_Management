@@ -25,8 +25,7 @@ public class loginController {
 
     @FXML
     public void initialize() {
-        roleCombobox.getItems().addAll("Vehicle Owner", "Toll Collector", "Maintenance Stuff", "Traffic Inspector", "Supervisor", "Customer_Service_Agent");
-        roleCombobox.getItems().addAll("Vehicle Owner", "Toll Collector", "Supervisor", "Customer_Service_Agent", "Accountant", "Managing Director");
+        roleCombobox.getItems().addAll("Vehicle Owner", "Toll Collector", "Maintenance Stuff", "Traffic Inspector", "Supervisor", "Customer_Service_Agent", "Accountant", "Managing Director");
     }
 
     @FXML
@@ -35,7 +34,7 @@ public class loginController {
         String password = passwordField.getText();
         String role = roleCombobox.getValue();
 
-        // 🔹 Simple check (replace with database check later)
+
         if (username.isEmpty() || password.isEmpty() || role == null) {
             errorLabel.setText("Please fill in all fields.");
             return;
