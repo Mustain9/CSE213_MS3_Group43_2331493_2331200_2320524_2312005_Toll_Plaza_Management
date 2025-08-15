@@ -24,6 +24,8 @@ public class DetectandflagController
 
     @javafx.fxml.FXML
     public void initialize() {
+        DetectFlagList = new ArrayList<>();
+        selectboothCb.getItems().addAll("North Gate", "South Gate", "East Gate", "West Gate", "Vip Lane");
     }
 
     @javafx.fxml.FXML

@@ -9,9 +9,11 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class ViewentryandexitController
@@ -36,6 +38,11 @@ public class ViewentryandexitController
 
     @javafx.fxml.FXML
     public void initialize() {
+        EntryExitLogList = new ArrayList<>();
+        timeStampsDp.setValue(LocalDate.now());
+        idTc.setCellValueFactory(new PropertyValueFactory<EntryExitLog, String>("vehicleId"));
+        lanesTc.setCellValueFactory(new PropertyValueFactory<EntryExitLog, String>("lane"));
+        timestampsTc.setCellValueFactory(new PropertyValueFactory<EntryExitLog, String>("TimeStamps"));
     }
 
     @javafx.fxml.FXML

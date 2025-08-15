@@ -26,6 +26,10 @@ public class ExportDailyTrafficController
 
     @javafx.fxml.FXML
     public void initialize() {
+        ExportDailyList = new ArrayList<>();
+        selectrangeCb.getItems().addAll("North Gate", "South Gate", "East Gate", "West Gate", "Vip Lane");
+        selectboothCb.getItems().addAll("Cars Only", "Truck Only", "Buses Only", "Mixed Vehicle", "Vip/Emergency");
+
     }
 
     @javafx.fxml.FXML
