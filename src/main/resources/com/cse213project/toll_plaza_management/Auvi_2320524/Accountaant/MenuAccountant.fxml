@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.cse213project.toll_plaza_management.Auvi_2320524.Accountaant.MenuAccountantController"
+            fx:id="rootPane"
+            prefHeight="600.0" prefWidth="520.0">
+    <children>
+        <VBox spacing="10.0" AnchorPane.topAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0"
+              AnchorPane.bottomAnchor="10.0">
+            <children>
+                <Label text="Accountant Menu">
+                    <font>
+                        <Font name="Segoe UI Semibold" size="22.0"/>
+                    </font>
+                </Label>
+                <Button text="Monthly Financial Journal" onAction="#openMonthlyFinancialJournal"/>
+                <Button text="Record Maintenance Expense" onAction="#openValidationStatus"/>
+                <Button text="Income &amp; Expense Summary" onAction="#openIncomeExpenseSummary"/>
+                <Button text="Edit/Delete Financial Transaction" onAction="#openEditingFinancialTransaction"/>
+                <Button text="Shift-wise Toll Report" onAction="#openShiftwiseTollReport"/>
+                <Button text="Manage Employee Payments" onAction="#openManageEmployeePayments"/>
+                <Button text="Update Toll Rates" onAction="#openUpdateTollRates"/>
+                <Button text="Track Annual Toll Collection" onAction="#openTrackAnnualTollCollection"/>
+                <Separator/>
+                <Button text="Go to Login" onAction="#openLogin"/>
+            </children>
+            <padding>
+                <Insets topRightBottomLeft="10"/>
+            </padding>
+        </VBox>
+    </children>
+</AnchorPane>

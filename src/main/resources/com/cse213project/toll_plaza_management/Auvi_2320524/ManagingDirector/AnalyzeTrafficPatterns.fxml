@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.cse213project.toll_plaza_management.Auvi_2320524.ManagingDirector.AnalyzeTrafficPatternsController"
+            fx:id="rootPane"
+            prefHeight="720.0" prefWidth="1100.0">
+    <children>
+        <VBox spacing="10.0" AnchorPane.topAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0"
+              AnchorPane.bottomAnchor="10.0">
+            <children>
+                <Label text="Traffic Pattern Analysis">
+                    <font>
+                        <Font name="Segoe UI Semibold" size="22.0"/>
+                    </font>
+                </Label>
+                <HBox spacing="10.0">
+                    <children>
+                        <TextField fx:id="locationField" promptText="Location / Checkpoint Name"/>
+                        <ComboBox fx:id="dataTypeCombo" promptText="Select Data Type"/>
+                        <DatePicker fx:id="datePicker" promptText="Select Date"/>
+                        <Button text="Load Traffic Data"/>
+                    </children>
+                </HBox>
+                <TableView fx:id="trafficTable" prefHeight="460.0">
+                    <columns>
+                        <TableColumn fx:id="colTimeSlot" text="Time Slot" prefWidth="200.0"/>
+                        <TableColumn fx:id="colVehicleCount" text="Vehicle Count" prefWidth="200.0"/>
+                        <TableColumn fx:id="colPeak" text="Peak/Off-peak" prefWidth="200.0"/>
+                        <TableColumn fx:id="colLane" text="Lane Usage" prefWidth="220.0"/>
+                    </columns>
+                </TableView>
+                <HBox spacing="10.0">
+                    <children>
+                        <RadioButton fx:id="peakRadio" text="Peak Hours"/>
+                        <RadioButton fx:id="offPeakRadio" text="Off-Peak"/>
+                        <RadioButton fx:id="slowLanesRadio" text="Slow Lanes"/>
+                        <Button text="Generate Optimization Suggestions"/>
+                        <Button text="Send Suggestions via Meeting"/>
+                        <Button text="Back to Menu" onAction="#handleBackToMenu"/>
+                    </children>
+                </HBox>
+            </children>
+            <padding>
+                <Insets topRightBottomLeft="10"/>
+            </padding>
+        </VBox>
+    </children>
+</AnchorPane>

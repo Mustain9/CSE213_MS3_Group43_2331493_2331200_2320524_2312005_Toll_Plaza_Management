@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.cse213project.toll_plaza_management.Auvi_2320524.ManagingDirector.CoordinateAuthoritiesController"
+            fx:id="rootPane"
+            prefHeight="720.0" prefWidth="1100.0">
+    <children>
+        <VBox spacing="10.0" AnchorPane.topAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0"
+              AnchorPane.bottomAnchor="10.0">
+            <children>
+                <Label text="Coordinate with Authorities">
+                    <font>
+                        <Font name="Segoe UI Semibold" size="22.0"/>
+                    </font>
+                </Label>
+                <HBox spacing="10.0">
+                    <children>
+                        <TextField fx:id="meetingIdField" promptText="Meeting ID"/>
+                        <ComboBox fx:id="meetingTypeCombo" promptText="Select Meeting Type"/>
+                        <DatePicker fx:id="meetingDatePicker" promptText="Meeting Date"/>
+                        <Button text="View Government Requests / Audit Data"/>
+                    </children>
+                </HBox>
+                <TextArea fx:id="agendaArea" promptText="Draft Agenda" prefRowCount="4"/>
+                <HBox spacing="10.0">
+                    <children>
+                        <Button text="Upload Compliance Data"/>
+                    </children>
+                </HBox>
+                <TableView fx:id="requestsTable" prefHeight="360.0">
+                    <columns>
+                        <TableColumn fx:id="colRequestId" text="Request ID" prefWidth="180.0"/>
+                        <TableColumn fx:id="colType" text="Type" prefWidth="200.0"/>
+                        <TableColumn fx:id="colDate" text="Date" prefWidth="180.0"/>
+                        <TableColumn fx:id="colStatus" text="Status" prefWidth="180.0"/>
+                    </columns>
+                </TableView>
+                <HBox spacing="10.0">
+                    <children>
+                        <Button text="Confirm Meeting &amp; Send Invite"/>
+                        <Button text="Back to Menu" onAction="#handleBackToMenu"/>
+                    </children>
+                </HBox>
+            </children>
+            <padding>
+                <Insets topRightBottomLeft="10"/>
+            </padding>
+        </VBox>
+    </children>
+</AnchorPane>

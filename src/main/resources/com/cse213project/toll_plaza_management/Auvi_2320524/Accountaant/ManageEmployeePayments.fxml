@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.cse213project.toll_plaza_management.Auvi_2320524.Accountaant.ManageEmployeePaymentsController"
+            fx:id="rootPane"
+            prefHeight="720.0" prefWidth="1100.0">
+    <children>
+        <VBox spacing="12.0" AnchorPane.topAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0"
+              AnchorPane.bottomAnchor="10.0">
+            <children>
+                <Label text="Manage Employee Payments">
+                    <font>
+                        <Font name="Segoe UI Semibold" size="22.0"/>
+                    </font>
+                </Label>
+
+                <VBox spacing="8.0">
+                    <children>
+                        <Label text="User Login"/>
+                        <HBox spacing="10.0">
+                            <children>
+                                <TextField promptText="Username"/>
+                                <PasswordField promptText="Password"/>
+                                <Button text="Login"/>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+
+                <VBox spacing="8.0">
+                    <children>
+                        <Label text="Dashboard"/>
+                        <HBox spacing="10.0">
+                            <children>
+                                <Button text="Others"/>
+                                <Button text="Financial Update"/>
+                                <Button text="Logout" onAction="#handleLogout"/>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+
+                <HBox spacing="10.0">
+                    <children>
+                        <Button text="Employee Payments"/>
+                    </children>
+                </HBox>
+
+                <VBox spacing="8.0">
+                    <children>
+                        <TableView prefHeight="380.0">
+                            <columns>
+                                <TableColumn text="Employee ID" prefWidth="140.0"/>
+                                <TableColumn text="Name" prefWidth="200.0"/>
+                                <TableColumn text="Designation" prefWidth="200.0"/>
+                                <TableColumn text="Last Payment Date" prefWidth="180.0"/>
+                                <TableColumn text="Amount Paid" prefWidth="140.0"/>
+                                <TableColumn text="Actions" prefWidth="160.0"/>
+                            </columns>
+                        </TableView>
+                    </children>
+                </VBox>
+
+                <VBox spacing="8.0">
+                    <children>
+                        <HBox spacing="10.0">
+                            <children>
+                                <DatePicker promptText="Payment Date"/>
+                                <TextField promptText="Amount"/>
+                                <ComboBox promptText="Payment Mode"/>
+                                <TextField promptText="Remarks"/>
+                                <Button text="Save"/>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+
+                <HBox spacing="10.0">
+                    <children>
+                        <Button fx:id="backButton" text="Back To Menu" onAction="#handleBackToMenu"/>
+                    </children>
+                </HBox>
+            </children>
+            <padding>
+                <Insets topRightBottomLeft="10"/>
+            </padding>
+        </VBox>
+    </children>
+</AnchorPane>

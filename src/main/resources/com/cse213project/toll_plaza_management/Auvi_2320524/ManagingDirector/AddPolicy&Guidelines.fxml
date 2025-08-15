@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.cse213project.toll_plaza_management.Auvi_2320524.ManagingDirector.PolicyGuidelinesController"
+            fx:id="rootPane"
+            prefHeight="720.0" prefWidth="1100.0">
+    <children>
+        <VBox spacing="12.0" AnchorPane.topAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0"
+              AnchorPane.bottomAnchor="10.0">
+            <children>
+                <Label text="Policy &amp; Guidelines">
+                    <font>
+                        <Font name="Segoe UI Semibold" size="22.0"/>
+                    </font>
+                </Label>
+
+                <VBox spacing="8.0">
+                    <children>
+                        <Label text="User Login"/>
+                        <HBox spacing="10.0">
+                            <children>
+                                <TextField promptText="Username"/>
+                                <PasswordField promptText="Password"/>
+                                <Button text="Login"/>
+                                <Button text="Logout" onAction="#handleLogout"/>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+
+                <HBox spacing="10.0">
+                    <children>
+                        <Button text="Add New Policy" onAction="#handleShowAddForm"/>
+                    </children>
+                </HBox>
+
+                <VBox spacing="10.0">
+                    <children>
+                        <TableView fx:id="policyTable" prefHeight="320.0">
+                            <columns>
+                                <TableColumn fx:id="titleColumn" text="Title" prefWidth="220.0"/>
+                                <TableColumn fx:id="dateColumn" text="Date" prefWidth="160.0"/>
+                                <TableColumn fx:id="descriptionColumn" text="Description" prefWidth="420.0"/>
+                                <TableColumn fx:id="actionsColumn" text="Actions" prefWidth="160.0"/>
+                            </columns>
+                        </TableView>
+                        <Label fx:id="statusLabel" text=""/>
+                    </children>
+                </VBox>
+
+                <VBox fx:id="addFormBox" spacing="8.0">
+                    <children>
+                        <TextField fx:id="policyTitleField" promptText="Policy Title"/>
+                        <DatePicker fx:id="effectiveDatePicker" promptText="Effective Date"/>
+                        <TextArea fx:id="policyDescriptionArea" promptText="Policy Description" prefRowCount="5"/>
+                        <Button text="Save Policy" onAction="#handleSavePolicy"/>
+                    </children>
+                </VBox>
+                <HBox spacing="10.0">
+                    <children>
+                        <Button text="Back to Menu" onAction="#handleBackToMenu"/>
+                    </children>
+                </HBox>
+            </children>
+            <padding>
+                <Insets topRightBottomLeft="10"/>
+            </padding>
+        </VBox>
+    </children>
+</AnchorPane>

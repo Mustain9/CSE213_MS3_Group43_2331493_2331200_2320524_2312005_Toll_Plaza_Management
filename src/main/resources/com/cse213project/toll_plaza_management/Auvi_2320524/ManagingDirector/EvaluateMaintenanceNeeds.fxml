@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.cse213project.toll_plaza_management.Auvi_2320524.ManagingDirector.EvaluateMaintenanceNeedsController"
+            fx:id="rootPane"
+            prefHeight="720.0" prefWidth="1100.0">
+    <children>
+        <VBox spacing="10.0" AnchorPane.topAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0"
+              AnchorPane.bottomAnchor="10.0">
+            <children>
+                <Label text="Evaluate Maintenance Needs">
+                    <font>
+                        <Font name="Segoe UI Semibold" size="22.0"/>
+                    </font>
+                </Label>
+                <HBox spacing="10.0">
+                    <children>
+                        <TextField fx:id="faultIdField" promptText="Fault ID / Equipment ID"/>
+                        <ComboBox fx:id="equipmentTypeCombo" promptText="Select Equipment Type"/>
+                        <DatePicker fx:id="reportDatePicker" promptText="Report Date"/>
+                        <Button text="Search Fault Reports"/>
+                    </children>
+                </HBox>
+                <TableView fx:id="faultTable" prefHeight="460.0">
+                    <columns>
+                        <TableColumn fx:id="colFaultId" text="Fault ID" prefWidth="160.0"/>
+                        <TableColumn fx:id="colEquipmentType" text="Equipment Type" prefWidth="200.0"/>
+                        <TableColumn fx:id="colReportDate" text="Report Date" prefWidth="160.0"/>
+                        <TableColumn fx:id="colSeverity" text="Severity" prefWidth="140.0"/>
+                        <TableColumn fx:id="colStatus" text="Status" prefWidth="160.0"/>
+                    </columns>
+                </TableView>
+                <HBox spacing="10.0">
+                    <children>
+                        <RadioButton fx:id="highRadio" text="High"/>
+                        <RadioButton fx:id="mediumRadio" text="Medium"/>
+                        <RadioButton fx:id="lowRadio" text="Low"/>
+                        <Button text="Approve &amp; Forward Work"/>
+                        <Button text="Update Status"/>
+                        <Button text="Back to Menu" onAction="#handleBackToMenu"/>
+                    </children>
+                </HBox>
+            </children>
+            <padding>
+                <Insets topRightBottomLeft="10"/>
+            </padding>
+        </VBox>
+    </children>
+</AnchorPane>

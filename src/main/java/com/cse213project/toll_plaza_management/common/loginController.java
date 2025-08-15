@@ -26,6 +26,7 @@ public class loginController {
     @FXML
     public void initialize() {
         roleCombobox.getItems().addAll("Vehicle Owner", "Toll Collector", "Maintenance Stuff", "Traffic Inspector", "Supervisor", "Customer_Service_Agent");
+        roleCombobox.getItems().addAll("Vehicle Owner", "Toll Collector", "Supervisor", "Customer_Service_Agent", "Accountant", "Managing Director");
     }
 
     @FXML
@@ -57,6 +58,10 @@ public class loginController {
         }
         else if (role.equals("Customer_Service_Agent") && username.equals("agent") && password.equals("1234")) {
             loadDashboard(event, "/com/cse213project/toll_plaza_management/Sonda_2331200/Customer_Service_Agent/AgentDashboard.fxml", "Agent Dashboard");
+        } else if (role.equals("Accountant") && username.equals("accountant") && password.equals("1234")) {
+            loadDashboard(event, "/com/cse213project/toll_plaza_management/Auvi_2320524/Accountaant/MenuAccountant.fxml", "Accountant Dashboard - Annual Toll Collection");
+        } else if (role.equals("Managing Director") && username.equals("director") && password.equals("1234")) {
+            loadDashboard(event, "/com/cse213project/toll_plaza_management/Auvi_2320524/ManagingDirector/MenuManagingDirector.fxml", "Managing Director Menu");
         }
 
         else {

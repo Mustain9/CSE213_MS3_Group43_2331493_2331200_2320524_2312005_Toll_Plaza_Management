@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.cse213project.toll_plaza_management.Auvi_2320524.ManagingDirector.MenuManagingDirectorController"
+            fx:id="rootPane"
+            prefHeight="600.0" prefWidth="520.0">
+    <children>
+        <VBox spacing="10.0" AnchorPane.topAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0"
+              AnchorPane.bottomAnchor="10.0">
+            <children>
+                <Label text="Managing Director Menu">
+                    <font>
+                        <Font name="Segoe UI Semibold" size="22.0"/>
+                    </font>
+                </Label>
+                <Button text="Analyze Traffic Patterns" onAction="#openAnalyzeTrafficPatterns"/>
+                <Button text="Approve &amp; Allocate Budgets" onAction="#openApproveAllocateBudgets"/>
+                <Button text="Approve Financial &amp; Operational Reports" onAction="#openApproveReports"/>
+                <Button text="Coordinate with Authorities" onAction="#openCoordinateAuthorities"/>
+                <Button text="Evaluate Maintenance Needs" onAction="#openEvaluateMaintenanceNeeds"/>
+                <Button text="Monitor Daily/Monthly Toll Revenue" onAction="#openMonitorRevenue"/>
+                <Button text="Add Policy &amp; Guidelines" onAction="#openPolicyGuidelines"/>
+                <Button text="Schedule Emergency Meeting" onAction="#openScheduleEmergencyMeeting"/>
+                <Separator/>
+                <Button text="Go to Login" onAction="#openLogin"/>
+            </children>
+            <padding>
+                <Insets topRightBottomLeft="10"/>
+            </padding>
+        </VBox>
+    </children>
+</AnchorPane>
