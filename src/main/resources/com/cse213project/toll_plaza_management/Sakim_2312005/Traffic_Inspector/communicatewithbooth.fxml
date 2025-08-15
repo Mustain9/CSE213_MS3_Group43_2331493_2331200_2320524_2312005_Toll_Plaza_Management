@@ -7,12 +7,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cse213project.toll_plaza_management.Sakim_2312005.Traffic_Inspector.CommunicatewithboothController">
    <children>
       <ComboBox fx:id="selectrecipientCb" layoutX="56.0" layoutY="86.0" prefWidth="150.0" promptText="Select Recipient" />
-      <TextArea fx:id="messageinputtTa" layoutX="51.0" layoutY="175.0" prefHeight="200.0" prefWidth="200.0" promptText="Message Input" />
-      <Button layoutX="324.0" layoutY="79.0" mnemonicParsing="false" onAction="#sendmessageOnaction" text="Send Message">
+      <TextArea fx:id="messageinputTa" layoutX="51.0" layoutY="175.0" prefHeight="200.0" prefWidth="200.0" promptText="Message Input" />
+      <Button layoutX="300.0" layoutY="79.0" mnemonicParsing="false" onAction="#sendmessageOnaction" text="Send Message">
          <font>
             <Font size="19.0" />
          </font>
@@ -22,6 +21,11 @@
             <Font size="22.0" />
          </font>
       </Label>
-      <TextArea fx:id="messagehistoryTa" editable="false" layoutX="324.0" layoutY="175.0" prefHeight="200.0" prefWidth="200.0" promptText="Message History" />
+      <TextArea fx:id="messagehistoryTa" editable="false" layoutX="300.0" layoutY="175.0" prefHeight="200.0" prefWidth="200.0" promptText="Message History" />
+      <Button layoutX="521.0" layoutY="335.0" mnemonicParsing="false" onAction="#backOnaction" text="Back">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

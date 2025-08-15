@@ -15,6 +15,7 @@ public class loginController {
 
     @FXML
     private PasswordField passwordField;
+
     @FXML
     private TextField usernameField;
     @FXML
@@ -24,7 +25,7 @@ public class loginController {
 
     @FXML
     public void initialize() {
-        roleCombobox.getItems().addAll("Vehicle Owner", "Toll Collector", "Supervisor", "Customer_Service_Agent");
+        roleCombobox.getItems().addAll("Vehicle Owner", "Toll Collector", "Maintenance Stuff", "Traffic Inspector", "Supervisor", "Customer_Service_Agent");
     }
 
     @FXML
@@ -33,6 +34,7 @@ public class loginController {
         String password = passwordField.getText();
         String role = roleCombobox.getValue();
 
+        // 🔹 Simple check (replace with database check later)
         if (username.isEmpty() || password.isEmpty() || role == null) {
             errorLabel.setText("Please fill in all fields.");
             return;
@@ -43,6 +45,12 @@ public class loginController {
         }
         else if (role.equals("Toll Collector") && username.equals("collector") && password.equals("1234")) {
             loadDashboard(event, "/com/cse213project/toll_plaza_management/Mustain_2331493/TollCollector/toll_collector_dashboard.fxml", "Toll Collector Dashboard");
+        }
+        else if (role.equals("Maintenance Stuff") && username.equals("Maintenance Stuff") && password.equals("1234")) {
+            loadDashboard(event, "/com/cse213project/toll_plaza_management/Sakim_2312005/Maintenance_Staff/MaintenanceStuffDashboard.fxml", "Maintenance Stuff Dashboard");
+        }
+        else if (role.equals("Traffic Inspector") && username.equals("Traffic Inspector") && password.equals("1234")) {
+            loadDashboard(event, "/com/cse213project/toll_plaza_management/Sakim_2312005/Traffic_Inspector/TrafficInspectorDashboard.fxml", "Traffic Inspector Dashboard");
         }
         else if (role.equals("Supervisor") && username.equals("supervisor") && password.equals("1234")) {
             loadDashboard(event, "/com/cse213project/toll_plaza_management/Sonda_2331200/Supervisor/SupervisorDashboard.fxml", "Supervisor Dashboard");

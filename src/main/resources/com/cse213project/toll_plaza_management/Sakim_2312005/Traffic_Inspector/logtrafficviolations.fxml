@@ -7,7 +7,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cse213project.toll_plaza_management.Sakim_2312005.Traffic_Inspector.LogtrafficviolationsController">
    <children>
       <TextField fx:id="vehicleidTf" layoutX="99.0" layoutY="59.0" promptText="Vehicle Id" />
@@ -23,5 +22,10 @@
          </font>
       </Button>
       <TextArea fx:id="notesTa" layoutX="99.0" layoutY="168.0" prefHeight="200.0" prefWidth="200.0" />
+      <Button layoutX="493.0" layoutY="343.0" mnemonicParsing="false" onAction="#backOnaction" text="Back">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
