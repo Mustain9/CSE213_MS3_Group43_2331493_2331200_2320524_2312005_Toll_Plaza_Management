@@ -34,6 +34,8 @@ public class AcknowledgenewissueController
 
     ArrayList<Notification> NotificationList;
 
+    // Sakim
+
     @javafx.fxml.FXML
     public void initialize() {
         NotificationList = new ArrayList<>();
