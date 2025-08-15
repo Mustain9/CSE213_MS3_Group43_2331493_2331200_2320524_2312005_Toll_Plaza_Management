@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.cse213project.toll_plaza_management.Auvi_2320524.ManagingDirector.ApproveAllocateBudgetsController"
+            fx:id="rootPane"
+            prefHeight="720.0" prefWidth="1100.0">
+    <children>
+        <VBox spacing="10.0" AnchorPane.topAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0"
+              AnchorPane.bottomAnchor="10.0">
+            <children>
+                <Label text="Approve &amp; Allocate Budgets">
+                    <font>
+                        <Font name="Segoe UI Semibold" size="22.0"/>
+                    </font>
+                </Label>
+                <HBox spacing="10.0">
+                    <children>
+                        <TextField fx:id="budgetRequestIdField" promptText="Budget Request ID"/>
+                        <ComboBox fx:id="departmentCombo" promptText="Select Department"/>
+                        <DatePicker fx:id="requestDatePicker" promptText="Request Date"/>
+                        <Button text="Review Budget Breakdown"/>
+                    </children>
+                </HBox>
+                <TableView fx:id="budgetTable" prefHeight="460.0">
+                    <columns>
+                        <TableColumn fx:id="colRequestId" text="Request ID" prefWidth="180.0"/>
+                        <TableColumn fx:id="colDepartment" text="Department" prefWidth="200.0"/>
+                        <TableColumn fx:id="colDate" text="Date" prefWidth="180.0"/>
+                        <TableColumn fx:id="colAmount" text="Amount Requested" prefWidth="200.0"/>
+                        <TableColumn fx:id="colStatus" text="Status" prefWidth="160.0"/>
+                    </columns>
+                </TableView>
+                <HBox spacing="10.0">
+                    <children>
+                        <Button text="Check Fund Availability"/>
+                    </children>
+                </HBox>
+                <HBox spacing="10.0">
+                    <children>
+                        <Button text="Approve"/>
+                        <Button text="Modify"/>
+                        <Button text="Update Approved Funds in System"/>
+                        <Button text="Back to Menu" onAction="#handleBackToMenu"/>
+                    </children>
+                </HBox>
+            </children>
+            <padding>
+                <Insets topRightBottomLeft="10"/>
+            </padding>
+        </VBox>
+    </children>
+</AnchorPane>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.cse213project.toll_plaza_management.Auvi_2320524.Accountaant.EditingFinancialTransactionController"
+            fx:id="rootPane"
+            prefHeight="720.0" prefWidth="1100.0">
+    <children>
+        <VBox spacing="12.0" AnchorPane.topAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0"
+              AnchorPane.bottomAnchor="10.0">
+            <children>
+                <Label text="Edit/Delete Financial Transaction">
+                    <font>
+                        <Font name="Segoe UI Semibold" size="22.0"/>
+                    </font>
+                </Label>
+
+                <VBox spacing="8.0">
+                    <children>
+                        <Label text="User Login"/>
+                        <HBox spacing="10.0">
+                            <children>
+                                <TextField fx:id="usernameField" promptText="Username"/>
+                                <PasswordField fx:id="passwordField" promptText="Password"/>
+                                <Button fx:id="loginButton" text="Login"/>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+
+                <VBox spacing="8.0">
+                    <children>
+                        <Label text="Dashboard"/>
+                        <HBox spacing="10.0">
+                            <children>
+                                <Button fx:id="addTransactionButton" text="Add Transaction"/>
+                                <Button fx:id="viewSummaryButton" text="View Summary"/>
+                                <Button fx:id="transactionHistoryButton" text="Transaction History"/>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+
+                <VBox spacing="8.0">
+                    <children>
+                        <Label text="Transaction History"/>
+                        <TableView fx:id="transactionTable" prefHeight="300.0">
+                            <columns>
+                                <TableColumn fx:id="dateColumn" text="Date" prefWidth="140.0"/>
+                                <TableColumn fx:id="typeColumn" text="Type" prefWidth="120.0"/>
+                                <TableColumn fx:id="descriptionColumn" text="Description" prefWidth="320.0"/>
+                                <TableColumn fx:id="amountColumn" text="Amount" prefWidth="140.0"/>
+                                <TableColumn fx:id="invoiceColumn" text="Invoice" prefWidth="180.0"/>
+                                <TableColumn fx:id="actionsColumn" text="Actions" prefWidth="160.0"/>
+                            </columns>
+                        </TableView>
+                    </children>
+                </VBox>
+
+                <VBox spacing="8.0">
+                    <children>
+                        <Label text="Filter by:"/>
+                        <HBox spacing="10.0">
+                            <children>
+                                <DatePicker fx:id="fromDatePicker" promptText="From"/>
+                                <DatePicker fx:id="toDatePicker" promptText="To"/>
+                                <ComboBox fx:id="transactionTypeCombo" promptText="Transaction Type"/>
+                                <TextField fx:id="keywordField" promptText="Keyword Search"/>
+                                <Button fx:id="applyFilterButton" text="Apply Filter"/>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+
+                <VBox spacing="8.0">
+                    <children>
+                        <Label text="Edit Transaction"/>
+                        <HBox spacing="10.0">
+                            <children>
+                                <DatePicker fx:id="editDatePicker" promptText="Date"/>
+                                <ComboBox fx:id="editTypeCombo" promptText="Type"/>
+                                <TextField fx:id="editDescriptionField" promptText="Description"/>
+                                <TextField fx:id="editAmountField" promptText="Amount"/>
+                            </children>
+                        </HBox>
+                        <HBox spacing="10.0">
+                            <children>
+                                <Button fx:id="uploadInvoiceButton" text="Upload Invoice"/>
+                                <Label fx:id="invoiceNameLabel" text="No file selected"/>
+                                <Button fx:id="updateButton" text="Update"/>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+
+                <HBox spacing="10.0">
+                    <children>
+                        <Button fx:id="logoutButton" text="Logout" onAction="#handleLogout"/>
+                        <Button fx:id="backButton" text="Back To Menu" onAction="#handleBackToMenu"/>
+                    </children>
+                </HBox>
+            </children>
+            <padding>
+                <Insets topRightBottomLeft="10"/>
+            </padding>
+        </VBox>
+    </children>
+</AnchorPane>

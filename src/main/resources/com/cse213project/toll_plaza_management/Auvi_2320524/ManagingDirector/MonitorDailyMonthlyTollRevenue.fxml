@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.cse213project.toll_plaza_management.Auvi_2320524.ManagingDirector.MonitorRevenueController"
+            fx:id="rootPane"
+            prefHeight="800.0" prefWidth="1150.0">
+    <children>
+        <VBox spacing="12.0" AnchorPane.topAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0"
+              AnchorPane.bottomAnchor="10.0">
+            <children>
+                <Label text="Revenue Reports">
+                    <font>
+                        <Font name="Segoe UI Semibold" size="22.0"/>
+                    </font>
+                </Label>
+
+                <VBox spacing="8.0">
+                    <children>
+                        <Label text="User Login"/>
+                        <HBox spacing="10.0">
+                            <children>
+                                <TextField fx:id="usernameField" promptText="Username"/>
+                                <PasswordField fx:id="passwordField" promptText="Password"/>
+                                <Button fx:id="loginButton" text="Login" onAction="#handleLogin"/>
+                                <Button text="Logout" onAction="#handleLogout"/>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+
+                <HBox spacing="10.0">
+                    <children>
+                        <Button text="Daily Report" onAction="#selectDaily"/>
+                        <Button text="Monthly Report" onAction="#selectMonthly"/>
+                        <RadioButton fx:id="dailyRadio" text="Daily"/>
+                        <RadioButton fx:id="monthlyRadio" text="Monthly"/>
+                    </children>
+                </HBox>
+
+                <HBox spacing="10.0">
+                    <children>
+                        <DatePicker fx:id="fromDatePicker" promptText="From Date"/>
+                        <DatePicker fx:id="toDatePicker" promptText="To Date"/>
+                        <Button text="Generate Report" onAction="#handleGenerate"/>
+                    </children>
+                </HBox>
+
+                <LineChart fx:id="revenueChart" prefHeight="320.0" prefWidth="1100.0">
+                    <xAxis>
+                        <CategoryAxis label="Date"/>
+                    </xAxis>
+                    <yAxis>
+                        <NumberAxis label="Amount"/>
+                    </yAxis>
+                </LineChart>
+
+                <TableView fx:id="revenueTable" prefHeight="260.0">
+                    <columns>
+                        <TableColumn fx:id="dateColumn" text="Date" prefWidth="200.0"/>
+                        <TableColumn fx:id="incomeColumn" text="Total Income" prefWidth="200.0"/>
+                        <TableColumn fx:id="expenseColumn" text="Total Expense" prefWidth="200.0"/>
+                        <TableColumn fx:id="balanceColumn" text="Balance" prefWidth="200.0"/>
+                    </columns>
+                </TableView>
+
+                <VBox spacing="8.0">
+                    <children>
+                        <Label text="Trend Analysis"/>
+                        <TextArea fx:id="analysisArea" prefRowCount="4"/>
+                    </children>
+                </VBox>
+
+                <HBox spacing="10.0">
+                    <children>
+                        <Button text="Back to Menu" onAction="#handleBackToMenu"/>
+                    </children>
+                </HBox>
+            </children>
+            <padding>
+                <Insets topRightBottomLeft="10"/>
+            </padding>
+        </VBox>
+    </children>
+</AnchorPane>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.cse213project.toll_plaza_management.Auvi_2320524.ManagingDirector.ScheduleEmergencyMeetingController"
+            fx:id="rootPane"
+            prefHeight="720.0" prefWidth="1100.0">
+    <children>
+        <VBox spacing="12.0" AnchorPane.topAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0"
+              AnchorPane.bottomAnchor="10.0">
+            <children>
+                <Label text="Schedule Emergency Meeting">
+                    <font>
+                        <Font name="Segoe UI Semibold" size="22.0"/>
+                    </font>
+                </Label>
+
+                <VBox spacing="8.0">
+                    <children>
+                        <Label text="User Login"/>
+                        <HBox spacing="10.0">
+                            <children>
+                                <TextField fx:id="usernameField" promptText="Username"/>
+                                <PasswordField fx:id="passwordField" promptText="Password"/>
+                                <Button fx:id="loginButton" text="Login" onAction="#handleLogin"/>
+                                <Button text="Logout" onAction="#handleLogout"/>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+
+                <HBox spacing="10.0">
+                    <children>
+                        <Button text="New Meeting"/>
+                        <Button text="Policy &amp; Guidelines"/>
+                        <Button text="Revenue Reports"/>
+                    </children>
+                </HBox>
+
+                <VBox spacing="10.0">
+                    <children>
+                        <HBox spacing="10.0">
+                            <children>
+                                <DatePicker fx:id="meetingDatePicker" promptText="Meeting Date"/>
+                                <TextField fx:id="meetingTimeField" promptText="Meeting Time"/>
+                                <TextField fx:id="meetingPlaceField" promptText="Meeting Place"/>
+                                <Button fx:id="setMeetingButton" text="Set Meeting" onAction="#handleSetMeeting"/>
+                            </children>
+                        </HBox>
+                        <Label fx:id="statusLabel" text=""/>
+                    </children>
+                </VBox>
+
+                <TableView fx:id="meetingTable" prefHeight="420.0">
+                    <columns>
+                        <TableColumn fx:id="dateColumn" text="Date" prefWidth="200.0"/>
+                        <TableColumn fx:id="timeColumn" text="Time" prefWidth="200.0"/>
+                        <TableColumn fx:id="placeColumn" text="Place" prefWidth="300.0"/>
+                    </columns>
+                </TableView>
+                <HBox spacing="10.0">
+                    <children>
+                        <Button text="Back to Menu" onAction="#handleBackToMenu"/>
+                    </children>
+                </HBox>
+            </children>
+            <padding>
+                <Insets topRightBottomLeft="10"/>
+            </padding>
+        </VBox>
+    </children>
+</AnchorPane>
