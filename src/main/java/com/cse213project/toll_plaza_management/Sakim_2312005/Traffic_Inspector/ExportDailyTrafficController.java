@@ -10,18 +10,29 @@ import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import javafx.stage.Stage;
+
+import java.io.IOException;
+import java.util.ArrayList;
 
 public class ExportDailyTrafficController
 {
     @javafx.fxml.FXML
-    private ComboBox selectrangeCb;
+    private ComboBox<String> selectrangeCb;
     @javafx.fxml.FXML
-    private ComboBox selectboothCb;
+    private ComboBox<String> selectboothCb;
     @javafx.fxml.FXML
     private TextArea reportTf;
 
+    ArrayList<ExportDaily> ExportDailyList;
+
+
     @javafx.fxml.FXML
     public void initialize() {
+        ExportDailyList = new ArrayList<>();
+        selectrangeCb.getItems().addAll("North Gate", "South Gate", "East Gate", "West Gate", "Vip Lane");
+        selectboothCb.getItems().addAll("Cars Only", "Truck Only", "Buses Only", "Mixed Vehicle", "Vip/Emergency");
+
     }
 
     @javafx.fxml.FXML
@@ -30,6 +41,21 @@ public class ExportDailyTrafficController
 
     @javafx.fxml.FXML
     public void clickgeneratereportOnaction(ActionEvent actionEvent) {
+        ExportDaily ExportDailyToBeAdded = new ExportDaily (
+                selectrangeCb.getValue(),
+                selectboothCb.getValue(),
+                reportTf.getText()
+
+        );
+    }
+
+    @javafx.fxml.FXML
+    public void backOnaction(ActionEvent actionEvent) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/com/cse213project/toll_plaza_management/Sakim_2312005/Traffic_Inspector/TrafficInspectorDashboard.fxml"));
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.setTitle("Traffic Inspector Dashboard");
+        stage.show();
     }
 
     @javafx.fxml.FXML

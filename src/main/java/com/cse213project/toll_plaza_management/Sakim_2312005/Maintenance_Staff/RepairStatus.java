@@ -1,6 +1,7 @@
 package com.cse213project.toll_plaza_management.Sakim_2312005.Maintenance_Staff;
 
 public class RepairStatus {
+    private int issueId;
     private String issueId;
     private String currentStatus;
 
@@ -8,15 +9,18 @@ public class RepairStatus {
     }
 
     public RepairStatus(String issueId, String currentStatus) {
+    public RepairStatus(int issueId, String currentStatus) {
         this.issueId = issueId;
         this.currentStatus = currentStatus;
     }
 
     public String getIssueId() {
+    public int getIssueId() {
         return issueId;
     }
 
     public void setIssueId(String issueId) {
+    public void setIssueId(int issueId) {
         this.issueId = issueId;
     }
 
@@ -31,6 +35,7 @@ public class RepairStatus {
     @Override
     public String toString() {
         return "RepairStatus{" +
+                "issueId=" + issueId +
                 "issueId='" + issueId + '\'' +
                 ", currentStatus='" + currentStatus + '\'' +
                 '}';

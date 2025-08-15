@@ -10,16 +10,25 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class DetectandflagController
 {
     @javafx.fxml.FXML
-    private ComboBox selectboothCb;
+    private ComboBox<String> selectboothCb;
     @javafx.fxml.FXML
     private TextField congestionresultTf;
 
+    ArrayList<DetectFlag> DetectFlagList;
+
+
     @javafx.fxml.FXML
     public void initialize() {
+        DetectFlagList = new ArrayList<>();
+        selectboothCb.getItems().addAll("North Gate", "South Gate", "East Gate", "West Gate", "Vip Lane");
     }
 
     @javafx.fxml.FXML
@@ -28,6 +37,19 @@ public class DetectandflagController
 
     @javafx.fxml.FXML
     public void checkcongestionOnaction(ActionEvent actionEvent) {
+        DetectFlag DetectFlagToBeAdded = new DetectFlag (
+                selectboothCb.getValue(),
+                congestionresultTf.getText()
+        );
+    }
+
+    @javafx.fxml.FXML
+    public void backOnaction(ActionEvent actionEvent) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/com/cse213project/toll_plaza_management/Sakim_2312005/Traffic_Inspector/TrafficInspectorDashboard.fxml"));
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.setTitle("Traffic Inspector Dashboard");
+        stage.show();
     }
 
     @javafx.fxml.FXML
