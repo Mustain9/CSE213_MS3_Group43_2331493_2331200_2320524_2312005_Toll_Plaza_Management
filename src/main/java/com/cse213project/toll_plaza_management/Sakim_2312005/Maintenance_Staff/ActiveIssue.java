@@ -3,7 +3,7 @@ package com.cse213project.toll_plaza_management.Sakim_2312005.Maintenance_Staff;
 import java.time.LocalDate;
 
 public class ActiveIssue {
-    private String issueId;
+    private int issueId;
     private String issueType;
     private LocalDate dateReported;
     private String location;
@@ -12,18 +12,18 @@ public class ActiveIssue {
 
     }
 
-    public ActiveIssue(String issueId, String issueType, LocalDate dateReported, String location) {
+    public ActiveIssue(int issueId, String issueType, LocalDate dateReported, String location) {
         this.issueId = issueId;
         this.issueType = issueType;
         this.dateReported = dateReported;
         this.location = location;
     }
 
-    public String getIssueId() {
+    public int getIssueId() {
         return issueId;
     }
 
-    public void setIssueId(String issueId) {
+    public void setIssueId(int issueId) {
         this.issueId = issueId;
     }
 
@@ -54,7 +54,7 @@ public class ActiveIssue {
     @Override
     public String toString() {
         return "ActiveIssue{" +
-                "issueId='" + issueId + '\'' +
+                "issueId=" + issueId +
                 ", issueType='" + issueType + '\'' +
                 ", dateReported=" + dateReported +
                 ", location='" + location + '\'' +
