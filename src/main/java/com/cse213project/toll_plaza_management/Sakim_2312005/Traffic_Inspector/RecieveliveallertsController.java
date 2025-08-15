@@ -9,6 +9,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -42,6 +43,11 @@ public class RecieveliveallertsController
 
     @javafx.fxml.FXML
     public void initialize() {
+        LiveAlertList = new ArrayList<>();
+        carTc.setCellValueFactory(new PropertyValueFactory<LiveAlert, String>("Car"));
+        busTc.setCellValueFactory(new PropertyValueFactory<LiveAlert, String>("Bus"));
+        truckTc.setCellValueFactory(new PropertyValueFactory<LiveAlert, String>("Truck"));
+        minibusTc.setCellValueFactory(new PropertyValueFactory<LiveAlert, String>("Mini Bus"));
     }
 
     @javafx.fxml.FXML

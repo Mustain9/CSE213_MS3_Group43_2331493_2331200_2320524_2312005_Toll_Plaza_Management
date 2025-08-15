@@ -27,6 +27,8 @@ public class LogtrafficviolationsController
 
     @javafx.fxml.FXML
     public void initialize() {
+        TrafficViolationList = new ArrayList<>();
+        violationtypeCb.getItems().addAll("Wrong Way", "No Entry", "Lane Changed", "Speed");
     }
 
     @javafx.fxml.FXML

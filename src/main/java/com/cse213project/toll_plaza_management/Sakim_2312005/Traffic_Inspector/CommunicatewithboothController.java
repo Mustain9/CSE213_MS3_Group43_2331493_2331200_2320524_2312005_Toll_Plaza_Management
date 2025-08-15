@@ -26,6 +26,8 @@ public class CommunicatewithboothController
 
     @javafx.fxml.FXML
     public void initialize() {
+        MessageList = new ArrayList<>();
+        selectrecipientCb.getItems().addAll("Booth control", "Supervisor");
     }
 
     @javafx.fxml.FXML

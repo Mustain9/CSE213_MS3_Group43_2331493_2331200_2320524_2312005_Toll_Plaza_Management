@@ -26,6 +26,8 @@ public class TemporaryBlockController
 
     @javafx.fxml.FXML
     public void initialize() {
+        BlockList = new ArrayList<>();
+        selectlaneCb.getItems().addAll("Lane A", "Lane B", "Lane C");
     }
 
     @javafx.fxml.FXML
