@@ -30,8 +30,9 @@ public class ViewentryandexitController
     private TableColumn<EntryExitLog, String> idTc;
     @javafx.fxml.FXML
     private TextField laneTf;
+
     @javafx.fxml.FXML
-    private DatePicker timeStampsDp;
+    private DatePicker timestampsDp;
 
     ArrayList<EntryExitLog> EntryExitLogList;
 
@@ -39,7 +40,7 @@ public class ViewentryandexitController
     @javafx.fxml.FXML
     public void initialize() {
         EntryExitLogList = new ArrayList<>();
-        timeStampsDp.setValue(LocalDate.now());
+        timestampsDp.setValue(LocalDate.now());
         idTc.setCellValueFactory(new PropertyValueFactory<EntryExitLog, String>("vehicleId"));
         lanesTc.setCellValueFactory(new PropertyValueFactory<EntryExitLog, String>("lane"));
         timestampsTc.setCellValueFactory(new PropertyValueFactory<EntryExitLog, String>("TimeStamps"));
@@ -54,7 +55,7 @@ public class ViewentryandexitController
         EntryExitLog EntryExitLogToBeAdded = new EntryExitLog (
                 Integer.parseInt(vehicleidTf.getText()),
                 laneTf.getText(),
-                timeStampsDp.getValue()
+                timestampsDp.getValue()
         );
         logstableTv.getItems().add(EntryExitLogToBeAdded);
         EntryExitLogList.add(EntryExitLogToBeAdded);

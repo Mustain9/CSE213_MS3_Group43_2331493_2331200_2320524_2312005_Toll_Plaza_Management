@@ -1,5 +1,7 @@
 package com.cse213project.toll_plaza_management.Sakim_2312005.Traffic_Inspector;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -15,12 +17,13 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.ArrayList;
 
+
 public class ViewtrafficvolumeController
 {
     @javafx.fxml.FXML
     private TableColumn<TrafficVolume,String> directionTc;
     @javafx.fxml.FXML
-    private TableColumn<TrafficVolume,String> countTc;
+    private TableColumn<TrafficVolume,Integer> countTc;
     @javafx.fxml.FXML
     private TableColumn<TrafficVolume,String> vehicletypeTc;
     @javafx.fxml.FXML
@@ -32,28 +35,43 @@ public class ViewtrafficvolumeController
     @javafx.fxml.FXML
     private TextField vehicleTypeTf;
 
-    ArrayList<TrafficVolume> TrafficVolumeList;
+    ObservableList<TrafficVolume> TrafficVolumeList = FXCollections.observableArrayList();
+
+
+
+
 
 
     @javafx.fxml.FXML
     public void initialize() {
-        TrafficVolumeList = new ArrayList<>();
+
+        vehiclecountTv.setItems(TrafficVolumeList);
+
+
+
         selectlaneboothCb.getItems().addAll("Booth 1", "Booth 2", "lane A", "Lane B");
         directionTc.setCellValueFactory(new PropertyValueFactory<TrafficVolume, String>("direction"));
         vehicletypeTc.setCellValueFactory(new PropertyValueFactory<TrafficVolume, String>("vehicleType"));
-        countTc.setCellValueFactory(new PropertyValueFactory<TrafficVolume, String>("count"));
+        countTc.setCellValueFactory(new PropertyValueFactory<TrafficVolume, Integer>("count"));
     }
 
     @javafx.fxml.FXML
     public void viewcountOnaction(ActionEvent actionEvent) {
-        TrafficVolume TrafficVolumeToBeAdded = new TrafficVolume (
-                selectlaneboothCb.getValue(),
-                vehicleTypeTf.getText(),
-                Integer.parseInt(countNumberTf.getText())
 
-        );
-        vehiclecountTv.getItems().add(TrafficVolumeToBeAdded);
-        TrafficVolumeList.add(TrafficVolumeToBeAdded);
+            TrafficVolume TrafficVolumeToBeAdded = new TrafficVolume (
+                    selectlaneboothCb.getValue(),
+                    vehicleTypeTf.getText(),
+                    Integer.parseInt(countNumberTf.getText())
+
+            );
+
+            TrafficVolumeList.add(TrafficVolumeToBeAdded);
+            vehiclecountTv.getItems().addAll(TrafficVolumeToBeAdded);
+
+
+
+
+
     }
 
     @javafx.fxml.FXML

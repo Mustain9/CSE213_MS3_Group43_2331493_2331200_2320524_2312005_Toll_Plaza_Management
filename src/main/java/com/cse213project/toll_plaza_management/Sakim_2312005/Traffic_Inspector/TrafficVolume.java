@@ -1,9 +1,13 @@
 package com.cse213project.toll_plaza_management.Sakim_2312005.Traffic_Inspector;
 
+import java.util.ArrayList;
+
 public class TrafficVolume {
     private String direction;
     private String vehicleType;
     private int count;
+
+
 
     public TrafficVolume() {
     }

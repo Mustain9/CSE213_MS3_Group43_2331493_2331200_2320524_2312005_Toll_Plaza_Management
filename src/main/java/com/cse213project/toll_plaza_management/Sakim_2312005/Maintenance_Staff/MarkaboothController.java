@@ -32,6 +32,7 @@ public class MarkaboothController
     @javafx.fxml.FXML
     public void initialize() {
         BoothList = new ArrayList<>();
+
     }
 
     @javafx.fxml.FXML

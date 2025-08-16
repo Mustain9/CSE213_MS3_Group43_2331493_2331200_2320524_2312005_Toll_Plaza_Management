@@ -34,6 +34,6 @@
          </font>
       </Button>
       <TextField fx:id="laneTf" layoutX="355.0" layoutY="76.0" promptText="Lane" />
-      <DatePicker fx:id="timeStampsDp" layoutX="348.0" layoutY="126.0" promptText="Time Stamps" />
+      <DatePicker fx:id="timestampsDp" layoutX="348.0" layoutY="126.0" promptText="Time Stamps" />
    </children>
 </AnchorPane>

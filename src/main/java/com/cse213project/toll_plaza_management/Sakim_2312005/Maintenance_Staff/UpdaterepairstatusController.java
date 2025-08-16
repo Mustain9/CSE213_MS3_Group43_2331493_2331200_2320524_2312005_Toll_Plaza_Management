@@ -34,6 +34,7 @@ public class UpdaterepairstatusController
 
     @javafx.fxml.FXML
     public void initialize() {
+        currentStatusCb.getItems().addAll(" In Progress", "Fixed", "Needs Parts", "On Hold");
         issueIdTc.setCellValueFactory(new PropertyValueFactory<RepairStatus, String>("issueId"));
         currentStatusTc.setCellValueFactory(new PropertyValueFactory<RepairStatus, String>("currentStatus"));
     }
