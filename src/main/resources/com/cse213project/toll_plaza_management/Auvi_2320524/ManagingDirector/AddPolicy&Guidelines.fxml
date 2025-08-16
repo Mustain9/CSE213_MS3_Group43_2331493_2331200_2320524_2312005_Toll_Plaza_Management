@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
@@ -14,65 +11,76 @@
             fx:id="rootPane"
             prefHeight="720.0" prefWidth="1100.0">
     <children>
-        <VBox spacing="12.0" AnchorPane.topAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0"
-              AnchorPane.bottomAnchor="10.0">
+        <VBox spacing="15.0" AnchorPane.topAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0"
+              AnchorPane.bottomAnchor="20.0">
             <children>
-                <Label text="Policy &amp; Guidelines">
+                <Label text="Add Policy &amp; Guidelines">
                     <font>
-                        <Font name="Segoe UI Semibold" size="22.0"/>
+                        <Font name="Segoe UI Bold" size="24.0"/>
                     </font>
                 </Label>
 
-                <VBox spacing="8.0">
+                <VBox spacing="10.0">
                     <children>
-                        <Label text="User Login"/>
-                        <HBox spacing="10.0">
+                        <Label text="Login Credentials">
+                            <font>
+                                <Font name="Segoe UI Semibold" size="16.0"/>
+                            </font>
+                        </Label>
+                        <HBox spacing="15.0">
                             <children>
-                                <TextField promptText="Username"/>
-                                <PasswordField promptText="Password"/>
-                                <Button text="Login"/>
-                                <Button text="Logout" onAction="#handleLogout"/>
+                                <TextField fx:id="usernameField" promptText="Username" prefWidth="200.0"/>
+                                <PasswordField fx:id="passwordField" promptText="Password" prefWidth="200.0"/>
                             </children>
                         </HBox>
                     </children>
                 </VBox>
 
-                <HBox spacing="10.0">
-                    <children>
-                        <Button text="Add New Policy" onAction="#handleShowAddForm"/>
-                    </children>
-                </HBox>
-
                 <VBox spacing="10.0">
                     <children>
-                        <TableView fx:id="policyTable" prefHeight="320.0">
-                            <columns>
-                                <TableColumn fx:id="titleColumn" text="Title" prefWidth="220.0"/>
-                                <TableColumn fx:id="dateColumn" text="Date" prefWidth="160.0"/>
-                                <TableColumn fx:id="descriptionColumn" text="Description" prefWidth="420.0"/>
-                                <TableColumn fx:id="actionsColumn" text="Actions" prefWidth="160.0"/>
-                            </columns>
-                        </TableView>
-                        <Label fx:id="statusLabel" text=""/>
+                        <Label text="Policy Information">
+                            <font>
+                                <Font name="Segoe UI Semibold" size="16.0"/>
+                            </font>
+                        </Label>
+                        <TextField fx:id="policyTitleField" promptText="Policy Title" prefWidth="400.0"/>
+                        <TextArea fx:id="policyDescriptionArea" promptText="Policy Description"
+                                  prefRowCount="4" prefWidth="400.0"/>
+                        <DatePicker fx:id="effectiveDatePicker" promptText="Effective Date" prefWidth="200.0"/>
+                        <Button fx:id="applyPolicyButton" text="Apply Policy" onAction="#handleApplyPolicy"
+                                style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold;"
+                                prefWidth="150.0"/>
                     </children>
                 </VBox>
 
-                <VBox fx:id="addFormBox" spacing="8.0">
-                    <children>
-                        <TextField fx:id="policyTitleField" promptText="Policy Title"/>
-                        <DatePicker fx:id="effectiveDatePicker" promptText="Effective Date"/>
-                        <TextArea fx:id="policyDescriptionArea" promptText="Policy Description" prefRowCount="5"/>
-                        <Button text="Save Policy" onAction="#handleSavePolicy"/>
-                    </children>
-                </VBox>
+                <Label fx:id="statusLabel" text="" textFill="GREEN">
+                    <font>
+                        <Font name="Segoe UI" size="14.0"/>
+                    </font>
+                </Label>
+
+                <TableView fx:id="policyTable" prefHeight="320.0">
+                    <columns>
+                        <TableColumn fx:id="titleColumn" text="Policy Title" prefWidth="250.0"/>
+                        <TableColumn fx:id="descriptionColumn" text="Description" prefWidth="350.0"/>
+                        <TableColumn fx:id="dateColumn" text="Effective Date" prefWidth="200.0"/>
+                        <TableColumn fx:id="statusColumn" text="Status" prefWidth="250.0"/>
+                    </columns>
+                </TableView>
+
                 <HBox spacing="10.0">
                     <children>
-                        <Button text="Back to Menu" onAction="#handleBackToMenu"/>
+                        <Button text="Back to Menu" onAction="#handleBackToMenu"
+                                style="-fx-background-color: #2196F3; -fx-text-fill: white;"
+                                prefWidth="120.0"/>
+                        <Button text="Logout" onAction="#handleLogout"
+                                style="-fx-background-color: #f44336; -fx-text-fill: white;"
+                                prefWidth="120.0"/>
                     </children>
                 </HBox>
             </children>
             <padding>
-                <Insets topRightBottomLeft="10"/>
+                <Insets topRightBottomLeft="15"/>
             </padding>
         </VBox>
     </children>

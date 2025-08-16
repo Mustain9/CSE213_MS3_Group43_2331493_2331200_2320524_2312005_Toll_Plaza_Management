@@ -1,20 +1,21 @@
 package com.cse213project.toll_plaza_management.Auvi_2320524.ManagingDirector.model;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class ReportRow {
+public class ReportRow implements Serializable {
     private String reportId;
-    private String type;
-    private LocalDate date;
+    private String decision;
+    private LocalDate decisionDate;
     private String status;
 
     public ReportRow() {
     }
 
-    public ReportRow(String reportId, String type, LocalDate date, String status) {
+    public ReportRow(String reportId, String decision, LocalDate decisionDate, String status) {
         this.reportId = reportId;
-        this.type = type;
-        this.date = date;
+        this.decision = decision;
+        this.decisionDate = decisionDate;
         this.status = status;
     }
 
@@ -26,20 +27,20 @@ public class ReportRow {
         this.reportId = reportId;
     }
 
-    public String getType() {
-        return type;
+    public String getDecision() {
+        return decision;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setDecision(String decision) {
+        this.decision = decision;
     }
 
-    public LocalDate getDate() {
-        return date;
+    public LocalDate getDecisionDate() {
+        return decisionDate;
     }
 
-    public void setDate(LocalDate date) {
-        this.date = date;
+    public void setDecisionDate(LocalDate decisionDate) {
+        this.decisionDate = decisionDate;
     }
 
     public String getStatus() {

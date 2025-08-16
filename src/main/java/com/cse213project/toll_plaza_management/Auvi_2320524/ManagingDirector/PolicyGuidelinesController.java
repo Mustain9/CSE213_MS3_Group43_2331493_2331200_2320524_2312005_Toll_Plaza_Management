@@ -9,9 +9,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import java.io.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -19,67 +19,112 @@ public class PolicyGuidelinesController {
     @FXML
     private AnchorPane rootPane;
     @FXML
+    private TextField usernameField;
+    @FXML
+    private PasswordField passwordField;
+    @FXML
+    private TextField policyTitleField;
+    @FXML
+    private TextArea policyDescriptionArea;
+    @FXML
+    private DatePicker effectiveDatePicker;
+    @FXML
+    private Button applyPolicyButton;
+    @FXML
+    private Label statusLabel;
+    @FXML
     private TableView<PolicyRecord> policyTable;
     @FXML
     private TableColumn<PolicyRecord, String> titleColumn;
     @FXML
-    private TableColumn<PolicyRecord, LocalDate> dateColumn;
-    @FXML
     private TableColumn<PolicyRecord, String> descriptionColumn;
     @FXML
-    private TableColumn<PolicyRecord, String> actionsColumn;
+    private TableColumn<PolicyRecord, LocalDate> dateColumn;
     @FXML
-    private VBox addFormBox;
-    @FXML
-    private TextField policyTitleField;
-    @FXML
-    private DatePicker effectiveDatePicker;
-    @FXML
-    private TextArea policyDescriptionArea;
-    @FXML
-    private Label statusLabel;
+    private TableColumn<PolicyRecord, String> statusColumn;
 
-    private final ArrayList<PolicyRecord> policies = new ArrayList<>();
+    private ArrayList<PolicyRecord> policies = new ArrayList<>();
+    private final String DATA_FILE = "policies.bin";
 
     @FXML
     public void initialize() {
-        titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
-        dateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
+        titleColumn.setCellValueFactory(new PropertyValueFactory<>("policyTitle"));
         descriptionColumn.setCellValueFactory(new PropertyValueFactory<>("description"));
-        actionsColumn.setCellValueFactory(new PropertyValueFactory<>("action"));
-        statusLabel.setText("");
-        addFormBox.setDisable(false);
+        dateColumn.setCellValueFactory(new PropertyValueFactory<>("effectiveDate"));
+        statusColumn.setCellValueFactory(new PropertyValueFactory<>("status"));
+        loadDataFromFile();
+        updateTable();
     }
 
     @FXML
-    public void handleShowAddForm(ActionEvent event) {
-        addFormBox.setDisable(false);
-    }
+    public void handleApplyPolicy(ActionEvent event) {
+        String username = usernameField.getText();
+        String password = passwordField.getText();
 
-    @FXML
-    public void handleSavePolicy(ActionEvent event) {
-        String title = policyTitleField.getText();
-        LocalDate date = effectiveDatePicker.getValue();
+        if (username == null || username.trim().isEmpty() || password == null || password.trim().isEmpty()) {
+            statusLabel.setText("Please enter username and password");
+            return;
+        }
+
+        String policyTitle = policyTitleField.getText();
         String description = policyDescriptionArea.getText();
-        if (title == null || title.isBlank() || date == null || description == null || description.isBlank()) {
-            statusLabel.setText("Enter title, date and description");
+        LocalDate effectiveDate = effectiveDatePicker.getValue();
+
+        if (policyTitle == null || policyTitle.trim().isEmpty() ||
+                description == null || description.trim().isEmpty() ||
+                effectiveDate == null) {
+            statusLabel.setText("Please fill all policy details");
             return;
         }
-        Alert confirm = new Alert(Alert.AlertType.CONFIRMATION);
-        confirm.setTitle("Confirm");
-        confirm.setHeaderText(null);
-        confirm.setContentText("Apply this policy?");
-        confirm.getButtonTypes().setAll(ButtonType.YES, ButtonType.NO);
-        ButtonType res = confirm.showAndWait().orElse(ButtonType.NO);
-        if (res != ButtonType.YES) {
-            return;
+
+        Alert confirmAlert = new Alert(Alert.AlertType.CONFIRMATION);
+        confirmAlert.setTitle("Apply Policy");
+        confirmAlert.setHeaderText("Add Policy & Guidelines");
+        confirmAlert.setContentText("Are you sure you want to apply this policy?");
+
+        if (confirmAlert.showAndWait().get() == ButtonType.OK) {
+            PolicyRecord newPolicy = new PolicyRecord(
+                    policyTitle.trim(),
+                    description.trim(),
+                    effectiveDate,
+                    "Active"
+            );
+            policies.add(newPolicy);
+            saveDataToFile();
+            updateTable();
+            clearFields();
+            statusLabel.setText("Policy applied successfully!");
         }
-        policies.add(new PolicyRecord(title, date, description));
-        policyTable.getItems().setAll(policies);
-        statusLabel.setText("Policy Added Successfully");
+    }
+
+    private void clearFields() {
         policyTitleField.clear();
-        effectiveDatePicker.setValue(null);
         policyDescriptionArea.clear();
+        effectiveDatePicker.setValue(null);
+    }
+
+    private void updateTable() {
+        policyTable.getItems().clear();
+        policyTable.getItems().addAll(policies);
+    }
+
+    private void saveDataToFile() {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(DATA_FILE))) {
+            oos.writeObject(policies);
+        } catch (IOException e) {
+            statusLabel.setText("Error saving data: " + e.getMessage());
+        }
+    }
+
+    private void loadDataFromFile() {
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(DATA_FILE))) {
+            policies = (ArrayList<PolicyRecord>) ois.readObject();
+        } catch (FileNotFoundException e) {
+            policies = new ArrayList<>();
+        } catch (IOException | ClassNotFoundException e) {
+            policies = new ArrayList<>();
+            statusLabel.setText("Error loading data: " + e.getMessage());
+        }
     }
 
     @FXML
@@ -90,6 +135,7 @@ public class PolicyGuidelinesController {
             stage.setScene(new Scene(root));
             stage.centerOnScreen();
         } catch (Exception e) {
+            statusLabel.setText("Error loading login page");
         }
     }
 
@@ -101,6 +147,7 @@ public class PolicyGuidelinesController {
             stage.setScene(new Scene(root));
             stage.centerOnScreen();
         } catch (Exception e) {
+            statusLabel.setText("Error loading menu");
         }
     }
 }

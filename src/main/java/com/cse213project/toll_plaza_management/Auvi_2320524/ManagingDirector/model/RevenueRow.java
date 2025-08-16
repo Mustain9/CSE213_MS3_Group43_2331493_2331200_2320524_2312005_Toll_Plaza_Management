@@ -1,50 +1,53 @@
 package com.cse213project.toll_plaza_management.Auvi_2320524.ManagingDirector.model;
 
-public class RevenueRow {
-    private String dateLabel;
-    private Double totalIncome;
-    private Double totalExpense;
-    private Double balance;
+import java.io.Serializable;
+import java.time.LocalDate;
+
+public class RevenueRow implements Serializable {
+    private String reportType;
+    private LocalDate fromDate;
+    private LocalDate toDate;
+    private Double revenueAmount;
 
     public RevenueRow() {
     }
 
-    public RevenueRow(String dateLabel, Double totalIncome, Double totalExpense, Double balance) {
-        this.dateLabel = dateLabel;
-        this.totalIncome = totalIncome;
-        this.totalExpense = totalExpense;
-        this.balance = balance;
+    public RevenueRow(String reportType, LocalDate fromDate, LocalDate toDate, Double revenueAmount) {
+        this.reportType = reportType;
+        this.fromDate = fromDate;
+        this.toDate = toDate;
+        this.revenueAmount = revenueAmount;
     }
 
-    public String getDateLabel() {
-        return dateLabel;
+    public String getReportType() {
+        return reportType;
     }
 
-    public void setDateLabel(String dateLabel) {
-        this.dateLabel = dateLabel;
+    public void setReportType(String reportType) {
+        this.reportType = reportType;
     }
 
-    public Double getTotalIncome() {
-        return totalIncome;
+    public LocalDate getFromDate() {
+        return fromDate;
     }
 
-    public void setTotalIncome(Double totalIncome) {
-        this.totalIncome = totalIncome;
+    public void setFromDate(LocalDate fromDate) {
+        this.fromDate = fromDate;
     }
 
-    public Double getTotalExpense() {
-        return totalExpense;
+    public LocalDate getToDate() {
+        return toDate;
     }
 
-    public void setTotalExpense(Double totalExpense) {
-        this.totalExpense = totalExpense;
+    public void setToDate(LocalDate toDate) {
+        this.toDate = toDate;
     }
 
-    public Double getBalance() {
-        return balance;
+    public Double getRevenueAmount() {
+        return revenueAmount;
     }
 
-    public void setBalance(Double balance) {
-        this.balance = balance;
+    public void setRevenueAmount(Double revenueAmount) {
+        this.revenueAmount = revenueAmount;
     }
 }

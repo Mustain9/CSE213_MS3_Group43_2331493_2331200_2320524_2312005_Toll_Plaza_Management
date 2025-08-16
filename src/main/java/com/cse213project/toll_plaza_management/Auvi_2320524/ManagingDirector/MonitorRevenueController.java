@@ -6,15 +6,12 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.chart.CategoryAxis;
-import javafx.scene.chart.LineChart;
-import javafx.scene.chart.NumberAxis;
-import javafx.scene.chart.XYChart;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
+import java.io.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -26,115 +23,118 @@ public class MonitorRevenueController {
     @FXML
     private PasswordField passwordField;
     @FXML
-    private Button loginButton;
-    @FXML
-    private RadioButton dailyRadio;
-    @FXML
-    private RadioButton monthlyRadio;
+    private ComboBox<String> reportTypeComboBox;
     @FXML
     private DatePicker fromDatePicker;
     @FXML
     private DatePicker toDatePicker;
     @FXML
-    private LineChart<String, Number> revenueChart;
+    private Button generateReportButton;
+    @FXML
+    private Label statusLabel;
     @FXML
     private TableView<RevenueRow> revenueTable;
     @FXML
-    private TableColumn<RevenueRow, String> dateColumn;
+    private TableColumn<RevenueRow, String> reportTypeColumn;
     @FXML
-    private TableColumn<RevenueRow, Double> incomeColumn;
+    private TableColumn<RevenueRow, LocalDate> fromDateColumn;
     @FXML
-    private TableColumn<RevenueRow, Double> expenseColumn;
+    private TableColumn<RevenueRow, LocalDate> toDateColumn;
     @FXML
-    private TableColumn<RevenueRow, Double> balanceColumn;
-    @FXML
-    private TextArea analysisArea;
+    private TableColumn<RevenueRow, Double> revenueAmountColumn;
 
-    private boolean loggedIn = false;
-    private final ArrayList<RevenueRow> rows = new ArrayList<>();
+    private ArrayList<RevenueRow> revenueReports = new ArrayList<>();
+    private final String DATA_FILE = "revenue_reports.bin";
 
     @FXML
     public void initialize() {
-        ToggleGroup group = new ToggleGroup();
-        dailyRadio.setToggleGroup(group);
-        monthlyRadio.setToggleGroup(group);
-        dateColumn.setCellValueFactory(new PropertyValueFactory<>("dateLabel"));
-        incomeColumn.setCellValueFactory(new PropertyValueFactory<>("totalIncome"));
-        expenseColumn.setCellValueFactory(new PropertyValueFactory<>("totalExpense"));
-        balanceColumn.setCellValueFactory(new PropertyValueFactory<>("balance"));
-        analysisArea.setText("");
+        reportTypeComboBox.getItems().addAll("Daily", "Monthly");
+
+        reportTypeColumn.setCellValueFactory(new PropertyValueFactory<>("reportType"));
+        fromDateColumn.setCellValueFactory(new PropertyValueFactory<>("fromDate"));
+        toDateColumn.setCellValueFactory(new PropertyValueFactory<>("toDate"));
+        revenueAmountColumn.setCellValueFactory(new PropertyValueFactory<>("revenueAmount"));
+
+        loadDataFromFile();
+        updateTable();
     }
 
     @FXML
-    public void handleLogin(ActionEvent event) {
-        String u = usernameField.getText();
-        String p = passwordField.getText();
-        if (u == null || u.isBlank() || p == null || p.isBlank()) {
+    public void handleGenerateReport(ActionEvent event) {
+        String username = usernameField.getText();
+        String password = passwordField.getText();
+
+        if (username == null || username.trim().isEmpty() || password == null || password.trim().isEmpty()) {
+            statusLabel.setText("Please enter username and password");
             return;
         }
-        loggedIn = true;
-        usernameField.setDisable(true);
-        passwordField.setDisable(true);
-        loginButton.setDisable(true);
-    }
 
-    @FXML
-    public void selectDaily(ActionEvent event) {
-        dailyRadio.setSelected(true);
-        monthlyRadio.setSelected(false);
-    }
+        String reportType = reportTypeComboBox.getValue();
+        LocalDate fromDate = fromDatePicker.getValue();
+        LocalDate toDate = toDatePicker.getValue();
 
-    @FXML
-    public void selectMonthly(ActionEvent event) {
-        dailyRadio.setSelected(false);
-        monthlyRadio.setSelected(true);
-    }
-
-    @FXML
-    public void handleGenerate(ActionEvent event) {
-        if (!loggedIn) {
+        if (reportType == null || fromDate == null || toDate == null) {
+            statusLabel.setText("Please select report type and date range");
             return;
         }
-        LocalDate from = fromDatePicker.getValue();
-        LocalDate to = toDatePicker.getValue();
-        if (from == null || to == null || to.isBefore(from)) {
+
+        if (toDate.isBefore(fromDate)) {
+            statusLabel.setText("To Date cannot be before From Date");
             return;
         }
-        rows.clear();
-        LocalDate d = from;
-        while (!d.isAfter(to)) {
-            double income = Math.round((10000 + Math.random() * 5000) * 100.0) / 100.0;
-            double expense = Math.round((4000 + Math.random() * 3000) * 100.0) / 100.0;
-            double balance = Math.round((income - expense) * 100.0) / 100.0;
-            String label = dailyRadio.isSelected() ? d.toString() : d.getYear() + "-" + String.format("%02d", d.getMonthValue());
-            rows.add(new RevenueRow(label, income, expense, balance));
-            d = dailyRadio.isSelected() ? d.plusDays(1) : d.plusMonths(1);
+
+        Alert confirmAlert = new Alert(Alert.AlertType.CONFIRMATION);
+        confirmAlert.setTitle("Generate Report");
+        confirmAlert.setHeaderText("Monitor Daily/Monthly Toll Revenue");
+        confirmAlert.setContentText("Generate revenue report for " + reportType + " from " + fromDate + " to " + toDate + "?");
+
+        if (confirmAlert.showAndWait().get() == ButtonType.OK) {
+            Double calculatedRevenue = calculateRevenue(reportType, fromDate, toDate);
+
+            RevenueRow newReport = new RevenueRow(reportType, fromDate, toDate, calculatedRevenue);
+            revenueReports.add(newReport);
+            saveDataToFile();
+            updateTable();
+            clearFields();
+            statusLabel.setText("Report generated successfully! Revenue: $" + String.format("%.2f", calculatedRevenue));
         }
-        revenueTable.getItems().setAll(rows);
-        updateChart();
-        updateAnalysis();
     }
 
-    private void updateChart() {
-        XYChart.Series<String, Number> incomeSeries = new XYChart.Series<>();
-        incomeSeries.setName("Income");
-        XYChart.Series<String, Number> expenseSeries = new XYChart.Series<>();
-        expenseSeries.setName("Expense");
-        for (RevenueRow r : rows) {
-            incomeSeries.getData().add(new XYChart.Data<>(r.getDateLabel(), r.getTotalIncome()));
-            expenseSeries.getData().add(new XYChart.Data<>(r.getDateLabel(), r.getTotalExpense()));
-        }
-        revenueChart.getData().setAll(incomeSeries, expenseSeries);
+    private Double calculateRevenue(String reportType, LocalDate fromDate, LocalDate toDate) {
+        long daysDifference = toDate.toEpochDay() - fromDate.toEpochDay() + 1;
+        double baseRevenue = reportType.equals("Daily") ? 5000.0 : 150000.0;
+        double multiplier = reportType.equals("Daily") ? daysDifference : (daysDifference / 30.0);
+        return Math.round((baseRevenue * multiplier + (Math.random() * 10000)) * 100.0) / 100.0;
     }
 
-    private void updateAnalysis() {
-        double totalIncome = rows.stream().mapToDouble(RevenueRow::getTotalIncome).sum();
-        double totalExpense = rows.stream().mapToDouble(RevenueRow::getTotalExpense).sum();
-        double balance = totalIncome - totalExpense;
-        String text = "Total Income: " + String.format("%.2f", totalIncome) + "\n" +
-                "Total Expense: " + String.format("%.2f", totalExpense) + "\n" +
-                "Balance: " + String.format("%.2f", balance);
-        analysisArea.setText(text);
+    private void clearFields() {
+        reportTypeComboBox.setValue(null);
+        fromDatePicker.setValue(null);
+        toDatePicker.setValue(null);
+    }
+
+    private void updateTable() {
+        revenueTable.getItems().clear();
+        revenueTable.getItems().addAll(revenueReports);
+    }
+
+    private void saveDataToFile() {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(DATA_FILE))) {
+            oos.writeObject(revenueReports);
+        } catch (IOException e) {
+            statusLabel.setText("Error saving data: " + e.getMessage());
+        }
+    }
+
+    private void loadDataFromFile() {
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(DATA_FILE))) {
+            revenueReports = (ArrayList<RevenueRow>) ois.readObject();
+        } catch (FileNotFoundException e) {
+            revenueReports = new ArrayList<>();
+        } catch (IOException | ClassNotFoundException e) {
+            revenueReports = new ArrayList<>();
+            statusLabel.setText("Error loading data: " + e.getMessage());
+        }
     }
 
     @FXML
@@ -145,6 +145,7 @@ public class MonitorRevenueController {
             stage.setScene(new Scene(root));
             stage.centerOnScreen();
         } catch (Exception e) {
+            statusLabel.setText("Error loading login page");
         }
     }
 
@@ -156,6 +157,7 @@ public class MonitorRevenueController {
             stage.setScene(new Scene(root));
             stage.centerOnScreen();
         } catch (Exception e) {
+            statusLabel.setText("Error loading menu");
         }
     }
 }

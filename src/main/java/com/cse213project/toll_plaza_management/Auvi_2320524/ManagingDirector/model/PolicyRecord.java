@@ -1,37 +1,30 @@
 package com.cse213project.toll_plaza_management.Auvi_2320524.ManagingDirector.model;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class PolicyRecord {
-    private String title;
-    private LocalDate date;
+public class PolicyRecord implements Serializable {
+    private String policyTitle;
     private String description;
-    private String action;
+    private LocalDate effectiveDate;
+    private String status;
 
     public PolicyRecord() {
     }
 
-    public PolicyRecord(String title, LocalDate date, String description) {
-        this.title = title;
-        this.date = date;
+    public PolicyRecord(String policyTitle, String description, LocalDate effectiveDate, String status) {
+        this.policyTitle = policyTitle;
         this.description = description;
-        this.action = "";
+        this.effectiveDate = effectiveDate;
+        this.status = status;
     }
 
-    public String getTitle() {
-        return title;
+    public String getPolicyTitle() {
+        return policyTitle;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public LocalDate getDate() {
-        return date;
-    }
-
-    public void setDate(LocalDate date) {
-        this.date = date;
+    public void setPolicyTitle(String policyTitle) {
+        this.policyTitle = policyTitle;
     }
 
     public String getDescription() {
@@ -42,11 +35,19 @@ public class PolicyRecord {
         this.description = description;
     }
 
-    public String getAction() {
-        return action;
+    public LocalDate getEffectiveDate() {
+        return effectiveDate;
     }
 
-    public void setAction(String action) {
-        this.action = action;
+    public void setEffectiveDate(LocalDate effectiveDate) {
+        this.effectiveDate = effectiveDate;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }
