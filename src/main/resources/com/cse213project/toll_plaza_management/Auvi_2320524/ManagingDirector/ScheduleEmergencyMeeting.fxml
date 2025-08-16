@@ -11,22 +11,26 @@
             fx:id="rootPane"
             prefHeight="720.0" prefWidth="1100.0">
     <children>
-        <VBox spacing="12.0" AnchorPane.topAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0"
-              AnchorPane.bottomAnchor="10.0">
+        <VBox spacing="15.0" AnchorPane.topAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0"
+              AnchorPane.bottomAnchor="20.0">
             <children>
                 <Label text="Schedule Emergency Meeting">
                     <font>
-                        <Font name="Segoe UI Semibold" size="22.0"/>
+                        <Font name="Segoe UI Bold" size="24.0"/>
                     </font>
                 </Label>
 
-                <VBox spacing="8.0">
+                <VBox spacing="10.0">
                     <children>
-                        <Label text="User Login"/>
-                        <HBox spacing="10.0">
+                        <Label text="Login Credentials">
+                            <font>
+                                <Font name="Segoe UI Semibold" size="16.0"/>
+                            </font>
+                        </Label>
+                        <HBox spacing="15.0">
                             <children>
-                                <TextField fx:id="usernameField" promptText="Username"/>
-                                <PasswordField fx:id="passwordField" promptText="Password"/>
+                                <TextField fx:id="usernameField" promptText="Username" prefWidth="200.0"/>
+                                <PasswordField fx:id="passwordField" promptText="Password" prefWidth="200.0"/>
                                 <Button fx:id="loginButton" text="Login" onAction="#handleLogin"/>
                                 <Button text="Logout" onAction="#handleLogout"/>
                             </children>
@@ -34,43 +38,54 @@
                     </children>
                 </VBox>
 
-                <HBox spacing="10.0">
-                    <children>
-                        <Button text="New Meeting"/>
-                        <Button text="Policy &amp; Guidelines"/>
-                        <Button text="Revenue Reports"/>
-                    </children>
-                </HBox>
-
                 <VBox spacing="10.0">
                     <children>
-                        <HBox spacing="10.0">
+                        <Label text="Meeting Details">
+                            <font>
+                                <Font name="Segoe UI Semibold" size="16.0"/>
+                            </font>
+                        </Label>
+                        <HBox spacing="15.0">
                             <children>
-                                <DatePicker fx:id="meetingDatePicker" promptText="Meeting Date"/>
-                                <TextField fx:id="meetingTimeField" promptText="Meeting Time"/>
-                                <TextField fx:id="meetingPlaceField" promptText="Meeting Place"/>
-                                <Button fx:id="setMeetingButton" text="Set Meeting" onAction="#handleSetMeeting"/>
+                                <DatePicker fx:id="meetingDatePicker" promptText="Meeting Date" prefWidth="200.0"/>
+                                <TextField fx:id="meetingTimeField" promptText="Meeting Time" prefWidth="200.0"/>
+                                <TextField fx:id="meetingPlaceField" promptText="Meeting Place" prefWidth="300.0"/>
                             </children>
                         </HBox>
-                        <Label fx:id="statusLabel" text=""/>
+                        <Button fx:id="confirmMeetingButton" text="Confirm Meeting" onAction="#handleConfirmMeeting"
+                                style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold;"
+                                prefWidth="150.0"/>
                     </children>
                 </VBox>
 
-                <TableView fx:id="meetingTable" prefHeight="420.0">
+                <Label fx:id="statusLabel" text="" textFill="GREEN">
+                    <font>
+                        <Font name="Segoe UI" size="14.0"/>
+                    </font>
+                </Label>
+
+                <TableView fx:id="meetingTable" prefHeight="380.0">
                     <columns>
-                        <TableColumn fx:id="dateColumn" text="Date" prefWidth="200.0"/>
+                        <TableColumn fx:id="meetingDateColumn" text="Meeting Date" prefWidth="250.0"/>
                         <TableColumn fx:id="timeColumn" text="Time" prefWidth="200.0"/>
-                        <TableColumn fx:id="placeColumn" text="Place" prefWidth="300.0"/>
+                        <TableColumn fx:id="placeColumn" text="Place" prefWidth="350.0"/>
+                        <TableColumn fx:id="statusColumn" text="Status" prefWidth="250.0"/>
                     </columns>
                 </TableView>
+
                 <HBox spacing="10.0">
                     <children>
-                        <Button text="Back to Menu" onAction="#handleBackToMenu"/>
+                        <Button text="Back to Menu" onAction="#handleBackToMenu"
+                                style="-fx-background-color: #2196F3; -fx-text-fill: white;"
+                                prefWidth="120.0"/>
+                        <Button text="Logout" onAction="#handleLogout"
+                                style="-fx-background-color: #f44336; -fx-text-fill: white;"
+                                prefWidth="120.0"/>
                     </children>
                 </HBox>
             </children>
             <padding>
-                <Insets topRightBottomLeft="10"/>
+                <Insets topRightBottomLeft="15"/>
             </padding>
         </VBox>
     </children>

@@ -11,6 +11,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
+import java.io.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -22,78 +23,102 @@ public class ScheduleEmergencyMeetingController {
     @FXML
     private PasswordField passwordField;
     @FXML
-    private Button loginButton;
-    @FXML
     private DatePicker meetingDatePicker;
     @FXML
     private TextField meetingTimeField;
     @FXML
     private TextField meetingPlaceField;
     @FXML
-    private Button setMeetingButton;
+    private Button confirmMeetingButton;
     @FXML
     private Label statusLabel;
     @FXML
     private TableView<MeetingRecord> meetingTable;
     @FXML
-    private TableColumn<MeetingRecord, LocalDate> dateColumn;
+    private TableColumn<MeetingRecord, LocalDate> meetingDateColumn;
     @FXML
     private TableColumn<MeetingRecord, String> timeColumn;
     @FXML
     private TableColumn<MeetingRecord, String> placeColumn;
+    @FXML
+    private TableColumn<MeetingRecord, String> statusColumn;
 
     private boolean loggedIn = false;
-    private final ArrayList<MeetingRecord> meetings = new ArrayList<>();
+    private ArrayList<MeetingRecord> meetings = new ArrayList<>();
+    private final String DATA_FILE = "meetings.bin";
 
     @FXML
     public void initialize() {
-        dateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
+        meetingDateColumn.setCellValueFactory(new PropertyValueFactory<>("meetingDate"));
         timeColumn.setCellValueFactory(new PropertyValueFactory<>("time"));
         placeColumn.setCellValueFactory(new PropertyValueFactory<>("place"));
-        statusLabel.setText("");
+        statusColumn.setCellValueFactory(new PropertyValueFactory<>("status"));
+        loadDataFromFile();
+        updateTable();
     }
 
     @FXML
-    public void handleLogin(ActionEvent event) {
-        String u = usernameField.getText();
-        String p = passwordField.getText();
-        if (u == null || u.isBlank() || p == null || p.isBlank()) {
-            return;
-        }
-        loggedIn = true;
-        usernameField.setDisable(true);
-        passwordField.setDisable(true);
-        loginButton.setDisable(true);
-    }
+    public void handleConfirmMeeting(ActionEvent event) {
+        String username = usernameField.getText();
+        String password = passwordField.getText();
 
-    @FXML
-    public void handleSetMeeting(ActionEvent event) {
-        if (!loggedIn) {
-            statusLabel.setText("Login first");
+        if (username == null || username.trim().isEmpty() || password == null || password.trim().isEmpty()) {
+            statusLabel.setText("Please enter username and password");
             return;
         }
-        LocalDate date = meetingDatePicker.getValue();
+
+        LocalDate meetingDate = meetingDatePicker.getValue();
         String time = meetingTimeField.getText();
         String place = meetingPlaceField.getText();
-        if (date == null || time == null || time.isBlank() || place == null || place.isBlank()) {
-            statusLabel.setText("Enter date, time and place");
+
+        if (meetingDate == null || time == null || time.trim().isEmpty() || place == null || place.trim().isEmpty()) {
+            statusLabel.setText("Please fill all meeting details");
             return;
         }
-        Alert confirm = new Alert(Alert.AlertType.CONFIRMATION);
-        confirm.setTitle("Confirm");
-        confirm.setHeaderText(null);
-        confirm.setContentText("Confirm meeting details?");
-        confirm.getButtonTypes().setAll(ButtonType.YES, ButtonType.NO);
-        ButtonType result = confirm.showAndWait().orElse(ButtonType.NO);
-        if (result != ButtonType.YES) {
-            return;
+
+        Alert confirmAlert = new Alert(Alert.AlertType.CONFIRMATION);
+        confirmAlert.setTitle("Confirm Meeting");
+        confirmAlert.setHeaderText("Schedule Emergency Meeting");
+        confirmAlert.setContentText("Are you sure you want to schedule this meeting?");
+
+        if (confirmAlert.showAndWait().get() == ButtonType.OK) {
+            MeetingRecord newMeeting = new MeetingRecord(meetingDate, time.trim(), place.trim(), "Scheduled");
+            meetings.add(newMeeting);
+            saveDataToFile();
+            updateTable();
+            clearFields();
+            statusLabel.setText("Meeting scheduled successfully!");
         }
-        meetings.add(new MeetingRecord(date, time, place));
-        meetingTable.getItems().setAll(meetings);
-        statusLabel.setText("Meeting Scheduled Successfully");
+    }
+
+    private void clearFields() {
         meetingDatePicker.setValue(null);
         meetingTimeField.clear();
         meetingPlaceField.clear();
+    }
+
+    private void updateTable() {
+        meetingTable.getItems().clear();
+        meetingTable.getItems().addAll(meetings);
+    }
+
+    private void saveDataToFile() {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(DATA_FILE))) {
+            oos.writeObject(meetings);
+        } catch (IOException e) {
+            statusLabel.setText("Error saving data: " + e.getMessage());
+        }
+    }
+
+    private void loadDataFromFile() {
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(DATA_FILE))) {
+            meetings = (ArrayList<MeetingRecord>) ois.readObject();
+        } catch (FileNotFoundException e) {
+            meetings = new ArrayList<>();
+        } catch (IOException | ClassNotFoundException e) {
+            meetings = new ArrayList<>();
+            statusLabel.setText("Error loading data: " + e.getMessage());
+        }
     }
 
     @FXML
@@ -104,6 +129,7 @@ public class ScheduleEmergencyMeetingController {
             stage.setScene(new Scene(root));
             stage.centerOnScreen();
         } catch (Exception e) {
+            statusLabel.setText("Error loading login page");
         }
     }
 
@@ -115,6 +141,7 @@ public class ScheduleEmergencyMeetingController {
             stage.setScene(new Scene(root));
             stage.centerOnScreen();
         } catch (Exception e) {
+            statusLabel.setText("Error loading menu");
         }
     }
 }
