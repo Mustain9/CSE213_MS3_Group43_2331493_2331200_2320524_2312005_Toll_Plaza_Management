@@ -8,84 +8,52 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class ShiftSummaryController {
 
-    @FXML
-    private Button btnBack;
+    @FXML private Button btnBack;
+    @FXML private Button btnExportPDF;
+
+    @FXML private TableColumn<ShiftRecord, String> colPaymentMethod;
+    @FXML private TableColumn<ShiftRecord, String> colTime;
+    @FXML private TableColumn<ShiftRecord, Double> colTollAmount;
+    @FXML private TableColumn<ShiftRecord, String> colVehicleNo;
+    @FXML private TableColumn<ShiftRecord, String> colVehicleType;
+
+    @FXML private TextField lblCollectorName;
+    @FXML private TextField lblShiftID;
+    @FXML private TextField lblShiftTime;
+
+    @FXML private Label lblTotalCollected;
+    @FXML private Label lblTotalVehicles;
+
+    @FXML private TableView<ShiftRecord> tableShiftSummary;
+
+    public ArrayList<ShiftRecord> ShiftList = new ArrayList<>();
+
 
     @FXML
-    private TableColumn<ShiftRecord, String> colPaymentMethod;
-
-    @FXML
-    private TableColumn<ShiftRecord, String> colTime;
-
-    @FXML
-    private TableColumn<ShiftRecord, Double> colTollAmount;
-
-    @FXML
-    private TableColumn<ShiftRecord, String> colVehicleNo;
-
-    @FXML
-    private TableColumn<ShiftRecord, String> colVehicleType;
-
-    @FXML
-    private TextField lblCollectorName;
-
-    @FXML
-    private TextField lblShiftID;
-
-    @FXML
-    private TextField lblShiftTime;
-
-    @FXML
-    private Label lblTotalCollected;
-
-    @FXML
-    private Label lblTotalVehicles;
-
-    @FXML
-    private TableView<ShiftRecord> tableShiftSummary;
-
-    private ObservableList<ShiftRecord> shiftData = FXCollections.observableArrayList();
-
-    @javafx.fxml.FXML
     public void initialize() {
 
+        colVehicleNo.setCellValueFactory(new PropertyValueFactory<>("vehicleNo"));
+        colVehicleType.setCellValueFactory(new PropertyValueFactory<>("vehicleType"));
+        colTollAmount.setCellValueFactory(new PropertyValueFactory<>("tollAmount"));
+        colPaymentMethod.setCellValueFactory(new PropertyValueFactory<>("paymentMethod"));
+        colTime.setCellValueFactory(new PropertyValueFactory<>("time"));
 
-        colVehicleNo.setCellValueFactory(new PropertyValueFactory<>("Vehicle No"));
-        colVehicleType.setCellValueFactory(new PropertyValueFactory<>("Vehicle Type"));
-        colPaymentMethod.setCellValueFactory(new PropertyValueFactory<>("Payment Method"));
-        colTollAmount.setCellValueFactory(new PropertyValueFactory<>("Toll Amount"));
-        colTime.setCellValueFactory(new PropertyValueFactory<>("Time"));
+        ShiftList.add(new ShiftRecord("DHA-1234", "Car", "Cash" , 200.0,  "10:30 AM"));
+        ShiftList.add(new ShiftRecord("CTG-5678", "Truck", "Card", 500.0,  "11:00 AM"));
 
-        loadDummyData();
-        updateSummaryLabels();
+        tableShiftSummary.setItems(FXCollections.observableArrayList(ShiftList));
     }
 
-    private void loadDummyData() {
-        shiftData.addAll(
-                new ShiftRecord("CAR-1234", "Car", "Cash", 100.0, "08:15 AM"),
-                new ShiftRecord("TRK-5678", "Truck", "Tag", 250.0, "09:30 AM"),
-                new ShiftRecord("BUS-9999", "Bus", "Cash", 300.0, "10:05 AM")
-        );
-        tableShiftSummary.setItems(shiftData);
-    }
 
-    private void updateSummaryLabels() {
-        double totalCollected = shiftData.stream().mapToDouble(ShiftRecord::getTollAmount).sum();
-        lblTotalCollected.setText(String.format("%.2f", totalCollected));
-        lblTotalVehicles.setText(String.valueOf(shiftData.size()));
-    }
 
     @FXML
     public void goBackToDashboard(ActionEvent event) throws IOException {

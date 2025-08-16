@@ -5,6 +5,7 @@ public class MaintenanceReport {
     private String description;
 
     public MaintenanceReport() {
+
     }
 
     public MaintenanceReport(String filePath, String description) {

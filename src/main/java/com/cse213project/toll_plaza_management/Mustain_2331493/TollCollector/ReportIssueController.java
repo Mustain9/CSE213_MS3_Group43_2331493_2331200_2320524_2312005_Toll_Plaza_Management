@@ -47,7 +47,6 @@ public class ReportIssueController {
             return;
         }
 
-
         showAlert("Success", "Issue reported successfully!\nType: " + IssueType + "\nDetails: " + Description);
 
         clearFields();

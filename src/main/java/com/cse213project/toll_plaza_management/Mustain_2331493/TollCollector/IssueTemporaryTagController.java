@@ -14,6 +14,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class IssueTemporaryTagController {
 
@@ -41,6 +42,7 @@ public class IssueTemporaryTagController {
 
     @FXML
     private void onIssueTag() {
+
         String tempTagID = txtTempTagID.getText();
         String vehicleNumber = txtVehicleNumber.getText();
         LocalDate expiryDate = dateExpiry.getValue();
