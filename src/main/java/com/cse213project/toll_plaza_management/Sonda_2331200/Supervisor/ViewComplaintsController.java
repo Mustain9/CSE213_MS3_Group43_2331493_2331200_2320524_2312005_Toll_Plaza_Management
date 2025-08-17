@@ -51,7 +51,7 @@ public class ViewComplaintsController {
     private ComboBox<String> filterStatus;
 
     private ObservableList<Complaint> allComplaints = FXCollections.observableArrayList();
-    @FXML
+
 
     @FXML
     public void initialize() {

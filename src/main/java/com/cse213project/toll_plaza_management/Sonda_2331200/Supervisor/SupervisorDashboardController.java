@@ -27,9 +27,9 @@ public class SupervisorDashboardController
 
     @javafx.fxml.FXML
     public void ViewComplaintBtn(ActionEvent event) throws IOException {
-        FXMLLoader.load(getClass().getResource("/com/cse213project/toll_plaza_management/Sonda_2331200/Supervisor/ViewComplaints.fxml"));
+        Parent root =FXMLLoader.load(getClass().getResource("/com/cse213project/toll_plaza_management/Sonda_2331200/Supervisor/ViewComplaints.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(FXMLLoader.load()));
+        stage.setScene(new Scene(root));
         stage.setTitle("delete complain ");
         stage.show();
        
@@ -37,45 +37,45 @@ public class SupervisorDashboardController
 
     @javafx.fxml.FXML
     public void deleteComplaintBtn(ActionEvent event) throws IOException {
-        FXMLLoader.load(getClass().getResource("/com/cse213project/toll_plaza_management/common/login.fxml"));
+        Parent root =FXMLLoader.load(getClass().getResource("/com/cse213project/toll_plaza_management/common/login.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(FXMLLoader.load()));
+        stage.setScene(new Scene(root));
         stage.setTitle("delete complain ");
         stage.show();
     }
 
     @javafx.fxml.FXML
     public void AssignComplainBtn(ActionEvent event) throws IOException {
-        FXMLLoader.load(getClass().getResource("/com/cse213project/toll_plaza_management/Sonda_2331200/Supervisor/AssignComplaintController.java"));
+        Parent root =FXMLLoader.load(getClass().getResource("/com/cse213project/toll_plaza_management/Sonda_2331200/Supervisor/AssignComplaintController.java"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(FXMLLoader.load()));
+        stage.setScene(new Scene(root));
         stage.setTitle("assign Complain");
         stage.show();
     }
 
     @javafx.fxml.FXML
     public void remainderBtn(ActionEvent event) throws IOException {
-        FXMLLoader.load(getClass().getResource("/com/cse213project/toll_plaza_management/Sonda_2331200/Supervisor/UpdateComplaintStatus.fxml"));
+        Parent root =FXMLLoader.load(getClass().getResource("/com/cse213project/toll_plaza_management/Sonda_2331200/Supervisor/UpdateComplaintStatus.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(FXMLLoader.load()));
+        stage.setScene(new Scene(root));
         stage.setTitle("remainder");
         stage.show();
     }
 
     @javafx.fxml.FXML
     public void updateComplaintBtn(ActionEvent event) throws IOException {
-        FXMLLoader.load(getClass().getResource("/com/cse213project/toll_plaza_management/Sonda_2331200/Supervisor/UpdateComplaintStatus.fxml"));
+        Parent root =FXMLLoader.load(getClass().getResource("/com/cse213project/toll_plaza_management/Sonda_2331200/Supervisor/UpdateComplaintStatus.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(FXMLLoader.load()));
+        stage.setScene(new Scene(root));
         stage.setTitle("update complaint");
         stage.show();
     }
 
     @javafx.fxml.FXML
     public void logout(ActionEvent event) throws IOException {
-        FXMLLoader.load(getClass().getResource("/com/cse213project/toll_plaza_management/common/login.fxml"));
+        Parent root =FXMLLoader.load(getClass().getResource("/com/cse213project/toll_plaza_management/common/login.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(FXMLLoader.load()));
+        stage.setScene(new Scene(root));
         stage.setTitle("Login");
         stage.show();
     }

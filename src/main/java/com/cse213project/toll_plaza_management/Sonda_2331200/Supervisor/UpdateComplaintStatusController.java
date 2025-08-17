@@ -31,11 +31,11 @@ public class UpdateComplaintStatusController {
 
     @FXML
 
-    @FXML
+
     public void backOnDashboard(ActionEvent event) throws IOException {
-        FXMLLoader.load(getClass().getResource("/com/cse213project/toll_plaza_management/Sonda_2331200/Supervisor/SupervisorDashboard.fxml"));
+        Parent root =FXMLLoader.load(getClass().getResource("/com/cse213project/toll_plaza_management/Sonda_2331200/Supervisor/SupervisorDashboard.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(FXMLLoader.load()));
+        Scene scene = new Scene(root);
         stage.show();
     }
 
